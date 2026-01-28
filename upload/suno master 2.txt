@@ -1,0 +1,281 @@
+My master list of drum-related style prompts for custom sounds.
+
+ Drum Texture & Timbre  
+	•	[Tube-Saturated Kick] – Warm, analog-style kick with soft distortion and vintage punch  
+	•	[Vinyl Print Texture] – Dusty, grainy percussive feel like sampled records  
+	•	[Hard-Shelled Snare] – Snare with a brittle, crackling top-end snap  
+	•	[Tonal Rim Shot] – Rim sounds with tonal resonance, not dry clicks  
+	•	[Crushed Transient Hits] – Compressed, clipped attack for aggressive feel  
+	•	[Wet Clap Reverb] – Lush, tail-heavy claps filling stereo space  
+	•	[Ribbon Mic Percussion] – Soft, rounded highs; natural vintage warmth  
+	•	[Chalky Hi-Hats] – Dry, textured hats with granular surface feel  
+	•	[Rubberized Floor Tom] – Damped, bouncy low-end toms with smooth decay  
+  
+⸻  
+  
+Drum Rhythmic Movement  
+	•	[Stutter-Ramp Rhythm] – Glitchy bursts ramping into steady pulses  
+	•	[Offset Pulse Cycle] – Drum patterns shifted just off the beat loop  
+	•	[Triplet-Swing Compression] – Triplet groove with tight dynamic control  
+	•	[Backbeat Cut Sync] – Precise snare syncopation on the backbeat  
+	•	[Polyrhythmic Wash] – Interweaving time signatures for complex texture  
+	•	[Syncope Latch Break] – Sudden syncopated breaks that reattach rhythmically  
+	•	[Microstep Jitter Grid] – Fast, jittery step sequences adding twitchy motion  
+  
+⸻  
+  
+Decay & Sustain Behavior  
+	•	[Analog Tail Drift] – Long, tapering analog decay on each hit  
+	•	[Snare Choke Collapse] – Fast cut-off snare, like muted live playing  
+	•	[Open Hat Splash Delay] – Hats trailing with stereo slapback  
+	•	[Reverse Boom Bloom] – Backward attack swelling into full body  
+	•	[Snubbed Room Reverb] – Tight, dry space—small room, zero tail  
+	•	[Kick Decay Swell] – Kick thump grows subtly post-hit  
+  
+⸻  
+  
+Spatial & Stereo Placement  
+	•	[Stereo Wall Sweep] – Percussion sweeping left-right in motion arcs  
+	•	[Pan-Divided Drums] – Each drum isolated into its own stereo pocket  
+	•	[Monolith Percussion Center] – Drums sit dead-center, towering presence  
+	•	[Spiral Rim Loop] – Rim or click sounds spiral outward in stereo field  
+	•	[Wide Floor Drum Spread] – Low drums panned wide for immersive space  
+  
+⸻  
+  
+Energy Curve & FX Modulation  
+	•	[Reverb Pulse Overdrive] – Echoes peak and distort with rhythmic intensity  
+	•	[Drum Bus Saturation Curve] – Saturation increases over the phrase length  
+	•	[Transient Pump Swell] – Attack bursts push into smooth dynamic flow  
+	•	[Granular Kick Refract] – Fragmented kick pulses glitching on impact  
+	•	[Phase-Shifting Snare Snap] – Snare timbre moves subtly with stereo phasing  
+
+
+
+
+
+_____44
+
+
+
+
+
+Complete List of Suno Voice Tags for Vocal Manipulation
+When using Suno to generate music, you can creatively manipulate the structure of a singer’s voice with a variety of suno voice tags. These tags allow you to alter the tone, effects, pitch, and emotional delivery, making it easier to craft dynamic vocal performances that suit the mood and genre of your track. Below is an extensive list of suno voice tags that you can use to transform the vocal experience in your music.
+
+Suno Prompt Guide
+Important note
+Many of these suno voice tags are hit and miss. Instead, I’ve found a really good strategy is to use a vocal sample from Splice.
+
+From here you can:
+
+Upload the vocal sample
+Extend the song but add in different lyrics
+Or try using the cover option.
+Use the suno voice tags to manipulate the vocal to get the sound you want
+Layer in more styles by repeating the process with different style prompts
+Get the vocal and instrumental stems and delete any vocals you don’t want
+Find a vocal sample on Splice
+
+Here is an example house song that used a Splice sample:
+
+Suno pop song album cover
+
+1. Vocal Tone Tags
+These suno voice tags help define the tonal quality of the voice, giving it a distinct feel that fits the overall mood of your music.
+
+
+
+Airy
+Breathy
+Crisp
+Deep
+Gritty
+Smooth
+Soft
+Warm
+Raw
+Sharp
+Muffled
+Bright
+Mellow
+Raspy
+Clear
+Thin
+Dense
+2. Vocal Effects Tags
+Use these suno voice tags to apply different effects to the singer’s voice, altering the texture and sonic profile to fit genres like EDM, pop, or experimental music.
+
+Auto-tuned
+Distorted
+Reverbed
+Echoed
+Layered
+Chopped
+Pitch-shifted (up/down)
+Filtered
+Vocoder
+Robotized
+Phased
+Flanged
+Time-stretched
+Lo-fi
+Bit-crushed
+Glitched
+Stuttered
+Modulated
+Panned (left/right for stereo effects)
+Granular
+Doubled
+Auto-harmonized
+Saturated
+Ring-modulated
+Detuned
+Reverse (creates eerie, backward-sounding vocals)
+These suno voice tags are essential for giving your vocal performance an otherworldly or futuristic quality, perfect for electronic, psychedelic, or experimental music genres.
+
+3. Pitch & Range Manipulation Tags
+Modifying the pitch and vocal range can dramatically change how a voice is perceived. These suno voice tags allow you to shift the voice up or down the scale, expanding its expressive range.
+
+
+
+Low-pitched
+High-pitched
+Mid-range
+Sub-bass vocals
+Falsetto
+Baritone
+Soprano
+Tenor
+Contralto
+Whispered falsetto
+Harmonized layers
+Dissonant harmonies
+Octave shift (up/down)
+Pitch-bent
+Modulated pitch
+Subtle detune
+Formant-shifted (changing the vocal characteristics without altering pitch)
+Pitch shifting and range effects, enhanced by suno voice tags, can add depth to your song, whether you’re aiming for high-energy or more ethereal, dream-like vocals.
+
+4. Vocal Texture Tags
+Adding texture to a voice can emphasize mood and emotion, making a song feel intimate or intense. These suno voice tags help you control how the vocal texture interacts with the rest of the mix.
+
+
+
+Whispered
+Gravelly
+Velvety
+Dreamy
+Resonant
+Nasal
+Brassy
+Metallic
+Saturated
+Smoky
+Chilled
+Rough-edged
+Shimmery
+Glassy
+Crunchy
+Liquid-like
+Breathy exhale
+These suno voice tags are ideal for adding nuanced character to the voice, matching the specific atmosphere of the track you’re working on.
+
+5. Vocal Style Tags
+Vocal style defines how the singer performs each note or phrase. These suno voice tags give you control over the expressive delivery of the vocal, impacting the entire flow of the song.
+
+
+
+Staccato
+Legato
+Vibrato-heavy
+Monotone
+Melismatic
+Syncopated
+Operatic
+Chanting
+Spoken-word
+Growling
+Belting
+Yodeling
+Humming
+Rapping
+Scatting
+Falsetto runs
+Yelping
+Grunting
+Call-and-response
+By incorporating these vocal styles into your suno voice tags, you can design a performance that shifts dynamically throughout the track, adding variety and complexity.
+
+6. Dynamics & Volume Tags
+Dynamics can change the energy level of a song. These suno voice tags focus on the intensity and volume of the voice, helping shape the emotional peaks and valleys in your production.
+
+
+
+Soft-spoken
+Shouted
+Crescendo
+Decrescendo
+Sudden stop
+Building intensity
+Explosive
+Subtle
+Whispered vocals
+Breathy build-up
+Intense climax
+Dynamic shifts
+Fading vocals
+Echoing softly
+Reverb swell
+Silent break (a pause for dramatic effect)
+These suno voice tags will help you manipulate the dynamics of the performance, making your song more impactful by playing with loud and soft contrasts.
+
+7. Emotional & Mood Tags
+Emotional tone is key to delivering the right feeling in a song. These suno voice tags let you control how the singer conveys different moods and emotions.
+
+
+
+Sultry
+Ethereal
+Melancholic
+Playful
+Aggressive
+Haunting
+Euphoric
+Mysterious
+Hypnotic
+Dreamy
+Confident
+Desperate
+Tranquil
+Emotive
+Longing
+Angsty
+Triumphant
+Introspective
+Detached
+These suno voice tags help guide the emotional storytelling of the vocals, ensuring the mood aligns with the overall theme of your track.
+
+8. Vocal Timing & Rhythm Tags
+The rhythm and timing of vocals can significantly impact the groove of a song. These suno voice tags allow you to modify the vocal performance to fit different beats and time signatures.
+
+
+
+Off-beat
+Syncopated
+On-beat
+Fast-paced
+Laid-back
+Polyrhythmic
+Triplets
+Slow-drawled
+Quick stabs
+Rolling
+Freeform
+Rapid-fire
+Loose phrasing
+Tight rhythm
+Using these suno voice tags ensures that the vocal delivery complements the rhythm and timing of your instrumental track.
+
+By combining these various suno voice tags, you’ll be able to craft unique, tailored vocal performances for each of your Suno-generated tracks. Whether you’re after a futuristic, otherworldly voice or a grounded, intimate vocal texture, using the right tags will allow you to push the boundaries of creativity and experiment with vocal styles, dynamics, and emotional tone.
