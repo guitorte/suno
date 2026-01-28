@@ -1,0 +1,2578 @@
+[
+  {
+    "id": "tag-airy",
+    "name": "Airy",
+    "category": "vocal-tone",
+    "syntax": "[Airy]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-breathy",
+    "name": "Breathy",
+    "category": "vocal-tone",
+    "syntax": "[Breathy]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-crisp",
+    "name": "Crisp",
+    "category": "vocal-tone",
+    "syntax": "[Crisp]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-deep",
+    "name": "Deep",
+    "category": "vocal-tone",
+    "syntax": "[Deep]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-gritty",
+    "name": "Gritty",
+    "category": "vocal-tone",
+    "syntax": "[Gritty]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-smooth",
+    "name": "Smooth",
+    "category": "vocal-tone",
+    "syntax": "[Smooth]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-soft",
+    "name": "Soft",
+    "category": "vocal-tone",
+    "syntax": "[Soft]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-warm",
+    "name": "Warm",
+    "category": "vocal-tone",
+    "syntax": "[Warm]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-raw",
+    "name": "Raw",
+    "category": "vocal-tone",
+    "syntax": "[Raw]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-sharp",
+    "name": "Sharp",
+    "category": "vocal-tone",
+    "syntax": "[Sharp]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-muffled",
+    "name": "Muffled",
+    "category": "vocal-tone",
+    "syntax": "[Muffled]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-bright",
+    "name": "Bright",
+    "category": "vocal-tone",
+    "syntax": "[Bright]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-mellow",
+    "name": "Mellow",
+    "category": "vocal-tone",
+    "syntax": "[Mellow]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-raspy",
+    "name": "Raspy",
+    "category": "vocal-tone",
+    "syntax": "[Raspy]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-clear",
+    "name": "Clear",
+    "category": "vocal-tone",
+    "syntax": "[Clear]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-thin",
+    "name": "Thin",
+    "category": "vocal-tone",
+    "syntax": "[Thin]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-dense",
+    "name": "Dense",
+    "category": "vocal-tone",
+    "syntax": "[Dense]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-auto-tuned",
+    "name": "Auto-tuned",
+    "category": "vocal-effects",
+    "syntax": "[Auto-tuned]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-distorted",
+    "name": "Distorted",
+    "category": "vocal-effects",
+    "syntax": "[Distorted]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-reverbed",
+    "name": "Reverbed",
+    "category": "vocal-effects",
+    "syntax": "[Reverbed]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-echoed",
+    "name": "Echoed",
+    "category": "vocal-effects",
+    "syntax": "[Echoed]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-layered",
+    "name": "Layered",
+    "category": "vocal-effects",
+    "syntax": "[Layered]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-chopped",
+    "name": "Chopped",
+    "category": "vocal-effects",
+    "syntax": "[Chopped]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-filtered",
+    "name": "Filtered",
+    "category": "vocal-effects",
+    "syntax": "[Filtered]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-vocoder",
+    "name": "Vocoder",
+    "category": "vocal-effects",
+    "syntax": "[Vocoder]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-robotized",
+    "name": "Robotized",
+    "category": "vocal-effects",
+    "syntax": "[Robotized]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-phased",
+    "name": "Phased",
+    "category": "vocal-effects",
+    "syntax": "[Phased]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-flanged",
+    "name": "Flanged",
+    "category": "vocal-effects",
+    "syntax": "[Flanged]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-time-stretched",
+    "name": "Time-stretched",
+    "category": "vocal-effects",
+    "syntax": "[Time-stretched]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-lo-fi",
+    "name": "Lo-fi",
+    "category": "vocal-effects",
+    "syntax": "[Lo-fi]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-bit-crushed",
+    "name": "Bit-crushed",
+    "category": "vocal-effects",
+    "syntax": "[Bit-crushed]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-glitched",
+    "name": "Glitched",
+    "category": "vocal-effects",
+    "syntax": "[Glitched]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-stuttered",
+    "name": "Stuttered",
+    "category": "vocal-effects",
+    "syntax": "[Stuttered]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-modulated",
+    "name": "Modulated",
+    "category": "vocal-effects",
+    "syntax": "[Modulated]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-granular",
+    "name": "Granular",
+    "category": "vocal-effects",
+    "syntax": "[Granular]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-doubled",
+    "name": "Doubled",
+    "category": "vocal-effects",
+    "syntax": "[Doubled]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-auto-harmonized",
+    "name": "Auto-harmonized",
+    "category": "vocal-effects",
+    "syntax": "[Auto-harmonized]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-saturated",
+    "name": "Saturated",
+    "category": "vocal-effects",
+    "syntax": "[Saturated]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-ring-modulated",
+    "name": "Ring-modulated",
+    "category": "vocal-effects",
+    "syntax": "[Ring-modulated]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-detuned",
+    "name": "Detuned",
+    "category": "vocal-effects",
+    "syntax": "[Detuned]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-low-pitched",
+    "name": "Low-pitched",
+    "category": "pitch-range",
+    "syntax": "[Low-pitched]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-high-pitched",
+    "name": "High-pitched",
+    "category": "pitch-range",
+    "syntax": "[High-pitched]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-mid-range",
+    "name": "Mid-range",
+    "category": "pitch-range",
+    "syntax": "[Mid-range]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-sub-bass-vocals",
+    "name": "Sub-bass vocals",
+    "category": "pitch-range",
+    "syntax": "[Sub-bass vocals]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-falsetto",
+    "name": "Falsetto",
+    "category": "pitch-range",
+    "syntax": "[Falsetto]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-baritone",
+    "name": "Baritone",
+    "category": "pitch-range",
+    "syntax": "[Baritone]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-soprano",
+    "name": "Soprano",
+    "category": "pitch-range",
+    "syntax": "[Soprano]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-tenor",
+    "name": "Tenor",
+    "category": "pitch-range",
+    "syntax": "[Tenor]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-contralto",
+    "name": "Contralto",
+    "category": "pitch-range",
+    "syntax": "[Contralto]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-whispered-falsetto",
+    "name": "Whispered falsetto",
+    "category": "pitch-range",
+    "syntax": "[Whispered falsetto]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-harmonized-layers",
+    "name": "Harmonized layers",
+    "category": "pitch-range",
+    "syntax": "[Harmonized layers]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-dissonant-harmonies",
+    "name": "Dissonant harmonies",
+    "category": "pitch-range",
+    "syntax": "[Dissonant harmonies]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-pitch-bent",
+    "name": "Pitch-bent",
+    "category": "pitch-range",
+    "syntax": "[Pitch-bent]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-modulated-pitch",
+    "name": "Modulated pitch",
+    "category": "pitch-range",
+    "syntax": "[Modulated pitch]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-subtle-detune",
+    "name": "Subtle detune",
+    "category": "pitch-range",
+    "syntax": "[Subtle detune]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-whispered",
+    "name": "Whispered",
+    "category": "vocal-texture",
+    "syntax": "[Whispered]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-gravelly",
+    "name": "Gravelly",
+    "category": "vocal-texture",
+    "syntax": "[Gravelly]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-velvety",
+    "name": "Velvety",
+    "category": "vocal-texture",
+    "syntax": "[Velvety]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-dreamy",
+    "name": "Dreamy",
+    "category": "vocal-texture",
+    "syntax": "[Dreamy]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-resonant",
+    "name": "Resonant",
+    "category": "vocal-texture",
+    "syntax": "[Resonant]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-nasal",
+    "name": "Nasal",
+    "category": "vocal-texture",
+    "syntax": "[Nasal]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-brassy",
+    "name": "Brassy",
+    "category": "vocal-texture",
+    "syntax": "[Brassy]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-metallic",
+    "name": "Metallic",
+    "category": "vocal-texture",
+    "syntax": "[Metallic]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-smoky",
+    "name": "Smoky",
+    "category": "vocal-texture",
+    "syntax": "[Smoky]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-chilled",
+    "name": "Chilled",
+    "category": "vocal-texture",
+    "syntax": "[Chilled]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-rough-edged",
+    "name": "Rough-edged",
+    "category": "vocal-texture",
+    "syntax": "[Rough-edged]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-shimmery",
+    "name": "Shimmery",
+    "category": "vocal-texture",
+    "syntax": "[Shimmery]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-glassy",
+    "name": "Glassy",
+    "category": "vocal-texture",
+    "syntax": "[Glassy]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-crunchy",
+    "name": "Crunchy",
+    "category": "vocal-texture",
+    "syntax": "[Crunchy]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-liquid-like",
+    "name": "Liquid-like",
+    "category": "vocal-texture",
+    "syntax": "[Liquid-like]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-breathy-exhale",
+    "name": "Breathy exhale",
+    "category": "vocal-texture",
+    "syntax": "[Breathy exhale]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-staccato",
+    "name": "Staccato",
+    "category": "vocal-style",
+    "syntax": "[Staccato]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-legato",
+    "name": "Legato",
+    "category": "vocal-style",
+    "syntax": "[Legato]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-vibrato-heavy",
+    "name": "Vibrato-heavy",
+    "category": "vocal-style",
+    "syntax": "[Vibrato-heavy]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-monotone",
+    "name": "Monotone",
+    "category": "vocal-style",
+    "syntax": "[Monotone]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-melismatic",
+    "name": "Melismatic",
+    "category": "vocal-style",
+    "syntax": "[Melismatic]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-syncopated",
+    "name": "Syncopated",
+    "category": "vocal-style",
+    "syntax": "[Syncopated]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-operatic",
+    "name": "Operatic",
+    "category": "vocal-style",
+    "syntax": "[Operatic]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-chanting",
+    "name": "Chanting",
+    "category": "vocal-style",
+    "syntax": "[Chanting]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-spoken-word",
+    "name": "Spoken-word",
+    "category": "vocal-style",
+    "syntax": "[Spoken-word]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-growling",
+    "name": "Growling",
+    "category": "vocal-style",
+    "syntax": "[Growling]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-belting",
+    "name": "Belting",
+    "category": "vocal-style",
+    "syntax": "[Belting]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-yodeling",
+    "name": "Yodeling",
+    "category": "vocal-style",
+    "syntax": "[Yodeling]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-humming",
+    "name": "Humming",
+    "category": "vocal-style",
+    "syntax": "[Humming]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-rapping",
+    "name": "Rapping",
+    "category": "vocal-style",
+    "syntax": "[Rapping]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-scatting",
+    "name": "Scatting",
+    "category": "vocal-style",
+    "syntax": "[Scatting]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-falsetto-runs",
+    "name": "Falsetto runs",
+    "category": "vocal-style",
+    "syntax": "[Falsetto runs]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-yelping",
+    "name": "Yelping",
+    "category": "vocal-style",
+    "syntax": "[Yelping]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-grunting",
+    "name": "Grunting",
+    "category": "vocal-style",
+    "syntax": "[Grunting]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-call-and-response",
+    "name": "Call-and-response",
+    "category": "vocal-style",
+    "syntax": "[Call-and-response]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-soft-spoken",
+    "name": "Soft-spoken",
+    "category": "dynamics",
+    "syntax": "[Soft-spoken]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-shouted",
+    "name": "Shouted",
+    "category": "dynamics",
+    "syntax": "[Shouted]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-crescendo",
+    "name": "Crescendo",
+    "category": "dynamics",
+    "syntax": "[Crescendo]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-decrescendo",
+    "name": "Decrescendo",
+    "category": "dynamics",
+    "syntax": "[Decrescendo]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-sudden-stop",
+    "name": "Sudden stop",
+    "category": "dynamics",
+    "syntax": "[Sudden stop]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-building-intensity",
+    "name": "Building intensity",
+    "category": "dynamics",
+    "syntax": "[Building intensity]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-explosive",
+    "name": "Explosive",
+    "category": "dynamics",
+    "syntax": "[Explosive]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-subtle",
+    "name": "Subtle",
+    "category": "dynamics",
+    "syntax": "[Subtle]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-whispered-vocals",
+    "name": "Whispered vocals",
+    "category": "dynamics",
+    "syntax": "[Whispered vocals]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-breathy-build-up",
+    "name": "Breathy build-up",
+    "category": "dynamics",
+    "syntax": "[Breathy build-up]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-intense-climax",
+    "name": "Intense climax",
+    "category": "dynamics",
+    "syntax": "[Intense climax]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-dynamic-shifts",
+    "name": "Dynamic shifts",
+    "category": "dynamics",
+    "syntax": "[Dynamic shifts]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-fading-vocals",
+    "name": "Fading vocals",
+    "category": "dynamics",
+    "syntax": "[Fading vocals]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-echoing-softly",
+    "name": "Echoing softly",
+    "category": "dynamics",
+    "syntax": "[Echoing softly]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-reverb-swell",
+    "name": "Reverb swell",
+    "category": "dynamics",
+    "syntax": "[Reverb swell]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-sultry",
+    "name": "Sultry",
+    "category": "emotion-mood",
+    "syntax": "[Sultry]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-ethereal",
+    "name": "Ethereal",
+    "category": "emotion-mood",
+    "syntax": "[Ethereal]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-melancholic",
+    "name": "Melancholic",
+    "category": "emotion-mood",
+    "syntax": "[Melancholic]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-playful",
+    "name": "Playful",
+    "category": "emotion-mood",
+    "syntax": "[Playful]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-aggressive",
+    "name": "Aggressive",
+    "category": "emotion-mood",
+    "syntax": "[Aggressive]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-haunting",
+    "name": "Haunting",
+    "category": "emotion-mood",
+    "syntax": "[Haunting]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-euphoric",
+    "name": "Euphoric",
+    "category": "emotion-mood",
+    "syntax": "[Euphoric]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-mysterious",
+    "name": "Mysterious",
+    "category": "emotion-mood",
+    "syntax": "[Mysterious]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-hypnotic",
+    "name": "Hypnotic",
+    "category": "emotion-mood",
+    "syntax": "[Hypnotic]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-confident",
+    "name": "Confident",
+    "category": "emotion-mood",
+    "syntax": "[Confident]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-desperate",
+    "name": "Desperate",
+    "category": "emotion-mood",
+    "syntax": "[Desperate]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-tranquil",
+    "name": "Tranquil",
+    "category": "emotion-mood",
+    "syntax": "[Tranquil]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-emotive",
+    "name": "Emotive",
+    "category": "emotion-mood",
+    "syntax": "[Emotive]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-longing",
+    "name": "Longing",
+    "category": "emotion-mood",
+    "syntax": "[Longing]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-angsty",
+    "name": "Angsty",
+    "category": "emotion-mood",
+    "syntax": "[Angsty]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-triumphant",
+    "name": "Triumphant",
+    "category": "emotion-mood",
+    "syntax": "[Triumphant]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-introspective",
+    "name": "Introspective",
+    "category": "emotion-mood",
+    "syntax": "[Introspective]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-detached",
+    "name": "Detached",
+    "category": "emotion-mood",
+    "syntax": "[Detached]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-off-beat",
+    "name": "Off-beat",
+    "category": "timing-rhythm",
+    "syntax": "[Off-beat]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-on-beat",
+    "name": "On-beat",
+    "category": "timing-rhythm",
+    "syntax": "[On-beat]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-fast-paced",
+    "name": "Fast-paced",
+    "category": "timing-rhythm",
+    "syntax": "[Fast-paced]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-laid-back",
+    "name": "Laid-back",
+    "category": "timing-rhythm",
+    "syntax": "[Laid-back]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-polyrhythmic",
+    "name": "Polyrhythmic",
+    "category": "timing-rhythm",
+    "syntax": "[Polyrhythmic]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-triplets",
+    "name": "Triplets",
+    "category": "timing-rhythm",
+    "syntax": "[Triplets]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-slow-drawled",
+    "name": "Slow-drawled",
+    "category": "timing-rhythm",
+    "syntax": "[Slow-drawled]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-quick-stabs",
+    "name": "Quick stabs",
+    "category": "timing-rhythm",
+    "syntax": "[Quick stabs]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-rolling",
+    "name": "Rolling",
+    "category": "timing-rhythm",
+    "syntax": "[Rolling]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-freeform",
+    "name": "Freeform",
+    "category": "timing-rhythm",
+    "syntax": "[Freeform]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-rapid-fire",
+    "name": "Rapid-fire",
+    "category": "timing-rhythm",
+    "syntax": "[Rapid-fire]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-loose-phrasing",
+    "name": "Loose phrasing",
+    "category": "timing-rhythm",
+    "syntax": "[Loose phrasing]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-tight-rhythm",
+    "name": "Tight rhythm",
+    "category": "timing-rhythm",
+    "syntax": "[Tight rhythm]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-tube-saturated-kick",
+    "name": "Tube-Saturated Kick",
+    "category": "drums",
+    "subcategory": "texture-timbre",
+    "syntax": "[Tube-Saturated Kick]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-vinyl-print-texture",
+    "name": "Vinyl Print Texture",
+    "category": "drums",
+    "subcategory": "texture-timbre",
+    "syntax": "[Vinyl Print Texture]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-hard-shelled-snare",
+    "name": "Hard-Shelled Snare",
+    "category": "drums",
+    "subcategory": "texture-timbre",
+    "syntax": "[Hard-Shelled Snare]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-tonal-rim-shot",
+    "name": "Tonal Rim Shot",
+    "category": "drums",
+    "subcategory": "texture-timbre",
+    "syntax": "[Tonal Rim Shot]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-crushed-transient-hits",
+    "name": "Crushed Transient Hits",
+    "category": "drums",
+    "subcategory": "texture-timbre",
+    "syntax": "[Crushed Transient Hits]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-wet-clap-reverb",
+    "name": "Wet Clap Reverb",
+    "category": "drums",
+    "subcategory": "texture-timbre",
+    "syntax": "[Wet Clap Reverb]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-ribbon-mic-percussion",
+    "name": "Ribbon Mic Percussion",
+    "category": "drums",
+    "subcategory": "texture-timbre",
+    "syntax": "[Ribbon Mic Percussion]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-chalky-hi-hats",
+    "name": "Chalky Hi-Hats",
+    "category": "drums",
+    "subcategory": "texture-timbre",
+    "syntax": "[Chalky Hi-Hats]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-rubberized-floor-tom",
+    "name": "Rubberized Floor Tom",
+    "category": "drums",
+    "subcategory": "texture-timbre",
+    "syntax": "[Rubberized Floor Tom]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-stutter-ramp-rhythm",
+    "name": "Stutter-Ramp Rhythm",
+    "category": "drums",
+    "subcategory": "rhythmic-movement",
+    "syntax": "[Stutter-Ramp Rhythm]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-offset-pulse-cycle",
+    "name": "Offset Pulse Cycle",
+    "category": "drums",
+    "subcategory": "rhythmic-movement",
+    "syntax": "[Offset Pulse Cycle]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-triplet-swing-compression",
+    "name": "Triplet-Swing Compression",
+    "category": "drums",
+    "subcategory": "rhythmic-movement",
+    "syntax": "[Triplet-Swing Compression]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-backbeat-cut-sync",
+    "name": "Backbeat Cut Sync",
+    "category": "drums",
+    "subcategory": "rhythmic-movement",
+    "syntax": "[Backbeat Cut Sync]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-polyrhythmic-wash",
+    "name": "Polyrhythmic Wash",
+    "category": "drums",
+    "subcategory": "rhythmic-movement",
+    "syntax": "[Polyrhythmic Wash]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-syncope-latch-break",
+    "name": "Syncope Latch Break",
+    "category": "drums",
+    "subcategory": "rhythmic-movement",
+    "syntax": "[Syncope Latch Break]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-microstep-jitter-grid",
+    "name": "Microstep Jitter Grid",
+    "category": "drums",
+    "subcategory": "rhythmic-movement",
+    "syntax": "[Microstep Jitter Grid]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-analog-tail-drift",
+    "name": "Analog Tail Drift",
+    "category": "drums",
+    "subcategory": "decay-sustain",
+    "syntax": "[Analog Tail Drift]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-snare-choke-collapse",
+    "name": "Snare Choke Collapse",
+    "category": "drums",
+    "subcategory": "decay-sustain",
+    "syntax": "[Snare Choke Collapse]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-open-hat-splash-delay",
+    "name": "Open Hat Splash Delay",
+    "category": "drums",
+    "subcategory": "decay-sustain",
+    "syntax": "[Open Hat Splash Delay]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-reverse-boom-bloom",
+    "name": "Reverse Boom Bloom",
+    "category": "drums",
+    "subcategory": "decay-sustain",
+    "syntax": "[Reverse Boom Bloom]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-snubbed-room-reverb",
+    "name": "Snubbed Room Reverb",
+    "category": "drums",
+    "subcategory": "decay-sustain",
+    "syntax": "[Snubbed Room Reverb]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-kick-decay-swell",
+    "name": "Kick Decay Swell",
+    "category": "drums",
+    "subcategory": "decay-sustain",
+    "syntax": "[Kick Decay Swell]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-stereo-wall-sweep",
+    "name": "Stereo Wall Sweep",
+    "category": "drums",
+    "subcategory": "spatial-stereo",
+    "syntax": "[Stereo Wall Sweep]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-pan-divided-drums",
+    "name": "Pan-Divided Drums",
+    "category": "drums",
+    "subcategory": "spatial-stereo",
+    "syntax": "[Pan-Divided Drums]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-monolith-percussion-center",
+    "name": "Monolith Percussion Center",
+    "category": "drums",
+    "subcategory": "spatial-stereo",
+    "syntax": "[Monolith Percussion Center]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-spiral-rim-loop",
+    "name": "Spiral Rim Loop",
+    "category": "drums",
+    "subcategory": "spatial-stereo",
+    "syntax": "[Spiral Rim Loop]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-wide-floor-drum-spread",
+    "name": "Wide Floor Drum Spread",
+    "category": "drums",
+    "subcategory": "spatial-stereo",
+    "syntax": "[Wide Floor Drum Spread]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-reverb-pulse-overdrive",
+    "name": "Reverb Pulse Overdrive",
+    "category": "drums",
+    "subcategory": "energy-fx",
+    "syntax": "[Reverb Pulse Overdrive]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-drum-bus-saturation-curve",
+    "name": "Drum Bus Saturation Curve",
+    "category": "drums",
+    "subcategory": "energy-fx",
+    "syntax": "[Drum Bus Saturation Curve]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-transient-pump-swell",
+    "name": "Transient Pump Swell",
+    "category": "drums",
+    "subcategory": "energy-fx",
+    "syntax": "[Transient Pump Swell]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-granular-kick-refract",
+    "name": "Granular Kick Refract",
+    "category": "drums",
+    "subcategory": "energy-fx",
+    "syntax": "[Granular Kick Refract]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-phase-shifting-snare-snap",
+    "name": "Phase-Shifting Snare Snap",
+    "category": "drums",
+    "subcategory": "energy-fx",
+    "syntax": "[Phase-Shifting Snare Snap]",
+    "source": "master-2"
+  },
+  {
+    "id": "tag-verse",
+    "name": "Verse",
+    "category": "structure",
+    "description": "",
+    "syntax": "[Verse]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-chorus",
+    "name": "Chorus",
+    "category": "structure",
+    "description": "",
+    "syntax": "[Chorus]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-bridge",
+    "name": "Bridge",
+    "category": "structure",
+    "description": "",
+    "syntax": "[Bridge]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-intro",
+    "name": "Intro",
+    "category": "structure",
+    "description": "",
+    "syntax": "[Intro]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-outro",
+    "name": "Outro",
+    "category": "structure",
+    "description": "",
+    "syntax": "[Outro]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-pre-chorus",
+    "name": "Pre-Chorus",
+    "category": "structure",
+    "description": "",
+    "syntax": "[Pre-Chorus]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-post-chorus",
+    "name": "Post-Chorus",
+    "category": "structure",
+    "description": "",
+    "syntax": "[Post-Chorus]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-verse-1",
+    "name": "Verse 1",
+    "category": "structure",
+    "description": "",
+    "syntax": "[Verse 1]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-verse-2",
+    "name": "Verse 2",
+    "category": "structure",
+    "description": "",
+    "syntax": "[Verse 2]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-chorus-x2",
+    "name": "Chorus x2",
+    "category": "structure",
+    "description": "",
+    "syntax": "[Chorus x2]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-instrumental-break",
+    "name": "Instrumental Break",
+    "category": "structure",
+    "description": "",
+    "syntax": "[Instrumental Break]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-solo-section",
+    "name": "Solo Section",
+    "category": "structure",
+    "description": "",
+    "syntax": "[Solo Section]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-nostalgic",
+    "name": "Nostalgic",
+    "category": "mood-atmosphere",
+    "description": "",
+    "syntax": "[Nostalgic]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-peaceful",
+    "name": "Peaceful",
+    "category": "mood-atmosphere",
+    "description": "",
+    "syntax": "[Peaceful]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-dark-atmosphere",
+    "name": "Dark Atmosphere",
+    "category": "mood-atmosphere",
+    "description": "",
+    "syntax": "[Dark Atmosphere]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-bright-atmosphere",
+    "name": "Bright Atmosphere",
+    "category": "mood-atmosphere",
+    "description": "",
+    "syntax": "[Bright Atmosphere]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-ambient-atmosphere",
+    "name": "Ambient Atmosphere",
+    "category": "mood-atmosphere",
+    "description": "",
+    "syntax": "[Ambient Atmosphere]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-intimate-atmosphere",
+    "name": "Intimate Atmosphere",
+    "category": "mood-atmosphere",
+    "description": "",
+    "syntax": "[Intimate Atmosphere]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-high-energy",
+    "name": "High Energy",
+    "category": "energy-intensity",
+    "description": "",
+    "syntax": "[High Energy]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-medium-energy",
+    "name": "Medium Energy",
+    "category": "energy-intensity",
+    "description": "",
+    "syntax": "[Medium Energy]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-low-energy",
+    "name": "Low Energy",
+    "category": "energy-intensity",
+    "description": "",
+    "syntax": "[Low Energy]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-building-energy",
+    "name": "Building Energy",
+    "category": "energy-intensity",
+    "description": "",
+    "syntax": "[Building Energy]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-explosive-energy",
+    "name": "Explosive Energy",
+    "category": "energy-intensity",
+    "description": "",
+    "syntax": "[Explosive Energy]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-intense",
+    "name": "Intense",
+    "category": "energy-intensity",
+    "description": "",
+    "syntax": "[Intense]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-gentle",
+    "name": "Gentle",
+    "category": "energy-intensity",
+    "description": "",
+    "syntax": "[Gentle]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-powerful",
+    "name": "Powerful",
+    "category": "energy-intensity",
+    "description": "",
+    "syntax": "[Powerful]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-dynamic",
+    "name": "Dynamic",
+    "category": "energy-intensity",
+    "description": "",
+    "syntax": "[Dynamic]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-electric-guitar",
+    "name": "Electric Guitar",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Electric Guitar]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-acoustic-guitar",
+    "name": "Acoustic Guitar",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Acoustic Guitar]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-bass-guitar",
+    "name": "Bass Guitar",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Bass Guitar]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-violin",
+    "name": "Violin",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Violin]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-cello",
+    "name": "Cello",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Cello]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-drums",
+    "name": "Drums",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Drums]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-electronic-drums",
+    "name": "Electronic Drums",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Electronic Drums]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-hand-percussion",
+    "name": "Hand Percussion",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Hand Percussion]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-timpani",
+    "name": "Timpani",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Timpani]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-piano",
+    "name": "Piano",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Piano]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-electric-piano",
+    "name": "Electric Piano",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Electric Piano]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-synthesizer",
+    "name": "Synthesizer",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Synthesizer]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-organ",
+    "name": "Organ",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Organ]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-strings-section",
+    "name": "Strings Section",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Strings Section]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-saxophone",
+    "name": "Saxophone",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Saxophone]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-trumpet",
+    "name": "Trumpet",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Trumpet]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-flute",
+    "name": "Flute",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Flute]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-clarinet",
+    "name": "Clarinet",
+    "category": "instruments",
+    "description": "",
+    "syntax": "[Clarinet]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-pop",
+    "name": "Pop",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Pop]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-rock",
+    "name": "Rock",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Rock]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-hip-hop",
+    "name": "Hip-Hop",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Hip-Hop]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-electronic",
+    "name": "Electronic",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Electronic]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-jazz",
+    "name": "Jazz",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Jazz]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-classical",
+    "name": "Classical",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Classical]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-folk",
+    "name": "Folk",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Folk]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-r-b",
+    "name": "R&B",
+    "category": "genre",
+    "description": "",
+    "syntax": "[R&B]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-country",
+    "name": "Country",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Country]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-reggae",
+    "name": "Reggae",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Reggae]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-house",
+    "name": "House",
+    "category": "genre",
+    "description": "",
+    "syntax": "[House]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-techno",
+    "name": "Techno",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Techno]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-ambient",
+    "name": "Ambient",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Ambient]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-dubstep",
+    "name": "Dubstep",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Dubstep]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-trance",
+    "name": "Trance",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Trance]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-alternative-rock",
+    "name": "Alternative Rock",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Alternative Rock]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-hard-rock",
+    "name": "Hard Rock",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Hard Rock]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-indie-rock",
+    "name": "Indie Rock",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Indie Rock]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-progressive-rock",
+    "name": "Progressive Rock",
+    "category": "genre",
+    "description": "",
+    "syntax": "[Progressive Rock]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-male-vocals",
+    "name": "Male Vocals",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[Male Vocals]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-female-vocals",
+    "name": "Female Vocals",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[Female Vocals]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-harmonies",
+    "name": "Harmonies",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[Harmonies]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-choir",
+    "name": "Choir",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[Choir]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-powerful-vocals",
+    "name": "Powerful Vocals",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[Powerful Vocals]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-smooth-vocals",
+    "name": "Smooth Vocals",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[Smooth Vocals]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-vibrato",
+    "name": "Vibrato",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[Vibrato]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-staccato-vocals",
+    "name": "Staccato Vocals",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[Staccato Vocals]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-legato-vocals",
+    "name": "Legato Vocals",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[Legato Vocals]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-raspy-voice",
+    "name": "Raspy Voice",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[Raspy Voice]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-clear-voice",
+    "name": "Clear Voice",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[Clear Voice]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-deep-voice",
+    "name": "Deep Voice",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[Deep Voice]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-high-voice",
+    "name": "High Voice",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[High Voice]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-soulful-voice",
+    "name": "Soulful Voice",
+    "category": "vocal",
+    "description": "",
+    "syntax": "[Soulful Voice]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-hall-reverb",
+    "name": "Hall Reverb",
+    "category": "production",
+    "description": "",
+    "syntax": "[Hall Reverb]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-room-reverb",
+    "name": "Room Reverb",
+    "category": "production",
+    "description": "",
+    "syntax": "[Room Reverb]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-plate-reverb",
+    "name": "Plate Reverb",
+    "category": "production",
+    "description": "",
+    "syntax": "[Plate Reverb]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-spring-reverb",
+    "name": "Spring Reverb",
+    "category": "production",
+    "description": "",
+    "syntax": "[Spring Reverb]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-no-reverb",
+    "name": "No Reverb",
+    "category": "production",
+    "description": "",
+    "syntax": "[No Reverb]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-echo",
+    "name": "Echo",
+    "category": "production",
+    "description": "",
+    "syntax": "[Echo]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-delay",
+    "name": "Delay",
+    "category": "production",
+    "description": "",
+    "syntax": "[Delay]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-slapback-delay",
+    "name": "Slapback Delay",
+    "category": "production",
+    "description": "",
+    "syntax": "[Slapback Delay]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-ping-pong-delay",
+    "name": "Ping Pong Delay",
+    "category": "production",
+    "description": "",
+    "syntax": "[Ping Pong Delay]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-distortion",
+    "name": "Distortion",
+    "category": "production",
+    "description": "",
+    "syntax": "[Distortion]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-overdrive",
+    "name": "Overdrive",
+    "category": "production",
+    "description": "",
+    "syntax": "[Overdrive]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-fuzz",
+    "name": "Fuzz",
+    "category": "production",
+    "description": "",
+    "syntax": "[Fuzz]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-clean",
+    "name": "Clean",
+    "category": "production",
+    "description": "",
+    "syntax": "[Clean]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-flanger",
+    "name": "Flanger",
+    "category": "production",
+    "description": "",
+    "syntax": "[Flanger]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-phaser",
+    "name": "Phaser",
+    "category": "production",
+    "description": "",
+    "syntax": "[Phaser]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-tremolo",
+    "name": "Tremolo",
+    "category": "production",
+    "description": "",
+    "syntax": "[Tremolo]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-i-v-vi-iv",
+    "name": "I-V-vi-IV",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[I-V-vi-IV]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-vi-iv-i-v",
+    "name": "vi-IV-I-V",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[vi-IV-I-V]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-i-vi-iv-v",
+    "name": "I-vi-IV-V",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[I-vi-IV-V]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-ii-v-i",
+    "name": "ii-V-I",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[ii-V-I]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-i-vii-vi-vii",
+    "name": "I-VII-♭VI-♭VII",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[I-VII-♭VI-♭VII]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-major-harmony",
+    "name": "Major Harmony",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[Major Harmony]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-minor-harmony",
+    "name": "Minor Harmony",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[Minor Harmony]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-modal-harmony",
+    "name": "Modal Harmony",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[Modal Harmony]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-jazz-harmony",
+    "name": "Jazz Harmony",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[Jazz Harmony]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-dissonant-harmony",
+    "name": "Dissonant Harmony",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[Dissonant Harmony]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-suspended-chords",
+    "name": "Suspended Chords",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[Suspended Chords]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-extended-chords",
+    "name": "Extended Chords",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[Extended Chords]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-altered-chords",
+    "name": "Altered Chords",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[Altered Chords]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-quartal-harmony",
+    "name": "Quartal Harmony",
+    "category": "harmony",
+    "description": "",
+    "syntax": "[Quartal Harmony]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-rain",
+    "name": "Rain",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Rain]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-thunder",
+    "name": "Thunder",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Thunder]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-wind",
+    "name": "Wind",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Wind]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-ocean-waves",
+    "name": "Ocean Waves",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Ocean Waves]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-fire-crackling",
+    "name": "Fire Crackling",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Fire Crackling]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-traffic",
+    "name": "Traffic",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Traffic]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-footsteps",
+    "name": "Footsteps",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Footsteps]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-doors",
+    "name": "Doors",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Doors]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-machinery",
+    "name": "Machinery",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Machinery]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-vinyl-crackle",
+    "name": "Vinyl Crackle",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Vinyl Crackle]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-tape-hiss",
+    "name": "Tape Hiss",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Tape Hiss]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-record-scratch",
+    "name": "Record Scratch",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Record Scratch]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-reverse-reverb",
+    "name": "Reverse Reverb",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Reverse Reverb]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-risers",
+    "name": "Risers",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Risers]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-impacts",
+    "name": "Impacts",
+    "category": "sound-effects",
+    "description": "",
+    "syntax": "[Impacts]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-c-major",
+    "name": "C Major",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[C Major]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-g-major",
+    "name": "G Major",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[G Major]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-d-major",
+    "name": "D Major",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[D Major]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-a-major",
+    "name": "A Major",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[A Major]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-e-major",
+    "name": "E Major",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[E Major]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-a-minor",
+    "name": "A Minor",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[A Minor]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-e-minor",
+    "name": "E Minor",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[E Minor]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-b-minor",
+    "name": "B Minor",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[B Minor]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-f-minor",
+    "name": "F# Minor",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[F# Minor]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-dorian-mode",
+    "name": "Dorian Mode",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[Dorian Mode]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-mixolydian-mode",
+    "name": "Mixolydian Mode",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[Mixolydian Mode]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-lydian-mode",
+    "name": "Lydian Mode",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[Lydian Mode]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-phrygian-mode",
+    "name": "Phrygian Mode",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[Phrygian Mode]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-pentatonic-scale",
+    "name": "Pentatonic Scale",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[Pentatonic Scale]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-blues-scale",
+    "name": "Blues Scale",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[Blues Scale]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-chromatic-scale",
+    "name": "Chromatic Scale",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[Chromatic Scale]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-whole-tone-scale",
+    "name": "Whole Tone Scale",
+    "category": "keys-scales",
+    "description": "",
+    "syntax": "[Whole Tone Scale]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-slow-tempo",
+    "name": "Slow Tempo",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[Slow Tempo]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-medium-tempo",
+    "name": "Medium Tempo",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[Medium Tempo]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-fast-tempo",
+    "name": "Fast Tempo",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[Fast Tempo]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-very-fast",
+    "name": "Very Fast",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[Very Fast]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-straight-feel",
+    "name": "Straight Feel",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[Straight Feel]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-swing-feel",
+    "name": "Swing Feel",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[Swing Feel]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-shuffle-feel",
+    "name": "Shuffle Feel",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[Shuffle Feel]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-latin-feel",
+    "name": "Latin Feel",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[Latin Feel]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-backbeat",
+    "name": "Backbeat",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[Backbeat]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-polyrhythm",
+    "name": "Polyrhythm",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[Polyrhythm]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-cross-rhythm",
+    "name": "Cross-rhythm",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[Cross-rhythm]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-4-4-time",
+    "name": "4/4 Time",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[4/4 Time]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-3-4-time",
+    "name": "3/4 Time",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[3/4 Time]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-6-8-time",
+    "name": "6/8 Time",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[6/8 Time]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-5-4-time",
+    "name": "5/4 Time",
+    "category": "rhythm-tempo",
+    "description": "",
+    "syntax": "[5/4 Time]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-call-and-response",
+    "name": "Call and Response",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Call and Response]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-counterpoint",
+    "name": "Counterpoint",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Counterpoint]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-layering",
+    "name": "Layering",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Layering]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-unison",
+    "name": "Unison",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Unison]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-canon",
+    "name": "Canon",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Canon]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-diminuendo",
+    "name": "Diminuendo",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Diminuendo]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-forte",
+    "name": "Forte",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Forte]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-sforzando",
+    "name": "Sforzando",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Sforzando]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-minimalist",
+    "name": "Minimalist",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Minimalist]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-maximalist",
+    "name": "Maximalist",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Maximalist]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-monophonic",
+    "name": "Monophonic",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Monophonic]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-homophonic",
+    "name": "Homophonic",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Homophonic]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-polyphonic",
+    "name": "Polyphonic",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Polyphonic]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-glitch",
+    "name": "Glitch",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Glitch]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-morphing",
+    "name": "Morphing",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Morphing]",
+    "source": "master-3"
+  },
+  {
+    "id": "tag-sidechaining",
+    "name": "Sidechaining",
+    "category": "advanced",
+    "description": "",
+    "syntax": "[Sidechaining]",
+    "source": "master-3"
+  }
+]

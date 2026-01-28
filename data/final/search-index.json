@@ -1,0 +1,2528 @@
+[
+  {
+    "id": "trick-4",
+    "type": "trick",
+    "name": "Live Concert Mode with Sound Effects",
+    "searchText": "live concert mode with sound effects  this trick uses **environmental cues inside the lyrics** to bias suno toward:\r\n- live recordings\r\n- audience noise\r\n- imperfect timing\r\n- raw vocal delivery\r\n\r\nyou are not \"adding sound effects.\"  \r\nyou are **changing the performance context**.",
+    "category": "production",
+    "reliability": 4
+  },
+  {
+    "id": "trick-5",
+    "type": "trick",
+    "name": "Phonetic Respelling for Pronunciation Control",
+    "searchText": "phonetic respelling for pronunciation control  when suno consistently mispronounces a word in your lyrics, you can override its interpretation by **respelling the word phonetically**—writing it the way it sounds rather than how it's spelled.\r\n\r\nthis works because suno processes text based on **pattern matching**, not linguistic understanding.",
+    "category": "lyrics",
+    "reliability": 4
+  },
+  {
+    "id": "trick-6",
+    "type": "trick",
+    "name": "ALL CAPS for Emotional Spikes",
+    "searchText": "all caps for emotional spikes  capital letters signal:\r\n- emphasis\r\n- urgency\r\n- intensity\r\n\r\nsuno interprets all caps as:\r\n> \"increase vocal energy.\"\r\n\r\nthis affects:\r\n- **loudness** — gets louder\r\n- **aggressiveness** — more forceful delivery\r\n- **phrasing** — more dramatic\r\n- **articulation** — clearer, stronger",
+    "category": "emotion-dynamics",
+    "reliability": 0
+  },
+  {
+    "id": "trick-9",
+    "type": "trick",
+    "name": "Vocal Stretching and Stuttering",
+    "searchText": "vocal stretching and stuttering  hyphens and letter repetition stretch syllables.\r\n\r\nthey bias suno toward:\r\n- longer notes\r\n- melismatic delivery (multiple notes per syllable)\r\n- stuttered phrasing",
+    "category": "vocal-control",
+    "reliability": 4
+  },
+  {
+    "id": "trick-10",
+    "type": "trick",
+    "name": "Parentheses for Background Vocals",
+    "searchText": "parentheses for background vocals  text in `(parentheses)` is treated as:\r\n- secondary\r\n- background\r\n- supportive\r\n\r\nsuno often renders it as:\r\n- backing vocals\r\n- harmonies\r\n- call-and-response\r\n- adlibs",
+    "category": "vocal-control",
+    "reliability": 0
+  },
+  {
+    "id": "trick-11",
+    "type": "trick",
+    "name": "Tag Stacking with PIPE Symbol",
+    "searchText": "tag stacking with pipe symbol  the pipe symbol `|` separates instructions cleanly.\r\n\r\nwithout it, long tags blur together and confuse the ai.",
+    "category": "syntax",
+    "reliability": 4
+  },
+  {
+    "id": "trick-12",
+    "type": "trick",
+    "name": "Vocal Adlibs with Brackets",
+    "searchText": "vocal adlibs with brackets  square brackets `[...]` often produce:\r\n- adlibs\r\n- interjections\r\n- non-melodic vocal sounds",
+    "category": "vocal-control",
+    "reliability": 4
+  },
+  {
+    "id": "trick-14",
+    "type": "trick",
+    "name": "Forced Multi-Voice Duets",
+    "searchText": "forced multi-voice duets  this trick biases suno into generating:\r\n- two distinct vocal roles\r\n- alternating delivery\r\n- perceived gender contrast\r\n\r\nit does not guarantee:\r\n- stable vocal identity throughout\r\n- consistent timbre per character\r\n- realistic harmony balance",
+    "category": "vocal-control",
+    "reliability": 0
+  },
+  {
+    "id": "trick-15",
+    "type": "trick",
+    "name": "Vocal Register Control per Section",
+    "searchText": "vocal register control per section  **vocal register** = which part of the voice is used, and how much effort.\r\n\r\nregister labels bias:\r\n- pitch range\r\n- breathiness\r\n- vocal effort\r\n\r\nthey do not enforce correct technique.  \r\nthey **suggest performance energy**.",
+    "category": "vocal-control",
+    "reliability": 4
+  },
+  {
+    "id": "trick-16",
+    "type": "trick",
+    "name": "Emotion Switching per Section",
+    "searchText": "emotion switching per section  instead of one global mood, you assign **different emotions to different sections**.\r\n\r\nthis biases:\r\n- melody shape\r\n- intensity\r\n- harmonic tension (dark vs bright)\r\n- pacing",
+    "category": "emotion-dynamics",
+    "reliability": 4
+  },
+  {
+    "id": "trick-17",
+    "type": "trick",
+    "name": "\"Clean\" and \"FLAC\" Keywords for Quality",
+    "searchText": "\"clean\" and \"flac\" keywords for quality  keywords like:\r\n- clean\r\n- flac\r\n- high fidelity\r\n- studio polish\r\n- professional mix\r\n\r\ndo not increase bitrate or resolution.\r\n\r\nthey may bias suno toward:\r\n- simpler arrangements\r\n- less distortion\r\n- more conservative mixing choices\r\n- cleaner frequency separation\r\n\r\n**think of it as reducing chaos, not increasing quality.**",
+    "category": "general",
+    "reliability": 2
+  },
+  {
+    "id": "trick-19",
+    "type": "trick",
+    "name": "Pro Studio Equipment Keywords",
+    "searchText": "pro studio equipment keywords  mentioning:\r\n- neumann microphones\r\n- neve consoles\r\n- ssl boards\r\n- tape machines\r\n- tube preamps\r\n\r\ndoes not simulate hardware.\r\n\r\nit might trigger **aesthetic associations**:\r\n- vintage warmth\r\n- professional clarity\r\n- analog character\r\n- expensive sound",
+    "category": "general",
+    "reliability": 2
+  },
+  {
+    "id": "trick-20",
+    "type": "trick",
+    "name": "Remix with 55% Audio Influence for \"Live Feel\"",
+    "searchText": "remix with 55% audio influence for \"live feel\"  remixing an existing track with moderate audio influence:\r\n- preserves melody and structure\r\n- introduces looseness and imperfection\r\n- adds performance artifacts\r\n- creates \"live\" feel from \"studio\" track",
+    "category": "production",
+    "reliability": 4
+  },
+  {
+    "id": "tag-airy",
+    "type": "tag",
+    "name": "Airy",
+    "searchText": "airy  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-breathy",
+    "type": "tag",
+    "name": "Breathy",
+    "searchText": "breathy  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-crisp",
+    "type": "tag",
+    "name": "Crisp",
+    "searchText": "crisp  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-deep",
+    "type": "tag",
+    "name": "Deep",
+    "searchText": "deep  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-gritty",
+    "type": "tag",
+    "name": "Gritty",
+    "searchText": "gritty  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-smooth",
+    "type": "tag",
+    "name": "Smooth",
+    "searchText": "smooth  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-soft",
+    "type": "tag",
+    "name": "Soft",
+    "searchText": "soft  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-warm",
+    "type": "tag",
+    "name": "Warm",
+    "searchText": "warm  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-raw",
+    "type": "tag",
+    "name": "Raw",
+    "searchText": "raw  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-sharp",
+    "type": "tag",
+    "name": "Sharp",
+    "searchText": "sharp  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-muffled",
+    "type": "tag",
+    "name": "Muffled",
+    "searchText": "muffled  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-bright",
+    "type": "tag",
+    "name": "Bright",
+    "searchText": "bright  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-mellow",
+    "type": "tag",
+    "name": "Mellow",
+    "searchText": "mellow  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-raspy",
+    "type": "tag",
+    "name": "Raspy",
+    "searchText": "raspy  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-clear",
+    "type": "tag",
+    "name": "Clear",
+    "searchText": "clear  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-thin",
+    "type": "tag",
+    "name": "Thin",
+    "searchText": "thin  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-dense",
+    "type": "tag",
+    "name": "Dense",
+    "searchText": "dense  vocal-tone",
+    "category": "vocal-tone"
+  },
+  {
+    "id": "tag-auto-tuned",
+    "type": "tag",
+    "name": "Auto-tuned",
+    "searchText": "auto-tuned  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-distorted",
+    "type": "tag",
+    "name": "Distorted",
+    "searchText": "distorted  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-reverbed",
+    "type": "tag",
+    "name": "Reverbed",
+    "searchText": "reverbed  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-echoed",
+    "type": "tag",
+    "name": "Echoed",
+    "searchText": "echoed  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-layered",
+    "type": "tag",
+    "name": "Layered",
+    "searchText": "layered  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-chopped",
+    "type": "tag",
+    "name": "Chopped",
+    "searchText": "chopped  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-filtered",
+    "type": "tag",
+    "name": "Filtered",
+    "searchText": "filtered  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-vocoder",
+    "type": "tag",
+    "name": "Vocoder",
+    "searchText": "vocoder  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-robotized",
+    "type": "tag",
+    "name": "Robotized",
+    "searchText": "robotized  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-phased",
+    "type": "tag",
+    "name": "Phased",
+    "searchText": "phased  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-flanged",
+    "type": "tag",
+    "name": "Flanged",
+    "searchText": "flanged  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-time-stretched",
+    "type": "tag",
+    "name": "Time-stretched",
+    "searchText": "time-stretched  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-lo-fi",
+    "type": "tag",
+    "name": "Lo-fi",
+    "searchText": "lo-fi  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-bit-crushed",
+    "type": "tag",
+    "name": "Bit-crushed",
+    "searchText": "bit-crushed  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-glitched",
+    "type": "tag",
+    "name": "Glitched",
+    "searchText": "glitched  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-stuttered",
+    "type": "tag",
+    "name": "Stuttered",
+    "searchText": "stuttered  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-modulated",
+    "type": "tag",
+    "name": "Modulated",
+    "searchText": "modulated  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-granular",
+    "type": "tag",
+    "name": "Granular",
+    "searchText": "granular  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-doubled",
+    "type": "tag",
+    "name": "Doubled",
+    "searchText": "doubled  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-auto-harmonized",
+    "type": "tag",
+    "name": "Auto-harmonized",
+    "searchText": "auto-harmonized  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-saturated",
+    "type": "tag",
+    "name": "Saturated",
+    "searchText": "saturated  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-ring-modulated",
+    "type": "tag",
+    "name": "Ring-modulated",
+    "searchText": "ring-modulated  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-detuned",
+    "type": "tag",
+    "name": "Detuned",
+    "searchText": "detuned  vocal-effects",
+    "category": "vocal-effects"
+  },
+  {
+    "id": "tag-low-pitched",
+    "type": "tag",
+    "name": "Low-pitched",
+    "searchText": "low-pitched  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-high-pitched",
+    "type": "tag",
+    "name": "High-pitched",
+    "searchText": "high-pitched  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-mid-range",
+    "type": "tag",
+    "name": "Mid-range",
+    "searchText": "mid-range  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-sub-bass-vocals",
+    "type": "tag",
+    "name": "Sub-bass vocals",
+    "searchText": "sub-bass vocals  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-falsetto",
+    "type": "tag",
+    "name": "Falsetto",
+    "searchText": "falsetto  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-baritone",
+    "type": "tag",
+    "name": "Baritone",
+    "searchText": "baritone  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-soprano",
+    "type": "tag",
+    "name": "Soprano",
+    "searchText": "soprano  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-tenor",
+    "type": "tag",
+    "name": "Tenor",
+    "searchText": "tenor  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-contralto",
+    "type": "tag",
+    "name": "Contralto",
+    "searchText": "contralto  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-whispered-falsetto",
+    "type": "tag",
+    "name": "Whispered falsetto",
+    "searchText": "whispered falsetto  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-harmonized-layers",
+    "type": "tag",
+    "name": "Harmonized layers",
+    "searchText": "harmonized layers  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-dissonant-harmonies",
+    "type": "tag",
+    "name": "Dissonant harmonies",
+    "searchText": "dissonant harmonies  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-pitch-bent",
+    "type": "tag",
+    "name": "Pitch-bent",
+    "searchText": "pitch-bent  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-modulated-pitch",
+    "type": "tag",
+    "name": "Modulated pitch",
+    "searchText": "modulated pitch  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-subtle-detune",
+    "type": "tag",
+    "name": "Subtle detune",
+    "searchText": "subtle detune  pitch-range",
+    "category": "pitch-range"
+  },
+  {
+    "id": "tag-whispered",
+    "type": "tag",
+    "name": "Whispered",
+    "searchText": "whispered  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-gravelly",
+    "type": "tag",
+    "name": "Gravelly",
+    "searchText": "gravelly  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-velvety",
+    "type": "tag",
+    "name": "Velvety",
+    "searchText": "velvety  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-dreamy",
+    "type": "tag",
+    "name": "Dreamy",
+    "searchText": "dreamy  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-resonant",
+    "type": "tag",
+    "name": "Resonant",
+    "searchText": "resonant  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-nasal",
+    "type": "tag",
+    "name": "Nasal",
+    "searchText": "nasal  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-brassy",
+    "type": "tag",
+    "name": "Brassy",
+    "searchText": "brassy  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-metallic",
+    "type": "tag",
+    "name": "Metallic",
+    "searchText": "metallic  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-smoky",
+    "type": "tag",
+    "name": "Smoky",
+    "searchText": "smoky  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-chilled",
+    "type": "tag",
+    "name": "Chilled",
+    "searchText": "chilled  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-rough-edged",
+    "type": "tag",
+    "name": "Rough-edged",
+    "searchText": "rough-edged  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-shimmery",
+    "type": "tag",
+    "name": "Shimmery",
+    "searchText": "shimmery  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-glassy",
+    "type": "tag",
+    "name": "Glassy",
+    "searchText": "glassy  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-crunchy",
+    "type": "tag",
+    "name": "Crunchy",
+    "searchText": "crunchy  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-liquid-like",
+    "type": "tag",
+    "name": "Liquid-like",
+    "searchText": "liquid-like  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-breathy-exhale",
+    "type": "tag",
+    "name": "Breathy exhale",
+    "searchText": "breathy exhale  vocal-texture",
+    "category": "vocal-texture"
+  },
+  {
+    "id": "tag-staccato",
+    "type": "tag",
+    "name": "Staccato",
+    "searchText": "staccato  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-legato",
+    "type": "tag",
+    "name": "Legato",
+    "searchText": "legato  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-vibrato-heavy",
+    "type": "tag",
+    "name": "Vibrato-heavy",
+    "searchText": "vibrato-heavy  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-monotone",
+    "type": "tag",
+    "name": "Monotone",
+    "searchText": "monotone  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-melismatic",
+    "type": "tag",
+    "name": "Melismatic",
+    "searchText": "melismatic  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-syncopated",
+    "type": "tag",
+    "name": "Syncopated",
+    "searchText": "syncopated  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-operatic",
+    "type": "tag",
+    "name": "Operatic",
+    "searchText": "operatic  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-chanting",
+    "type": "tag",
+    "name": "Chanting",
+    "searchText": "chanting  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-spoken-word",
+    "type": "tag",
+    "name": "Spoken-word",
+    "searchText": "spoken-word  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-growling",
+    "type": "tag",
+    "name": "Growling",
+    "searchText": "growling  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-belting",
+    "type": "tag",
+    "name": "Belting",
+    "searchText": "belting  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-yodeling",
+    "type": "tag",
+    "name": "Yodeling",
+    "searchText": "yodeling  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-humming",
+    "type": "tag",
+    "name": "Humming",
+    "searchText": "humming  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-rapping",
+    "type": "tag",
+    "name": "Rapping",
+    "searchText": "rapping  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-scatting",
+    "type": "tag",
+    "name": "Scatting",
+    "searchText": "scatting  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-falsetto-runs",
+    "type": "tag",
+    "name": "Falsetto runs",
+    "searchText": "falsetto runs  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-yelping",
+    "type": "tag",
+    "name": "Yelping",
+    "searchText": "yelping  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-grunting",
+    "type": "tag",
+    "name": "Grunting",
+    "searchText": "grunting  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-call-and-response",
+    "type": "tag",
+    "name": "Call-and-response",
+    "searchText": "call-and-response  vocal-style",
+    "category": "vocal-style"
+  },
+  {
+    "id": "tag-soft-spoken",
+    "type": "tag",
+    "name": "Soft-spoken",
+    "searchText": "soft-spoken  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-shouted",
+    "type": "tag",
+    "name": "Shouted",
+    "searchText": "shouted  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-crescendo",
+    "type": "tag",
+    "name": "Crescendo",
+    "searchText": "crescendo  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-decrescendo",
+    "type": "tag",
+    "name": "Decrescendo",
+    "searchText": "decrescendo  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-sudden-stop",
+    "type": "tag",
+    "name": "Sudden stop",
+    "searchText": "sudden stop  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-building-intensity",
+    "type": "tag",
+    "name": "Building intensity",
+    "searchText": "building intensity  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-explosive",
+    "type": "tag",
+    "name": "Explosive",
+    "searchText": "explosive  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-subtle",
+    "type": "tag",
+    "name": "Subtle",
+    "searchText": "subtle  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-whispered-vocals",
+    "type": "tag",
+    "name": "Whispered vocals",
+    "searchText": "whispered vocals  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-breathy-build-up",
+    "type": "tag",
+    "name": "Breathy build-up",
+    "searchText": "breathy build-up  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-intense-climax",
+    "type": "tag",
+    "name": "Intense climax",
+    "searchText": "intense climax  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-dynamic-shifts",
+    "type": "tag",
+    "name": "Dynamic shifts",
+    "searchText": "dynamic shifts  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-fading-vocals",
+    "type": "tag",
+    "name": "Fading vocals",
+    "searchText": "fading vocals  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-echoing-softly",
+    "type": "tag",
+    "name": "Echoing softly",
+    "searchText": "echoing softly  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-reverb-swell",
+    "type": "tag",
+    "name": "Reverb swell",
+    "searchText": "reverb swell  dynamics",
+    "category": "dynamics"
+  },
+  {
+    "id": "tag-sultry",
+    "type": "tag",
+    "name": "Sultry",
+    "searchText": "sultry  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-ethereal",
+    "type": "tag",
+    "name": "Ethereal",
+    "searchText": "ethereal  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-melancholic",
+    "type": "tag",
+    "name": "Melancholic",
+    "searchText": "melancholic  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-playful",
+    "type": "tag",
+    "name": "Playful",
+    "searchText": "playful  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-aggressive",
+    "type": "tag",
+    "name": "Aggressive",
+    "searchText": "aggressive  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-haunting",
+    "type": "tag",
+    "name": "Haunting",
+    "searchText": "haunting  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-euphoric",
+    "type": "tag",
+    "name": "Euphoric",
+    "searchText": "euphoric  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-mysterious",
+    "type": "tag",
+    "name": "Mysterious",
+    "searchText": "mysterious  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-hypnotic",
+    "type": "tag",
+    "name": "Hypnotic",
+    "searchText": "hypnotic  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-confident",
+    "type": "tag",
+    "name": "Confident",
+    "searchText": "confident  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-desperate",
+    "type": "tag",
+    "name": "Desperate",
+    "searchText": "desperate  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-tranquil",
+    "type": "tag",
+    "name": "Tranquil",
+    "searchText": "tranquil  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-emotive",
+    "type": "tag",
+    "name": "Emotive",
+    "searchText": "emotive  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-longing",
+    "type": "tag",
+    "name": "Longing",
+    "searchText": "longing  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-angsty",
+    "type": "tag",
+    "name": "Angsty",
+    "searchText": "angsty  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-triumphant",
+    "type": "tag",
+    "name": "Triumphant",
+    "searchText": "triumphant  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-introspective",
+    "type": "tag",
+    "name": "Introspective",
+    "searchText": "introspective  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-detached",
+    "type": "tag",
+    "name": "Detached",
+    "searchText": "detached  emotion-mood",
+    "category": "emotion-mood"
+  },
+  {
+    "id": "tag-off-beat",
+    "type": "tag",
+    "name": "Off-beat",
+    "searchText": "off-beat  timing-rhythm",
+    "category": "timing-rhythm"
+  },
+  {
+    "id": "tag-on-beat",
+    "type": "tag",
+    "name": "On-beat",
+    "searchText": "on-beat  timing-rhythm",
+    "category": "timing-rhythm"
+  },
+  {
+    "id": "tag-fast-paced",
+    "type": "tag",
+    "name": "Fast-paced",
+    "searchText": "fast-paced  timing-rhythm",
+    "category": "timing-rhythm"
+  },
+  {
+    "id": "tag-laid-back",
+    "type": "tag",
+    "name": "Laid-back",
+    "searchText": "laid-back  timing-rhythm",
+    "category": "timing-rhythm"
+  },
+  {
+    "id": "tag-polyrhythmic",
+    "type": "tag",
+    "name": "Polyrhythmic",
+    "searchText": "polyrhythmic  timing-rhythm",
+    "category": "timing-rhythm"
+  },
+  {
+    "id": "tag-triplets",
+    "type": "tag",
+    "name": "Triplets",
+    "searchText": "triplets  timing-rhythm",
+    "category": "timing-rhythm"
+  },
+  {
+    "id": "tag-slow-drawled",
+    "type": "tag",
+    "name": "Slow-drawled",
+    "searchText": "slow-drawled  timing-rhythm",
+    "category": "timing-rhythm"
+  },
+  {
+    "id": "tag-quick-stabs",
+    "type": "tag",
+    "name": "Quick stabs",
+    "searchText": "quick stabs  timing-rhythm",
+    "category": "timing-rhythm"
+  },
+  {
+    "id": "tag-rolling",
+    "type": "tag",
+    "name": "Rolling",
+    "searchText": "rolling  timing-rhythm",
+    "category": "timing-rhythm"
+  },
+  {
+    "id": "tag-freeform",
+    "type": "tag",
+    "name": "Freeform",
+    "searchText": "freeform  timing-rhythm",
+    "category": "timing-rhythm"
+  },
+  {
+    "id": "tag-rapid-fire",
+    "type": "tag",
+    "name": "Rapid-fire",
+    "searchText": "rapid-fire  timing-rhythm",
+    "category": "timing-rhythm"
+  },
+  {
+    "id": "tag-loose-phrasing",
+    "type": "tag",
+    "name": "Loose phrasing",
+    "searchText": "loose phrasing  timing-rhythm",
+    "category": "timing-rhythm"
+  },
+  {
+    "id": "tag-tight-rhythm",
+    "type": "tag",
+    "name": "Tight rhythm",
+    "searchText": "tight rhythm  timing-rhythm",
+    "category": "timing-rhythm"
+  },
+  {
+    "id": "tag-tube-saturated-kick",
+    "type": "tag",
+    "name": "Tube-Saturated Kick",
+    "searchText": "tube-saturated kick  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-vinyl-print-texture",
+    "type": "tag",
+    "name": "Vinyl Print Texture",
+    "searchText": "vinyl print texture  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-hard-shelled-snare",
+    "type": "tag",
+    "name": "Hard-Shelled Snare",
+    "searchText": "hard-shelled snare  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-tonal-rim-shot",
+    "type": "tag",
+    "name": "Tonal Rim Shot",
+    "searchText": "tonal rim shot  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-crushed-transient-hits",
+    "type": "tag",
+    "name": "Crushed Transient Hits",
+    "searchText": "crushed transient hits  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-wet-clap-reverb",
+    "type": "tag",
+    "name": "Wet Clap Reverb",
+    "searchText": "wet clap reverb  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-ribbon-mic-percussion",
+    "type": "tag",
+    "name": "Ribbon Mic Percussion",
+    "searchText": "ribbon mic percussion  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-chalky-hi-hats",
+    "type": "tag",
+    "name": "Chalky Hi-Hats",
+    "searchText": "chalky hi-hats  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-rubberized-floor-tom",
+    "type": "tag",
+    "name": "Rubberized Floor Tom",
+    "searchText": "rubberized floor tom  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-stutter-ramp-rhythm",
+    "type": "tag",
+    "name": "Stutter-Ramp Rhythm",
+    "searchText": "stutter-ramp rhythm  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-offset-pulse-cycle",
+    "type": "tag",
+    "name": "Offset Pulse Cycle",
+    "searchText": "offset pulse cycle  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-triplet-swing-compression",
+    "type": "tag",
+    "name": "Triplet-Swing Compression",
+    "searchText": "triplet-swing compression  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-backbeat-cut-sync",
+    "type": "tag",
+    "name": "Backbeat Cut Sync",
+    "searchText": "backbeat cut sync  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-polyrhythmic-wash",
+    "type": "tag",
+    "name": "Polyrhythmic Wash",
+    "searchText": "polyrhythmic wash  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-syncope-latch-break",
+    "type": "tag",
+    "name": "Syncope Latch Break",
+    "searchText": "syncope latch break  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-microstep-jitter-grid",
+    "type": "tag",
+    "name": "Microstep Jitter Grid",
+    "searchText": "microstep jitter grid  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-analog-tail-drift",
+    "type": "tag",
+    "name": "Analog Tail Drift",
+    "searchText": "analog tail drift  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-snare-choke-collapse",
+    "type": "tag",
+    "name": "Snare Choke Collapse",
+    "searchText": "snare choke collapse  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-open-hat-splash-delay",
+    "type": "tag",
+    "name": "Open Hat Splash Delay",
+    "searchText": "open hat splash delay  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-reverse-boom-bloom",
+    "type": "tag",
+    "name": "Reverse Boom Bloom",
+    "searchText": "reverse boom bloom  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-snubbed-room-reverb",
+    "type": "tag",
+    "name": "Snubbed Room Reverb",
+    "searchText": "snubbed room reverb  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-kick-decay-swell",
+    "type": "tag",
+    "name": "Kick Decay Swell",
+    "searchText": "kick decay swell  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-stereo-wall-sweep",
+    "type": "tag",
+    "name": "Stereo Wall Sweep",
+    "searchText": "stereo wall sweep  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-pan-divided-drums",
+    "type": "tag",
+    "name": "Pan-Divided Drums",
+    "searchText": "pan-divided drums  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-monolith-percussion-center",
+    "type": "tag",
+    "name": "Monolith Percussion Center",
+    "searchText": "monolith percussion center  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-spiral-rim-loop",
+    "type": "tag",
+    "name": "Spiral Rim Loop",
+    "searchText": "spiral rim loop  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-wide-floor-drum-spread",
+    "type": "tag",
+    "name": "Wide Floor Drum Spread",
+    "searchText": "wide floor drum spread  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-reverb-pulse-overdrive",
+    "type": "tag",
+    "name": "Reverb Pulse Overdrive",
+    "searchText": "reverb pulse overdrive  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-drum-bus-saturation-curve",
+    "type": "tag",
+    "name": "Drum Bus Saturation Curve",
+    "searchText": "drum bus saturation curve  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-transient-pump-swell",
+    "type": "tag",
+    "name": "Transient Pump Swell",
+    "searchText": "transient pump swell  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-granular-kick-refract",
+    "type": "tag",
+    "name": "Granular Kick Refract",
+    "searchText": "granular kick refract  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-phase-shifting-snare-snap",
+    "type": "tag",
+    "name": "Phase-Shifting Snare Snap",
+    "searchText": "phase-shifting snare snap  drums",
+    "category": "drums"
+  },
+  {
+    "id": "tag-verse",
+    "type": "tag",
+    "name": "Verse",
+    "searchText": "verse  structure",
+    "category": "structure"
+  },
+  {
+    "id": "tag-chorus",
+    "type": "tag",
+    "name": "Chorus",
+    "searchText": "chorus  structure",
+    "category": "structure"
+  },
+  {
+    "id": "tag-bridge",
+    "type": "tag",
+    "name": "Bridge",
+    "searchText": "bridge  structure",
+    "category": "structure"
+  },
+  {
+    "id": "tag-intro",
+    "type": "tag",
+    "name": "Intro",
+    "searchText": "intro  structure",
+    "category": "structure"
+  },
+  {
+    "id": "tag-outro",
+    "type": "tag",
+    "name": "Outro",
+    "searchText": "outro  structure",
+    "category": "structure"
+  },
+  {
+    "id": "tag-pre-chorus",
+    "type": "tag",
+    "name": "Pre-Chorus",
+    "searchText": "pre-chorus  structure",
+    "category": "structure"
+  },
+  {
+    "id": "tag-post-chorus",
+    "type": "tag",
+    "name": "Post-Chorus",
+    "searchText": "post-chorus  structure",
+    "category": "structure"
+  },
+  {
+    "id": "tag-verse-1",
+    "type": "tag",
+    "name": "Verse 1",
+    "searchText": "verse 1  structure",
+    "category": "structure"
+  },
+  {
+    "id": "tag-verse-2",
+    "type": "tag",
+    "name": "Verse 2",
+    "searchText": "verse 2  structure",
+    "category": "structure"
+  },
+  {
+    "id": "tag-chorus-x2",
+    "type": "tag",
+    "name": "Chorus x2",
+    "searchText": "chorus x2  structure",
+    "category": "structure"
+  },
+  {
+    "id": "tag-instrumental-break",
+    "type": "tag",
+    "name": "Instrumental Break",
+    "searchText": "instrumental break  structure",
+    "category": "structure"
+  },
+  {
+    "id": "tag-solo-section",
+    "type": "tag",
+    "name": "Solo Section",
+    "searchText": "solo section  structure",
+    "category": "structure"
+  },
+  {
+    "id": "tag-nostalgic",
+    "type": "tag",
+    "name": "Nostalgic",
+    "searchText": "nostalgic  mood-atmosphere",
+    "category": "mood-atmosphere"
+  },
+  {
+    "id": "tag-peaceful",
+    "type": "tag",
+    "name": "Peaceful",
+    "searchText": "peaceful  mood-atmosphere",
+    "category": "mood-atmosphere"
+  },
+  {
+    "id": "tag-dark-atmosphere",
+    "type": "tag",
+    "name": "Dark Atmosphere",
+    "searchText": "dark atmosphere  mood-atmosphere",
+    "category": "mood-atmosphere"
+  },
+  {
+    "id": "tag-bright-atmosphere",
+    "type": "tag",
+    "name": "Bright Atmosphere",
+    "searchText": "bright atmosphere  mood-atmosphere",
+    "category": "mood-atmosphere"
+  },
+  {
+    "id": "tag-ambient-atmosphere",
+    "type": "tag",
+    "name": "Ambient Atmosphere",
+    "searchText": "ambient atmosphere  mood-atmosphere",
+    "category": "mood-atmosphere"
+  },
+  {
+    "id": "tag-intimate-atmosphere",
+    "type": "tag",
+    "name": "Intimate Atmosphere",
+    "searchText": "intimate atmosphere  mood-atmosphere",
+    "category": "mood-atmosphere"
+  },
+  {
+    "id": "tag-high-energy",
+    "type": "tag",
+    "name": "High Energy",
+    "searchText": "high energy  energy-intensity",
+    "category": "energy-intensity"
+  },
+  {
+    "id": "tag-medium-energy",
+    "type": "tag",
+    "name": "Medium Energy",
+    "searchText": "medium energy  energy-intensity",
+    "category": "energy-intensity"
+  },
+  {
+    "id": "tag-low-energy",
+    "type": "tag",
+    "name": "Low Energy",
+    "searchText": "low energy  energy-intensity",
+    "category": "energy-intensity"
+  },
+  {
+    "id": "tag-building-energy",
+    "type": "tag",
+    "name": "Building Energy",
+    "searchText": "building energy  energy-intensity",
+    "category": "energy-intensity"
+  },
+  {
+    "id": "tag-explosive-energy",
+    "type": "tag",
+    "name": "Explosive Energy",
+    "searchText": "explosive energy  energy-intensity",
+    "category": "energy-intensity"
+  },
+  {
+    "id": "tag-intense",
+    "type": "tag",
+    "name": "Intense",
+    "searchText": "intense  energy-intensity",
+    "category": "energy-intensity"
+  },
+  {
+    "id": "tag-gentle",
+    "type": "tag",
+    "name": "Gentle",
+    "searchText": "gentle  energy-intensity",
+    "category": "energy-intensity"
+  },
+  {
+    "id": "tag-powerful",
+    "type": "tag",
+    "name": "Powerful",
+    "searchText": "powerful  energy-intensity",
+    "category": "energy-intensity"
+  },
+  {
+    "id": "tag-dynamic",
+    "type": "tag",
+    "name": "Dynamic",
+    "searchText": "dynamic  energy-intensity",
+    "category": "energy-intensity"
+  },
+  {
+    "id": "tag-electric-guitar",
+    "type": "tag",
+    "name": "Electric Guitar",
+    "searchText": "electric guitar  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-acoustic-guitar",
+    "type": "tag",
+    "name": "Acoustic Guitar",
+    "searchText": "acoustic guitar  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-bass-guitar",
+    "type": "tag",
+    "name": "Bass Guitar",
+    "searchText": "bass guitar  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-violin",
+    "type": "tag",
+    "name": "Violin",
+    "searchText": "violin  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-cello",
+    "type": "tag",
+    "name": "Cello",
+    "searchText": "cello  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-drums",
+    "type": "tag",
+    "name": "Drums",
+    "searchText": "drums  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-electronic-drums",
+    "type": "tag",
+    "name": "Electronic Drums",
+    "searchText": "electronic drums  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-hand-percussion",
+    "type": "tag",
+    "name": "Hand Percussion",
+    "searchText": "hand percussion  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-timpani",
+    "type": "tag",
+    "name": "Timpani",
+    "searchText": "timpani  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-piano",
+    "type": "tag",
+    "name": "Piano",
+    "searchText": "piano  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-electric-piano",
+    "type": "tag",
+    "name": "Electric Piano",
+    "searchText": "electric piano  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-synthesizer",
+    "type": "tag",
+    "name": "Synthesizer",
+    "searchText": "synthesizer  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-organ",
+    "type": "tag",
+    "name": "Organ",
+    "searchText": "organ  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-strings-section",
+    "type": "tag",
+    "name": "Strings Section",
+    "searchText": "strings section  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-saxophone",
+    "type": "tag",
+    "name": "Saxophone",
+    "searchText": "saxophone  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-trumpet",
+    "type": "tag",
+    "name": "Trumpet",
+    "searchText": "trumpet  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-flute",
+    "type": "tag",
+    "name": "Flute",
+    "searchText": "flute  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-clarinet",
+    "type": "tag",
+    "name": "Clarinet",
+    "searchText": "clarinet  instruments",
+    "category": "instruments"
+  },
+  {
+    "id": "tag-pop",
+    "type": "tag",
+    "name": "Pop",
+    "searchText": "pop  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-rock",
+    "type": "tag",
+    "name": "Rock",
+    "searchText": "rock  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-hip-hop",
+    "type": "tag",
+    "name": "Hip-Hop",
+    "searchText": "hip-hop  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-electronic",
+    "type": "tag",
+    "name": "Electronic",
+    "searchText": "electronic  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-jazz",
+    "type": "tag",
+    "name": "Jazz",
+    "searchText": "jazz  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-classical",
+    "type": "tag",
+    "name": "Classical",
+    "searchText": "classical  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-folk",
+    "type": "tag",
+    "name": "Folk",
+    "searchText": "folk  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-r-b",
+    "type": "tag",
+    "name": "R&B",
+    "searchText": "r&b  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-country",
+    "type": "tag",
+    "name": "Country",
+    "searchText": "country  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-reggae",
+    "type": "tag",
+    "name": "Reggae",
+    "searchText": "reggae  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-house",
+    "type": "tag",
+    "name": "House",
+    "searchText": "house  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-techno",
+    "type": "tag",
+    "name": "Techno",
+    "searchText": "techno  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-ambient",
+    "type": "tag",
+    "name": "Ambient",
+    "searchText": "ambient  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-dubstep",
+    "type": "tag",
+    "name": "Dubstep",
+    "searchText": "dubstep  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-trance",
+    "type": "tag",
+    "name": "Trance",
+    "searchText": "trance  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-alternative-rock",
+    "type": "tag",
+    "name": "Alternative Rock",
+    "searchText": "alternative rock  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-hard-rock",
+    "type": "tag",
+    "name": "Hard Rock",
+    "searchText": "hard rock  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-indie-rock",
+    "type": "tag",
+    "name": "Indie Rock",
+    "searchText": "indie rock  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-progressive-rock",
+    "type": "tag",
+    "name": "Progressive Rock",
+    "searchText": "progressive rock  genre",
+    "category": "genre"
+  },
+  {
+    "id": "tag-male-vocals",
+    "type": "tag",
+    "name": "Male Vocals",
+    "searchText": "male vocals  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-female-vocals",
+    "type": "tag",
+    "name": "Female Vocals",
+    "searchText": "female vocals  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-harmonies",
+    "type": "tag",
+    "name": "Harmonies",
+    "searchText": "harmonies  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-choir",
+    "type": "tag",
+    "name": "Choir",
+    "searchText": "choir  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-powerful-vocals",
+    "type": "tag",
+    "name": "Powerful Vocals",
+    "searchText": "powerful vocals  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-smooth-vocals",
+    "type": "tag",
+    "name": "Smooth Vocals",
+    "searchText": "smooth vocals  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-vibrato",
+    "type": "tag",
+    "name": "Vibrato",
+    "searchText": "vibrato  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-staccato-vocals",
+    "type": "tag",
+    "name": "Staccato Vocals",
+    "searchText": "staccato vocals  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-legato-vocals",
+    "type": "tag",
+    "name": "Legato Vocals",
+    "searchText": "legato vocals  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-raspy-voice",
+    "type": "tag",
+    "name": "Raspy Voice",
+    "searchText": "raspy voice  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-clear-voice",
+    "type": "tag",
+    "name": "Clear Voice",
+    "searchText": "clear voice  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-deep-voice",
+    "type": "tag",
+    "name": "Deep Voice",
+    "searchText": "deep voice  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-high-voice",
+    "type": "tag",
+    "name": "High Voice",
+    "searchText": "high voice  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-soulful-voice",
+    "type": "tag",
+    "name": "Soulful Voice",
+    "searchText": "soulful voice  vocal",
+    "category": "vocal"
+  },
+  {
+    "id": "tag-hall-reverb",
+    "type": "tag",
+    "name": "Hall Reverb",
+    "searchText": "hall reverb  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-room-reverb",
+    "type": "tag",
+    "name": "Room Reverb",
+    "searchText": "room reverb  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-plate-reverb",
+    "type": "tag",
+    "name": "Plate Reverb",
+    "searchText": "plate reverb  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-spring-reverb",
+    "type": "tag",
+    "name": "Spring Reverb",
+    "searchText": "spring reverb  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-no-reverb",
+    "type": "tag",
+    "name": "No Reverb",
+    "searchText": "no reverb  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-echo",
+    "type": "tag",
+    "name": "Echo",
+    "searchText": "echo  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-delay",
+    "type": "tag",
+    "name": "Delay",
+    "searchText": "delay  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-slapback-delay",
+    "type": "tag",
+    "name": "Slapback Delay",
+    "searchText": "slapback delay  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-ping-pong-delay",
+    "type": "tag",
+    "name": "Ping Pong Delay",
+    "searchText": "ping pong delay  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-distortion",
+    "type": "tag",
+    "name": "Distortion",
+    "searchText": "distortion  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-overdrive",
+    "type": "tag",
+    "name": "Overdrive",
+    "searchText": "overdrive  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-fuzz",
+    "type": "tag",
+    "name": "Fuzz",
+    "searchText": "fuzz  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-clean",
+    "type": "tag",
+    "name": "Clean",
+    "searchText": "clean  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-flanger",
+    "type": "tag",
+    "name": "Flanger",
+    "searchText": "flanger  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-phaser",
+    "type": "tag",
+    "name": "Phaser",
+    "searchText": "phaser  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-tremolo",
+    "type": "tag",
+    "name": "Tremolo",
+    "searchText": "tremolo  production",
+    "category": "production"
+  },
+  {
+    "id": "tag-i-v-vi-iv",
+    "type": "tag",
+    "name": "I-V-vi-IV",
+    "searchText": "i-v-vi-iv  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-vi-iv-i-v",
+    "type": "tag",
+    "name": "vi-IV-I-V",
+    "searchText": "vi-iv-i-v  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-i-vi-iv-v",
+    "type": "tag",
+    "name": "I-vi-IV-V",
+    "searchText": "i-vi-iv-v  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-ii-v-i",
+    "type": "tag",
+    "name": "ii-V-I",
+    "searchText": "ii-v-i  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-i-vii-vi-vii",
+    "type": "tag",
+    "name": "I-VII-♭VI-♭VII",
+    "searchText": "i-vii-♭vi-♭vii  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-major-harmony",
+    "type": "tag",
+    "name": "Major Harmony",
+    "searchText": "major harmony  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-minor-harmony",
+    "type": "tag",
+    "name": "Minor Harmony",
+    "searchText": "minor harmony  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-modal-harmony",
+    "type": "tag",
+    "name": "Modal Harmony",
+    "searchText": "modal harmony  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-jazz-harmony",
+    "type": "tag",
+    "name": "Jazz Harmony",
+    "searchText": "jazz harmony  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-dissonant-harmony",
+    "type": "tag",
+    "name": "Dissonant Harmony",
+    "searchText": "dissonant harmony  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-suspended-chords",
+    "type": "tag",
+    "name": "Suspended Chords",
+    "searchText": "suspended chords  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-extended-chords",
+    "type": "tag",
+    "name": "Extended Chords",
+    "searchText": "extended chords  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-altered-chords",
+    "type": "tag",
+    "name": "Altered Chords",
+    "searchText": "altered chords  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-quartal-harmony",
+    "type": "tag",
+    "name": "Quartal Harmony",
+    "searchText": "quartal harmony  harmony",
+    "category": "harmony"
+  },
+  {
+    "id": "tag-rain",
+    "type": "tag",
+    "name": "Rain",
+    "searchText": "rain  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-thunder",
+    "type": "tag",
+    "name": "Thunder",
+    "searchText": "thunder  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-wind",
+    "type": "tag",
+    "name": "Wind",
+    "searchText": "wind  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-ocean-waves",
+    "type": "tag",
+    "name": "Ocean Waves",
+    "searchText": "ocean waves  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-fire-crackling",
+    "type": "tag",
+    "name": "Fire Crackling",
+    "searchText": "fire crackling  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-traffic",
+    "type": "tag",
+    "name": "Traffic",
+    "searchText": "traffic  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-footsteps",
+    "type": "tag",
+    "name": "Footsteps",
+    "searchText": "footsteps  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-doors",
+    "type": "tag",
+    "name": "Doors",
+    "searchText": "doors  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-machinery",
+    "type": "tag",
+    "name": "Machinery",
+    "searchText": "machinery  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-vinyl-crackle",
+    "type": "tag",
+    "name": "Vinyl Crackle",
+    "searchText": "vinyl crackle  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-tape-hiss",
+    "type": "tag",
+    "name": "Tape Hiss",
+    "searchText": "tape hiss  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-record-scratch",
+    "type": "tag",
+    "name": "Record Scratch",
+    "searchText": "record scratch  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-reverse-reverb",
+    "type": "tag",
+    "name": "Reverse Reverb",
+    "searchText": "reverse reverb  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-risers",
+    "type": "tag",
+    "name": "Risers",
+    "searchText": "risers  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-impacts",
+    "type": "tag",
+    "name": "Impacts",
+    "searchText": "impacts  sound-effects",
+    "category": "sound-effects"
+  },
+  {
+    "id": "tag-c-major",
+    "type": "tag",
+    "name": "C Major",
+    "searchText": "c major  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-g-major",
+    "type": "tag",
+    "name": "G Major",
+    "searchText": "g major  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-d-major",
+    "type": "tag",
+    "name": "D Major",
+    "searchText": "d major  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-a-major",
+    "type": "tag",
+    "name": "A Major",
+    "searchText": "a major  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-e-major",
+    "type": "tag",
+    "name": "E Major",
+    "searchText": "e major  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-a-minor",
+    "type": "tag",
+    "name": "A Minor",
+    "searchText": "a minor  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-e-minor",
+    "type": "tag",
+    "name": "E Minor",
+    "searchText": "e minor  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-b-minor",
+    "type": "tag",
+    "name": "B Minor",
+    "searchText": "b minor  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-f-minor",
+    "type": "tag",
+    "name": "F# Minor",
+    "searchText": "f# minor  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-dorian-mode",
+    "type": "tag",
+    "name": "Dorian Mode",
+    "searchText": "dorian mode  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-mixolydian-mode",
+    "type": "tag",
+    "name": "Mixolydian Mode",
+    "searchText": "mixolydian mode  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-lydian-mode",
+    "type": "tag",
+    "name": "Lydian Mode",
+    "searchText": "lydian mode  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-phrygian-mode",
+    "type": "tag",
+    "name": "Phrygian Mode",
+    "searchText": "phrygian mode  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-pentatonic-scale",
+    "type": "tag",
+    "name": "Pentatonic Scale",
+    "searchText": "pentatonic scale  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-blues-scale",
+    "type": "tag",
+    "name": "Blues Scale",
+    "searchText": "blues scale  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-chromatic-scale",
+    "type": "tag",
+    "name": "Chromatic Scale",
+    "searchText": "chromatic scale  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-whole-tone-scale",
+    "type": "tag",
+    "name": "Whole Tone Scale",
+    "searchText": "whole tone scale  keys-scales",
+    "category": "keys-scales"
+  },
+  {
+    "id": "tag-slow-tempo",
+    "type": "tag",
+    "name": "Slow Tempo",
+    "searchText": "slow tempo  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-medium-tempo",
+    "type": "tag",
+    "name": "Medium Tempo",
+    "searchText": "medium tempo  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-fast-tempo",
+    "type": "tag",
+    "name": "Fast Tempo",
+    "searchText": "fast tempo  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-very-fast",
+    "type": "tag",
+    "name": "Very Fast",
+    "searchText": "very fast  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-straight-feel",
+    "type": "tag",
+    "name": "Straight Feel",
+    "searchText": "straight feel  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-swing-feel",
+    "type": "tag",
+    "name": "Swing Feel",
+    "searchText": "swing feel  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-shuffle-feel",
+    "type": "tag",
+    "name": "Shuffle Feel",
+    "searchText": "shuffle feel  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-latin-feel",
+    "type": "tag",
+    "name": "Latin Feel",
+    "searchText": "latin feel  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-backbeat",
+    "type": "tag",
+    "name": "Backbeat",
+    "searchText": "backbeat  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-polyrhythm",
+    "type": "tag",
+    "name": "Polyrhythm",
+    "searchText": "polyrhythm  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-cross-rhythm",
+    "type": "tag",
+    "name": "Cross-rhythm",
+    "searchText": "cross-rhythm  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-4-4-time",
+    "type": "tag",
+    "name": "4/4 Time",
+    "searchText": "4/4 time  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-3-4-time",
+    "type": "tag",
+    "name": "3/4 Time",
+    "searchText": "3/4 time  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-6-8-time",
+    "type": "tag",
+    "name": "6/8 Time",
+    "searchText": "6/8 time  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-5-4-time",
+    "type": "tag",
+    "name": "5/4 Time",
+    "searchText": "5/4 time  rhythm-tempo",
+    "category": "rhythm-tempo"
+  },
+  {
+    "id": "tag-call-and-response",
+    "type": "tag",
+    "name": "Call and Response",
+    "searchText": "call and response  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-counterpoint",
+    "type": "tag",
+    "name": "Counterpoint",
+    "searchText": "counterpoint  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-layering",
+    "type": "tag",
+    "name": "Layering",
+    "searchText": "layering  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-unison",
+    "type": "tag",
+    "name": "Unison",
+    "searchText": "unison  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-canon",
+    "type": "tag",
+    "name": "Canon",
+    "searchText": "canon  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-diminuendo",
+    "type": "tag",
+    "name": "Diminuendo",
+    "searchText": "diminuendo  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-forte",
+    "type": "tag",
+    "name": "Forte",
+    "searchText": "forte  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-sforzando",
+    "type": "tag",
+    "name": "Sforzando",
+    "searchText": "sforzando  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-minimalist",
+    "type": "tag",
+    "name": "Minimalist",
+    "searchText": "minimalist  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-maximalist",
+    "type": "tag",
+    "name": "Maximalist",
+    "searchText": "maximalist  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-monophonic",
+    "type": "tag",
+    "name": "Monophonic",
+    "searchText": "monophonic  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-homophonic",
+    "type": "tag",
+    "name": "Homophonic",
+    "searchText": "homophonic  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-polyphonic",
+    "type": "tag",
+    "name": "Polyphonic",
+    "searchText": "polyphonic  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-glitch",
+    "type": "tag",
+    "name": "Glitch",
+    "searchText": "glitch  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-morphing",
+    "type": "tag",
+    "name": "Morphing",
+    "searchText": "morphing  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "tag-sidechaining",
+    "type": "tag",
+    "name": "Sidechaining",
+    "searchText": "sidechaining  advanced",
+    "category": "advanced"
+  },
+  {
+    "id": "template-pop-ballad",
+    "type": "template",
+    "name": "Pop Ballad",
+    "searchText": "pop ballad pop pop, emotional, gentle, building, piano, string section,\r\n\r\nfemale vocal, vulnerable vocals, reverb heavy,\r\n\r\nlong reverb (hall), i-v-vi-iv, major 7th, clean production",
+    "category": "template"
+  },
+  {
+    "id": "template-edm-anthem",
+    "type": "template",
+    "name": "EDM Anthem",
+    "searchText": "edm anthem edm edm, progressive house, energetic, explosive, anthemic,\r\n\r\nsynth lead, synth bass, tr-808, electronic drums,\r\n\r\nvocoder, vocal chops, sidechain compression,\r\n\r\nwall of sound, crowd noise, cheering",
+    "category": "template"
+  },
+  {
+    "id": "template-indie-folk",
+    "type": "template",
+    "name": "Indie Folk",
+    "searchText": "indie folk indie indie folk, peaceful, contemplative, organic,\r\n\r\nacoustic guitar, fingerpicking, harmonica,\r\n\r\nmale vocal, gentle vocals, natural reverb,\r\n\r\nfield recording, dorian mode, folk progressions",
+    "category": "template"
+  },
+  {
+    "id": "template-dark-electronic",
+    "type": "template",
+    "name": "Dark Electronic",
+    "searchText": "dark electronic dark dark electronic, mysterious, atmospheric, synthesizer,\r\n\r\nminor key, reverb heavy, delay, ambient pads,\r\n\r\nno vocals, cinematic, tension, building\r\n\r\n# 💡 practical examples\r\n\r\nreal-world examples of professional tag combinations in action.\r\n\r\n# 🌟 example 1: \"cosmic echoes\" (psychedelic rock)\r\n\r\n**style prompt:**\r\n\r\npsychedelic rock, progressive rock, art rock, cinematic,\r\n\r\nmysterious, atmospheric, dreamy, hypnotic, epic, dark,\r\n\r\nintrospective, electric guitar, lead guitar, synthesizer,\r\n\r\nhammond organ, male vocal, ethereal vocals, haunting vocals,\r\n\r\nreverb heavy, delay, echo, phaser effect, ii-v-i,\r\n\r\nmodal interchange, dorian harmony, thunder, wind,\r\n\r\nraw production, wall of sound\r\n\r\n**detailed structure:**\r\n\r\n\\[intro - ethereal, hypnotic\\]\r\n\r\n\\[clean electric guitar arpeggios, synth pad\\]\r\n\r\n\\[whispered vocals, heavy reverb\\]\r\n\r\n\\[verse - dark, introspective\\]\r\n\r\n\\[hammond organ, timpani rolls\\]\r\n\r\n\\[chorus - epic, layered\\]\r\n\r\n\\[distorted electric guitar, layered harmonies, phaser effect\\]\r\n\r\n\\[guitar solo - psychedelic, intense\\]\r\n\r\n\\[lead guitar, tape delay, creative panning, lydian harmony\\]\r\n\r\n**why this works:**\r\n\r\n* **genre foundation**: clear psychedelic rock identity\r\n* **atmospheric layers**: multiple mood descriptors create depth\r\n* **instrument specificity**: exact instruments for authentic sound\r\n* **production details**: specific effects for psychedelic texture\r\n* **harmonic sophistication**: modal harmony for complexity\r\n\r\n# 🌟 example 2: \"digital pulse\" (edm)\r\n\r\n**style prompt:**\r\n\r\nedm, progressive house, trance, electro house, energetic,\r\n\r\nintense, driving, explosive, synthesizer, synth lead,\r\n\r\ntr-808, electronic drums, vocoder, autotuned vocals,\r\n\r\nsidechain compression, low-pass filter sweep, wall of sound,\r\n\r\nwide stereo image, crowd noise, cheering, i-v-vi-iv\r\n\r\n**build-up and drop structure:**\r\n\r\n**advanced parameters:**\r\n\r\nvocal gender: female (for vocal chops)\r\n\r\nweirdness: 40% (controlled festival energy)\r\n\r\nstyle influence: 80% (faithful to edm)\r\n\r\nexclude: acoustic, slow tempo, sad\r\n\r\n**why this works:**\r\n\r\n* **multiple edm subgenres**: creates rich electronic palette\r\n* **energy progression**: clear build-up and release structure\r\n* **technical production**: specific edm production techniques\r\n* **festival elements**: crowd sounds for authentic atmosphere\r\n* **harmonic foundation**: pop progression for accessibility\r\n\r\n# 🌟 example 3: \"cyber sushi\" (futuristic edm)\r\n\r\n**concept fusion:**\r\n\r\nedm, futuristic, glitchy, electronic, robotic voice,\r\n\r\nvocoder, vocal chops, bitcrushing, glitch effects,\r\n\r\nstutter edits, synthesizer, electronic drums,\r\n\r\neuphoric, anthemic, modern production, creative panning\r\n\r\n**unique elements:**\r\n\r\n* `[robotic voice filter]` for intro\r\n* `[stutter-vocals]` for effects\r\n* `[vocal chop]` in drop: \"su-shiiii!\", \"roll it!\", \"data-fiiiiish!\"\r\n\r\n**creative approach:**\r\n\r\n**advanced parameters:**\r\n\r\nweirdness: 65% (creative but controlled)\r\n\r\nstyle influence: 60% (allow creative interpretation)\r\n\r\nexclude: acoustic, traditional, organic\r\n\r\n**why this is creative:**\r\n\r\n* **concept-driven**: clear thematic vision\r\n* **sound design focus**: emphasis on texture and effects\r\n* **playful elements**: fun vocal chops and creative naming\r\n* **balanced weirdness**: creative but still accessible\r\n* **modern production**: cutting-edge electronic techniques\r\n\r\n# 💡 professional tips\r\n\r\nmaster-level strategies for professional music creation.\r\n\r\n# 🎯 best practices\r\n\r\nexpert strategies for maximum impact:\r\n\r\n**🎯 combining tags effectively:**\r\n\r\n* **layer complementary moods**: `[dreamy]` \\+ `[nostalgic]`\r\n* **balance energy levels**: don't mix `[high energy]`",
+    "category": "template"
+  },
+  {
+    "id": "template-cosmic-echoes",
+    "type": "template",
+    "name": "Cosmic Echoes",
+    "searchText": "cosmic echoes psychedelic rock psychedelic rock, progressive rock, art rock, cinematic,\r\n\r\nmysterious, atmospheric, dreamy, hypnotic, epic, dark,\r\n\r\nintrospective, electric guitar, lead guitar, synthesizer,\r\n\r\nhammond organ, male vocal, ethereal vocals, haunting vocals,\r\n\r\nreverb heavy, delay, echo, phaser effect, ii-v-i,\r\n\r\nmodal interchange, dorian harmony, thunder, wind,\r\n\r\nraw production, wall of sound",
+    "category": "template"
+  },
+  {
+    "id": "template-digital-pulse",
+    "type": "template",
+    "name": "Digital Pulse",
+    "searchText": "digital pulse edm edm, progressive house, trance, electro house, energetic,\r\n\r\nintense, driving, explosive, synthesizer, synth lead,\r\n\r\ntr-808, electronic drums, vocoder, autotuned vocals,\r\n\r\nsidechain compression, low-pass filter sweep, wall of sound,\r\n\r\nwide stereo image, crowd noise, cheering, i-v-vi-iv",
+    "category": "template"
+  },
+  {
+    "id": "template-cyber-sushi",
+    "type": "template",
+    "name": "Cyber Sushi",
+    "searchText": "cyber sushi futuristic edm **concept fusion:**\r\n\r\nedm, futuristic, glitchy, electronic, robotic voice,\r\n\r\nvocoder, vocal chops, bitcrushing, glitch effects,\r\n\r\nstutter edits, synthesizer, electronic drums,\r\n\r\neuphoric, anthemic, modern production, creative panning\r\n\r\n**unique elements:**\r\n\r\n* `[robotic voice filter]` for intro\r\n* `[stutter-vocals]` for effects\r\n* `[vocal chop]` in drop: \"su-shiiii!\", \"roll it!\", \"data-fiiiiish!\"\r\n\r\n**creative approach:**\r\n\r\n**advanced parameters:**\r\n\r\nweirdness: 65% (creative but controlled)\r\n\r\nstyle influence: 60% (allow creative interpretation)\r\n\r\nexclude: acoustic, traditional, organic\r\n\r\n**why this is creative:**\r\n\r\n* **concept-driven**: clear thematic vision\r\n* **sound design focus**: emphasis on texture and effects\r\n* **playful elements**: fun vocal chops and creative naming\r\n* **balanced weirdness**: creative but still accessible\r\n* **modern production**: cutting-edge electronic techniques",
+    "category": "template"
+  }
+]

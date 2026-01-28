@@ -1,0 +1,783 @@
+[
+  {
+    "id": "trick-4",
+    "number": 4,
+    "day": null,
+    "name": "Live Concert Mode with Sound Effects",
+    "subtitle": "",
+    "reliability": 4,
+    "reliabilityLabel": "High",
+    "whatItDoes": "This trick uses **environmental cues inside the lyrics** to bias Suno toward:\r\n- Live recordings\r\n- Audience noise\r\n- Imperfect timing\r\n- Raw vocal delivery\r\n\r\nYou are NOT \"adding sound effects.\"  \r\nYou are **changing the performance context**.",
+    "whenItFails": [
+      "❌ Used with highly polished genres (clean pop, EDM)",
+      "❌ Combined with \"clean / studio / pristine\" keywords",
+      "❌ Overused (too many sound effect cues)",
+      "❌ Cues contradict the style prompt"
+    ],
+    "iterationAdvice": [
+      "Less is more: one or two live cues are enough",
+      "Match genre: live cues work best with rock, folk, singer-songwriter",
+      "Place cues at structural moments: intro, between sections, outro",
+      "Don't expect precise sound effects: think \"atmosphere,\" not \"specific sound\""
+    ],
+    "examples": [
+      {
+        "lyrics": "[Intro: Live Crowd Cheering]\r\n[Stage Ambience]\r\n\r\n*crowd noise building*\r\n\r\nAre you ready tonight?!\r\n\r\n*crowd roaring*\r\n\r\nWe came here to rock!\r\nWe came here to feel alive!\r\n\r\n*audience cheering*\r\n\r\n[Chorus]\r\nThis is where I belong!\r\nSinging with you all night long!\r\n\r\n*crowd singalong*\r\n\r\n[Outro: Applause, Crowd Going Wild]",
+        "style": "Live concert recording, raw rock energy, \r\nfestival atmosphere, audience interaction, \r\nstadium rock sound, powerful male vocals, \r\nimperfect timing, authentic live feel, \r\nmid-tempo (115-125 BPM), anthemic chorus, \r\ncrowd participation, sweaty and real"
+      }
+    ],
+    "tables": [
+      {
+        "headers": [
+          "Syntax",
+          "Effect"
+        ],
+        "rows": [
+          {
+            "syntax": "`*crowd cheering*`",
+            "effect": "Applause and screams"
+          },
+          {
+            "syntax": "`*audience singalong*`",
+            "effect": "Crowd singing along"
+          },
+          {
+            "syntax": "`*festival roar*`",
+            "effect": "Stadium/festival roar"
+          },
+          {
+            "syntax": "`*applause*`",
+            "effect": "Final applause"
+          }
+        ]
+      },
+      {
+        "headers": [
+          "Syntax",
+          "Effect"
+        ],
+        "rows": [
+          {
+            "syntax": "`*thunder*`",
+            "effect": "Thunder for epic moments"
+          },
+          {
+            "syntax": "`*gunshots*`",
+            "effect": "For rap/trap/metal"
+          },
+          {
+            "syntax": "`*explosion*`",
+            "effect": "For EDM drops"
+          },
+          {
+            "syntax": "`*glass breaking*`",
+            "effect": "Breaking glass"
+          }
+        ]
+      },
+      {
+        "headers": [
+          "Syntax",
+          "Effect"
+        ],
+        "rows": [
+          {
+            "syntax": "`*café ambience*`",
+            "effect": "Coffee shop chatter"
+          },
+          {
+            "syntax": "`*rain falling*`",
+            "effect": "Melancholic atmosphere"
+          },
+          {
+            "syntax": "`*wind howling*`",
+            "effect": "Isolated, cold feeling"
+          }
+        ]
+      },
+      {
+        "headers": [
+          "Syntax",
+          "Effect"
+        ],
+        "rows": [
+          {
+            "syntax": "`*phone ringing*`",
+            "effect": "Phone ring"
+          },
+          {
+            "syntax": "`*door slamming*`",
+            "effect": "Door slam"
+          },
+          {
+            "syntax": "`*footsteps*`",
+            "effect": "Footsteps"
+          },
+          {
+            "syntax": "`*heartbeat*`",
+            "effect": "Heartbeat pulse"
+          }
+        ]
+      }
+    ],
+    "category": "production"
+  },
+  {
+    "id": "trick-5",
+    "number": 5,
+    "day": 1,
+    "name": "Phonetic Respelling for Pronunciation Control",
+    "subtitle": "",
+    "reliability": 4,
+    "reliabilityLabel": "High",
+    "whatItDoes": "When Suno consistently mispronounces a word in your lyrics, you can override its interpretation by **respelling the word phonetically**—writing it the way it sounds rather than how it's spelled.\r\n\r\nThis works because Suno processes text based on **pattern matching**, not linguistic understanding.",
+    "whenItFails": [
+      "❌ The phonetic spelling creates a NEW mispronunciation",
+      "❌ You use IPA for too many words (confuses the model)",
+      "❌ The respelling is too different from the original word",
+      "❌ Suno interprets your phonetic spelling as a completely different word"
+    ],
+    "iterationAdvice": [],
+    "examples": [
+      {
+        "lyrics": null,
+        "style": "Indie pop, conversational vocals, clear diction,\r\nacoustic guitar, light percussion, intimate delivery,\r\nmid-tempo (95-105 BPM), bedroom pop aesthetic,\r\nrelaxed but precise enunciation"
+      }
+    ],
+    "tables": [
+      {
+        "headers": [
+          "Standard Spelling",
+          "Phonetic Respelling",
+          "Why"
+        ],
+        "rows": [
+          {
+            "standard-spelling": "**read** (present tense)",
+            "phonetic-respelling": "`reed`",
+            "why": "Forces \"ree-d\" instead of \"red\""
+          },
+          {
+            "standard-spelling": "**live** (as in concert)",
+            "phonetic-respelling": "`lyve`",
+            "why": "Forces \"laiv\" instead of \"liv\""
+          },
+          {
+            "standard-spelling": "**bass** (instrument/low frequency)",
+            "phonetic-respelling": "`bahss` or `basss`",
+            "why": "Avoids \"base\" pronunciation"
+          },
+          {
+            "standard-spelling": "**tear** (crying)",
+            "phonetic-respelling": "`teer`",
+            "why": "Forces \"teer\" instead of \"tare\""
+          },
+          {
+            "standard-spelling": "**wound** (injury)",
+            "phonetic-respelling": "`woond`",
+            "why": "Forces \"woond\" instead of \"wownd\""
+          },
+          {
+            "standard-spelling": "**lead** (metal)",
+            "phonetic-respelling": "`led`",
+            "why": "Forces \"led\" instead of \"leed\""
+          }
+        ]
+      }
+    ],
+    "category": "lyrics"
+  },
+  {
+    "id": "trick-6",
+    "number": 6,
+    "day": 2,
+    "name": "ALL CAPS for Emotional Spikes",
+    "subtitle": "",
+    "reliability": 0,
+    "reliabilityLabel": "Unknown",
+    "whatItDoes": "Capital letters signal:\r\n- Emphasis\r\n- Urgency\r\n- Intensity\r\n\r\nSuno interprets ALL CAPS as:\r\n> \"Increase vocal energy.\"\r\n\r\nThis affects:\r\n- **Loudness** — gets louder\r\n- **Aggressiveness** — more forceful delivery\r\n- **Phrasing** — more dramatic\r\n- **Articulation** — clearer, stronger",
+    "whenItFails": [
+      "❌ Everything is in caps (no contrast)",
+      "❌ Genre discourages strong vocals (ambient, minimal)"
+    ],
+    "iterationAdvice": [
+      "Use caps for CLIMAX MOMENTS only: **Create contrast** — quiet verse, loud chorus",
+      "Add punctuation: ! and ?! reinforce intensity",
+      "Don't overuse: if everything is shouting, nothing is"
+    ],
+    "examples": [
+      {
+        "lyrics": "[Verse: whispered, intimate]\r\nI tried to keep my voice down\r\nI tried to stay calm\r\nthe memories fade away...\r\nyou're slipping from my arms...\r\n\r\n[Pre-Chorus: building tension]\r\nBut every time I close my eyes\r\n\r\n[Chorus: explosive, powerful]\r\nI still LOVE YOU!\r\nCan't you SEE?!\r\nWHY did you go?!\r\nI NEED YOU here with me!\r\n\r\n[Bridge: vulnerable]\r\nmaybe it's too late...\r\nmaybe we're done...\r\n\r\n[Final Chorus: maximum intensity]\r\nBut I won't GIVE UP!\r\nI'LL FIGHT for us!\r\nThis isn't over YET!",
+        "style": "Power ballad, emotional female vocals, \r\norchestral rock arrangement, dramatic dynamics, \r\nslow tempo (70-80 BPM), cinematic build, \r\nwhispered verses, explosive chorus, \r\nsoaring melodies, emotional journey, \r\npiano-driven with full band climax"
+      }
+    ],
+    "tables": [
+      {
+        "headers": [
+          "Format",
+          "Effect"
+        ],
+        "rows": [
+          {
+            "format": "`ALL CAPS + !`",
+            "effect": "Powerful, shouted"
+          },
+          {
+            "format": "`ALL CAPS + ?`",
+            "effect": "Dramatic, desperate"
+          },
+          {
+            "format": "`ALL CAPS + ?!`",
+            "effect": "Intense questioning"
+          },
+          {
+            "format": "`Mixed case + !`",
+            "effect": "Normal emphasis"
+          },
+          {
+            "format": "`lowercase`",
+            "effect": "Delicate (if tagged)"
+          }
+        ]
+      }
+    ],
+    "category": "emotion-dynamics"
+  },
+  {
+    "id": "trick-9",
+    "number": 9,
+    "day": 3,
+    "name": "Vocal Stretching and Stuttering",
+    "subtitle": "",
+    "reliability": 4,
+    "reliabilityLabel": "High",
+    "whatItDoes": "Hyphens and letter repetition stretch syllables.\r\n\r\nThey bias Suno toward:\r\n- Longer notes\r\n- Melismatic delivery (multiple notes per syllable)\r\n- Stuttered phrasing",
+    "whenItFails": [
+      "❌ Overused throughout entire song",
+      "❌ Applied to very fast tempos",
+      "❌ Stacked with dense, wordy lyrics",
+      "❌ Genre doesn't support extended vocals"
+    ],
+    "iterationAdvice": [
+      "Use sparingly: key words and phrases only",
+      "Match tempo: stretching works better at slow tempos",
+      "Consider genre: trap loves stuttering, folk doesn't"
+    ],
+    "examples": [
+      {
+        "lyrics": "[Verse]\r\nB-b-baby, I-I-I need you\r\nCan't sta-a-a-ay away from you\r\n\r\n[Pre-Chorus]\r\nEvery time you le-e-e-eave\r\nMy heart starts to ble-e-e-eed\r\n\r\n[Chorus]\r\nLo-o-o-o-ove is all we need\r\nFore-e-e-ever you and me-e-e-e\r\nDon't let go-o-o-o",
+        "style": "Modern R&B, trap soul influence, emotional male vocals with autotune, moody late-night atmosphere, slow tempo (75-85 BPM), heavy 808 bass, sparse production, intimate delivery, stuttered vocal style"
+      }
+    ],
+    "tables": [],
+    "category": "vocal-control"
+  },
+  {
+    "id": "trick-10",
+    "number": 10,
+    "day": 6,
+    "name": "Parentheses for Background Vocals",
+    "subtitle": "",
+    "reliability": 0,
+    "reliabilityLabel": "Unknown",
+    "whatItDoes": "Text in `(parentheses)` is treated as:\r\n- Secondary\r\n- Background\r\n- Supportive\r\n\r\nSuno often renders it as:\r\n- Backing vocals\r\n- Harmonies\r\n- Call-and-response\r\n- Adlibs",
+    "whenItFails": [
+      "❌ Tempo is extremely fast",
+      "❌ Lyrics are too dense",
+      "❌ Too many parentheses per line"
+    ],
+    "iterationAdvice": [
+      "Use consistently: establish the pattern early",
+      "Vary the content: mix echoes, adlibs, and harmonies",
+      "Don't overload: 1-2 parentheses per line maximum",
+      "Match genre conventions: hip hop = adlibs, soul = harmonies"
+    ],
+    "examples": [
+      {
+        "lyrics": "[Verse]\r\nI've been waiting (waiting)\r\nFor so long (so long)\r\nFor someone like you (ooh ooh)\r\nTo come along (come along)\r\n\r\n[Chorus]\r\nYou're the one (the one!)\r\nThat I need (that I need!)\r\nForever and always (always!) (yeah yeah!)\r\nYou're everything to me (ooh)",
+        "style": "Neo-soul, smooth R&B groove, female vocals with layered harmonies, call and response structure, warm production, mid-tempo (85-95 BPM), intimate and romantic, live band feel, rich vocal arrangement, gospel influence"
+      }
+    ],
+    "tables": [],
+    "category": "vocal-control"
+  },
+  {
+    "id": "trick-11",
+    "number": 11,
+    "day": 4,
+    "name": "Tag Stacking with PIPE Symbol",
+    "subtitle": "",
+    "reliability": 4,
+    "reliabilityLabel": "High",
+    "whatItDoes": "The pipe symbol `|` separates instructions cleanly.\r\n\r\nWithout it, long tags blur together and confuse the AI.",
+    "whenItFails": [
+      "❌ More than 7 elements per tag",
+      "❌ Contradictory elements (intimate + explosive together)",
+      "❌ Used without clear section structure"
+    ],
+    "iterationAdvice": [
+      "MAX 7 elements per tag: beyond = confusion",
+      "Prioritize: put most important elements first",
+      "Be specific: \"Guitar Solo\" not just \"Guitar\"",
+      "Match to style prompt: tags should reinforce, not contradict"
+    ],
+    "examples": [
+      {
+        "lyrics": "[Intro | Atmospheric | Soft Synth Pad | Building]\r\n\r\n[Verse | Intimate | Whispered Male Vocals | Minimal Beat | \r\nLo-Fi Texture | Close and Personal]\r\nI've been lost in the city lights\r\nSearching for meaning every night\r\n\r\n[Chorus | Explosive | Full Voice | Layered Synths | \r\nDriving Beat | Wide Stereo | Euphoric]\r\nBUT NOW I'VE FOUND MY WAY!\r\nNOTHING CAN STOP ME TODAY!\r\n\r\n[Outro | Fading | Reverb Decay | Peaceful Resolution]",
+        "style": "Indie electronic pop, emotional male vocals, dynamic contrast between sections, mid-tempo (105-115 BPM), synth-driven, intimate verses, anthemic chorus, modern production, cinematic feel"
+      }
+    ],
+    "tables": [],
+    "category": "syntax"
+  },
+  {
+    "id": "trick-12",
+    "number": 12,
+    "day": 8,
+    "name": "Vocal Adlibs with Brackets",
+    "subtitle": "",
+    "reliability": 4,
+    "reliabilityLabel": "High",
+    "whatItDoes": "Square brackets `[...]` often produce:\r\n- Adlibs\r\n- Interjections\r\n- Non-melodic vocal sounds",
+    "whenItFails": [
+      "❌ Used too frequently (every word)",
+      "❌ Lyrics are already overcrowded",
+      "❌ Genre doesn't use adlibs (classical, ambient)",
+      "❌ Adlibs don't match genre conventions"
+    ],
+    "iterationAdvice": [
+      "Match genre: use appropriate adlibs for the style",
+      "Don't overload: 2-3 per verse is plenty",
+      "Place strategically: end of lines, between phrases"
+    ],
+    "examples": [
+      {
+        "lyrics": "[Verse]\r\nMaking moves [uh!] every day [yeah!]\r\nGetting paid [money!] in every way [let's go!]\r\nHaters mad [hah!] but I don't care [nah!]\r\nI'm the king [boss!] everywhere [ayy!]\r\n\r\n[Chorus]\r\nWe on top [woah!]\r\nNever gonna stop [skrrt!]\r\nLiving life [yeah yeah!]\r\nDoing it right [let's get it!]",
+        "style": "Trap, confident male rapper, aggressive delivery, heavy 808 bass, crispy hi-hats, ad-libs throughout, hard-hitting drums, fast tempo (135-145 BPM), dark and energetic, Atlanta trap influence, modern production"
+      }
+    ],
+    "tables": [
+      {
+        "headers": [
+          "Genre",
+          "Common Adlibs"
+        ],
+        "rows": [
+          {
+            "genre": "Hip Hop/Trap",
+            "common-adlibs": "[yeah!], [uh!], [ayy!], [skrrt!], [woah!], [let's go!]"
+          },
+          {
+            "genre": "R&B/Soul",
+            "common-adlibs": "[ooh], [ahhh], [mmm], [oh yeah], [baby]"
+          },
+          {
+            "genre": "Rock/Metal",
+            "common-adlibs": "[hey!], [go!], [yeah!], [whoa-oh], [come on!]"
+          },
+          {
+            "genre": "Pop",
+            "common-adlibs": "[oh oh oh], [na na na], [la la la], [hey hey]"
+          },
+          {
+            "genre": "Latin",
+            "common-adlibs": "[dale!], [oye!], [vamos!]"
+          }
+        ]
+      }
+    ],
+    "category": "vocal-control"
+  },
+  {
+    "id": "trick-14",
+    "number": 14,
+    "day": 5,
+    "name": "Forced Multi-Voice Duets",
+    "subtitle": "",
+    "reliability": 0,
+    "reliabilityLabel": "Unknown",
+    "whatItDoes": "This trick biases Suno into generating:\r\n- Two distinct vocal roles\r\n- Alternating delivery\r\n- Perceived gender contrast\r\n\r\nIt does NOT guarantee:\r\n- Stable vocal identity throughout\r\n- Consistent timbre per character\r\n- Realistic harmony balance",
+    "whenItFails": [
+      "❌ \"Duet\" is missing from Style (critical!)",
+      "❌ Both roles have identical lyrics",
+      "❌ Section labels are unclear",
+      "❌ Too many voice switches (confuses AI)"
+    ],
+    "iterationAdvice": [
+      "Always include \"Duet\" in style: this is non-negotiable",
+      "Clear section labels: be explicit about who sings",
+      "Contrast the lyrics: different perspectives help differentiation",
+      "Limit voice switches: 4-6 per song maximum"
+    ],
+    "examples": [
+      {
+        "lyrics": "[Verse 1: Male Vocal]\r\nI walked away from everything we had\r\nLeft you standing in the rain\r\nI thought that I could make it on my own\r\nBut nothing's ever been the same\r\n\r\n[Verse 2: Female Vocal]\r\nYou let me go without a fight\r\nDidn't even say goodbye\r\nNow I'm standing here alone tonight\r\nWondering why, wondering why\r\n\r\n[Chorus: Both Vocals, Harmony]\r\nBut we still love each other\r\nCan't deny what we feel inside\r\nMaybe we should try again\r\nAnd let our broken hearts heal\r\n\r\n[Bridge: Female Lead, Male Backing]\r\nIf you come back to me (come back to me)\r\nI promise I won't leave (won't leave)\r\nWe can start again (start again)",
+        "style": "Emotional Pop Ballad Duet, Male and Female Vocals, romantic and heartfelt, piano-driven arrangement, slow tempo (70-80 BPM), cinematic build, orchestral swells, intimate verses, powerful harmonized chorus, modern adult contemporary"
+      }
+    ],
+    "tables": [
+      {
+        "headers": [
+          "Tag",
+          "Function"
+        ],
+        "rows": [
+          {
+            "tag": "`[Male Vocal]`",
+            "function": "Male voice"
+          },
+          {
+            "tag": "`[Female Vocal]`",
+            "function": "Female voice"
+          },
+          {
+            "tag": "`[Both Vocals]`",
+            "function": "Both together"
+          },
+          {
+            "tag": "`[Male Lead, Female Backing]`",
+            "function": "Male front, female background"
+          },
+          {
+            "tag": "`[Female Lead, Male Harmony]`",
+            "function": "Female front, male harmony"
+          },
+          {
+            "tag": "`[Duet]`",
+            "function": "Both voices, balanced"
+          }
+        ]
+      }
+    ],
+    "category": "vocal-control"
+  },
+  {
+    "id": "trick-15",
+    "number": 15,
+    "day": 13,
+    "name": "Vocal Register Control per Section",
+    "subtitle": "",
+    "reliability": 4,
+    "reliabilityLabel": "High",
+    "whatItDoes": "**Vocal register** = which part of the voice is used, and how much effort.\r\n\r\nRegister labels bias:\r\n- Pitch range\r\n- Breathiness\r\n- Vocal effort\r\n\r\nThey do NOT enforce correct technique.  \r\nThey **suggest performance energy**.",
+    "whenItFails": [
+      "❌ Tempo is very fast (no time for register shifts)",
+      "❌ Lyrics are too dense",
+      "❌ Too many register changes (more than 4-5)",
+      "❌ Registers contradict the genre"
+    ],
+    "iterationAdvice": [
+      "Use at structural moments: verse vs chorus, not every line",
+      "Create arc: start soft, build to powerful",
+      "Match emotion to register: vulnerable = whispered/falsetto",
+      "Don't over-specify: 3-4 register changes per song"
+    ],
+    "examples": [
+      {
+        "lyrics": "[Intro: Falsetto, Ethereal]\r\nOoh... floating above the clouds...\r\ndrifting away...\r\n\r\n[Verse 1: Chest Voice, Conversational]\r\nBut then I woke up to reality\r\nThe dream was gone, just a memory\r\nWalking through these empty streets\r\nSearching for what I need\r\n\r\n[Pre-Chorus: Mixed Voice, Building]\r\nAnd I can feel it rising up inside\r\n\r\n[Chorus: Belted, Powerful]\r\nI WON'T GIVE UP, I'LL CARRY ON!\r\nEVEN WHEN THE HOPE IS GONE!\r\nI'LL FIGHT UNTIL THE BREAK OF DAWN!\r\n\r\n[Bridge: Whispered, Intimate]\r\n(Maybe if I close my eyes...)\r\n(I can find my way back home...)\r\n\r\n[Final Chorus: Belted, Maximum Intensity]\r\nI WON'T GIVE UP!",
+        "style": "Alternative rock, dynamic male vocals, emotional journey, building intensity, mid-tempo (95-105 BPM), anthemic chorus, raw and vulnerable verses, explosive climax, guitar-driven, modern rock production"
+      }
+    ],
+    "tables": [
+      {
+        "headers": [
+          "Register",
+          "Character",
+          "Best For"
+        ],
+        "rows": [
+          {
+            "register": "`Falsetto`",
+            "character": "Light, airy, high, head voice",
+            "best-for": "Ethereal moments, vulnerability"
+          },
+          {
+            "register": "`Chest Voice`",
+            "character": "Full, powerful, grounded",
+            "best-for": "Confident delivery"
+          },
+          {
+            "register": "`Head Voice`",
+            "character": "Clear, light, high but full",
+            "best-for": "Pop brightness"
+          },
+          {
+            "register": "`Mixed Voice`",
+            "character": "Balanced, versatile",
+            "best-for": "Modern pop/R&B"
+          },
+          {
+            "register": "`Whispered`",
+            "character": "Soft, intimate",
+            "best-for": "Secret, vulnerable"
+          },
+          {
+            "register": "`Spoken Word`",
+            "character": "Narrative, non-melodic",
+            "best-for": "Rap verses, intros"
+          },
+          {
+            "register": "`Raspy`",
+            "character": "Hoarse, gritty",
+            "best-for": "Rock, blues, raw emotion"
+          },
+          {
+            "register": "`Belted`",
+            "character": "Maximum power, full volume",
+            "best-for": "Climax moments"
+          }
+        ]
+      },
+      {
+        "headers": [
+          "Register",
+          "Emotion"
+        ],
+        "rows": [
+          {
+            "register": "Falsetto",
+            "emotion": "Vulnerability, dream, longing"
+          },
+          {
+            "register": "Chest",
+            "emotion": "Strength, determination, confidence"
+          },
+          {
+            "register": "Whispered",
+            "emotion": "Intimacy, secrets, fragility"
+          },
+          {
+            "register": "Belted",
+            "emotion": "Climax, liberation, triumph"
+          },
+          {
+            "register": "Raspy",
+            "emotion": "Pain, experience, authenticity"
+          }
+        ]
+      }
+    ],
+    "category": "vocal-control"
+  },
+  {
+    "id": "trick-16",
+    "number": 16,
+    "day": 7,
+    "name": "Emotion Switching per Section",
+    "subtitle": "",
+    "reliability": 4,
+    "reliabilityLabel": "High",
+    "whatItDoes": "Instead of one global mood, you assign **different emotions to different sections**.\r\n\r\nThis biases:\r\n- Melody shape\r\n- Intensity\r\n- Harmonic tension (dark vs bright)\r\n- Pacing",
+    "whenItFails": [
+      "❌ Emotions contradict tempo (sad + fast)",
+      "❌ Everything is labeled emotional (no contrast)",
+      "❌ Emotions change too frequently",
+      "❌ Labels are too subtle or similar"
+    ],
+    "iterationAdvice": [
+      "Create clear emotional arc: beginning → middle → end",
+      "Use contrasting emotions: sad verse, triumphant chorus",
+      "Limit emotion labels: 3-4 per song",
+      "Match to lyrics: emotion should reinforce the words"
+    ],
+    "examples": [
+      {
+        "lyrics": "[Verse 1: Sad, Melancholic, Slow, Resigned]\r\nI lost you in the autumn rain\r\nThe leaves fell down like tears\r\nEverything we built together\r\nDisappeared with all those years\r\n\r\n[Verse 2: Angry, Bitter, Rising Tension]\r\nBut now I see you never cared\r\nYou played me like a fool\r\nI gave you everything I had\r\nAnd you broke every rule\r\n\r\n[Chorus: Triumphant, Defiant, Explosive]\r\nBut I'M FREE NOW! I'M FINALLY FREE!\r\nNO MORE CHAINS HOLDING ME!\r\nI'M STRONGER THAN I'VE EVER BEEN!\r\nTHIS IS MY VICTORY!\r\n\r\n[Bridge: Reflective, Bittersweet, Gentle]\r\nMaybe someday I'll forgive...\r\nMaybe time will heal these wounds...\r\nBut right now I'm just grateful\r\nThat I finally found the truth",
+        "style": "Emotional rock ballad, powerful female vocals, dynamic journey from soft to explosive, piano to full band arrangement, slow-mid tempo (80-90 BPM), cinematic build, cathartic release, strong emotional arc, modern rock production"
+      }
+    ],
+    "tables": [
+      {
+        "headers": [
+          "Emotional Tag",
+          "AI Adjustment"
+        ],
+        "rows": [
+          {
+            "emotional-tag": "Sad",
+            "ai-adjustment": "Minor key, slower, sparse"
+          },
+          {
+            "emotional-tag": "Angry",
+            "ai-adjustment": "Aggressive voice, faster, louder"
+          },
+          {
+            "emotional-tag": "Desperate",
+            "ai-adjustment": "Sparse instruments, raw vocals"
+          },
+          {
+            "emotional-tag": "Explosive",
+            "ai-adjustment": "Full band, maximum energy"
+          },
+          {
+            "emotional-tag": "Melancholic",
+            "ai-adjustment": "Slower tempo, minor harmonies"
+          },
+          {
+            "emotional-tag": "Euphoric",
+            "ai-adjustment": "Faster, major key, bright"
+          },
+          {
+            "emotional-tag": "Defiant",
+            "ai-adjustment": "Strong delivery, powerful"
+          },
+          {
+            "emotional-tag": "Reflective",
+            "ai-adjustment": "Gentle, thoughtful pacing"
+          },
+          {
+            "emotional-tag": "Triumphant",
+            "ai-adjustment": "Full arrangement, victorious"
+          }
+        ]
+      }
+    ],
+    "category": "emotion-dynamics"
+  },
+  {
+    "id": "trick-17",
+    "number": 17,
+    "day": 10,
+    "name": "\"Clean\" and \"FLAC\" Keywords for Quality",
+    "subtitle": "",
+    "reliability": 2,
+    "reliabilityLabel": "Low-Medium",
+    "whatItDoes": "Keywords like:\r\n- Clean\r\n- FLAC\r\n- High fidelity\r\n- Studio polish\r\n- Professional mix\r\n\r\ndo NOT increase bitrate or resolution.\r\n\r\nThey MAY bias Suno toward:\r\n- Simpler arrangements\r\n- Less distortion\r\n- More conservative mixing choices\r\n- Cleaner frequency separation\r\n\r\n**Think of it as reducing chaos, not increasing quality.**",
+    "whenItFails": [
+      "❌ Genre expects dirt (lo-fi, grunge, punk)",
+      "❌ Distortion is core to the style",
+      "❌ Audio input contradicts cleanliness",
+      "❌ You expect dramatic quality improvement"
+    ],
+    "iterationAdvice": [
+      "Don't stack excessively: 2-3 quality keywords max",
+      "Match to genre: clean works for EDM, not for lo-fi",
+      "Combine with good structure: keywords can't fix bad songs"
+    ],
+    "examples": [
+      {
+        "lyrics": "[Verse]\r\nFeel the rhythm taking over\r\nLet the bass control your soul\r\nWe're dancing into the sunrise\r\n\r\n[Drop | Explosive | Clean Mix]\r\nDrop it low!\r\nFeel the flow!\r\nLet it go!",
+        "style": "EDM progressive house, clean production, FLAC quality sound, studio polish, professional mix, high fidelity, crisp highs, tight controlled bass, balanced frequencies, mid-tempo (120-128 BPM), festival anthem, pristine sound design"
+      }
+    ],
+    "tables": [
+      {
+        "headers": [
+          "Keyword",
+          "Theoretical Effect"
+        ],
+        "rows": [
+          {
+            "keyword": "`Clean`",
+            "theoretical-effect": "Balanced mix, no mud"
+          },
+          {
+            "keyword": "`FLAC`",
+            "theoretical-effect": "High fidelity, sonic detail"
+          },
+          {
+            "keyword": "`Studio Polish`",
+            "theoretical-effect": "Professional production"
+          },
+          {
+            "keyword": "`High Fidelity`",
+            "theoretical-effect": "Maximum quality"
+          },
+          {
+            "keyword": "`Pristine`",
+            "theoretical-effect": "Clear, detailed"
+          },
+          {
+            "keyword": "`Professional Mix`",
+            "theoretical-effect": "Well-balanced"
+          },
+          {
+            "keyword": "`Crystal Clear`",
+            "theoretical-effect": "Bright, clean"
+          },
+          {
+            "keyword": "`Mastered`",
+            "theoretical-effect": "Polished final sound"
+          }
+        ]
+      }
+    ],
+    "category": "general"
+  },
+  {
+    "id": "trick-19",
+    "number": 19,
+    "day": 11,
+    "name": "Pro Studio Equipment Keywords",
+    "subtitle": "",
+    "reliability": 2,
+    "reliabilityLabel": "Low",
+    "whatItDoes": "Mentioning:\r\n- Neumann microphones\r\n- Neve consoles\r\n- SSL boards\r\n- Tape machines\r\n- Tube preamps\r\n\r\ndoes NOT simulate hardware.\r\n\r\nIt MIGHT trigger **aesthetic associations**:\r\n- Vintage warmth\r\n- Professional clarity\r\n- Analog character\r\n- Expensive sound",
+    "whenItFails": [
+      "❌ Stacked excessively (diminishing returns)",
+      "❌ Used as substitute for good structure",
+      "❌ Expected to \"fix\" bad prompts",
+      "❌ Contradicts genre (lo-fi with \"pristine Neumann\"?)"
+    ],
+    "iterationAdvice": [
+      "Use sparingly, or not at all: **Don't expect miracles**",
+      "Better to focus on style and structure: **This is the weakest production trick**"
+    ],
+    "examples": [
+      {
+        "lyrics": null,
+        "style": "Singer-songwriter, acoustic studio recording, Neumann microphone clarity, Neve preamp warmth, intimate female vocals, fingerpicked guitar, slow tempo (75-85 BPM), warm analog feel, professional yet intimate, vintage-inspired, recorded to tape aesthetic"
+      }
+    ],
+    "tables": [],
+    "category": "general"
+  },
+  {
+    "id": "trick-20",
+    "number": 20,
+    "day": 12,
+    "name": "Remix with 55% Audio Influence for \"Live Feel\"",
+    "subtitle": "",
+    "reliability": 4,
+    "reliabilityLabel": "High",
+    "whatItDoes": "Remixing an existing track with moderate audio influence:\r\n- Preserves melody and structure\r\n- Introduces looseness and imperfection\r\n- Adds performance artifacts\r\n- Creates \"live\" feel from \"studio\" track",
+    "whenItFails": [
+      "Original audio is too clean/sterile",
+      "Influence pushed too high (over 60%)",
+      "Genre discourages looseness (EDM, electronic)",
+      "Venue choice contradicts style"
+    ],
+    "iterationAdvice": [
+      "Choose venue that matches genre: **Don't expect sound effects** - think atmosphere, not literal sounds"
+    ],
+    "examples": [
+      {
+        "lyrics": null,
+        "style": "Live recording at Madison Square Garden, massive stadium atmosphere, 50,000 people, arena rock sound, raw performance energy, crowd singing along, imperfect timing, authentic concert recording, epic live feel, audience interaction"
+      }
+    ],
+    "tables": [
+      {
+        "headers": [
+          "Influence",
+          "Result"
+        ],
+        "rows": [
+          {
+            "influence": "≤50%",
+            "result": "Too different, loses melody"
+          },
+          {
+            "influence": "**55%**",
+            "result": "**Sweet spot** - preserves structure, adds character"
+          },
+          {
+            "influence": "≥60%",
+            "result": "Not enough transformation"
+          }
+        ]
+      }
+    ],
+    "category": "production"
+  }
+]
