@@ -1,0 +1,319 @@
+[
+  {
+    "id": "mapping-0",
+    "headers": [
+      "Register",
+      "Character",
+      "Best For"
+    ],
+    "entries": [
+      {
+        "register": "`Falsetto`",
+        "character": "Light, airy, high, head voice",
+        "best-for": "Ethereal moments, vulnerability"
+      },
+      {
+        "register": "`Chest Voice`",
+        "character": "Full, powerful, grounded",
+        "best-for": "Confident delivery"
+      },
+      {
+        "register": "`Head Voice`",
+        "character": "Clear, light, high but full",
+        "best-for": "Pop brightness"
+      },
+      {
+        "register": "`Mixed Voice`",
+        "character": "Balanced, versatile",
+        "best-for": "Modern pop/R&B"
+      },
+      {
+        "register": "`Whispered`",
+        "character": "Soft, intimate",
+        "best-for": "Secret, vulnerable"
+      },
+      {
+        "register": "`Spoken Word`",
+        "character": "Narrative, non-melodic",
+        "best-for": "Rap verses, intros"
+      },
+      {
+        "register": "`Raspy`",
+        "character": "Hoarse, gritty",
+        "best-for": "Rock, blues, raw emotion"
+      },
+      {
+        "register": "`Belted`",
+        "character": "Maximum power, full volume",
+        "best-for": "Climax moments"
+      }
+    ]
+  },
+  {
+    "id": "mapping-1",
+    "headers": [
+      "Register",
+      "Emotion"
+    ],
+    "entries": [
+      {
+        "register": "Falsetto",
+        "emotion": "Vulnerability, dream, longing"
+      },
+      {
+        "register": "Chest",
+        "emotion": "Strength, determination, confidence"
+      },
+      {
+        "register": "Whispered",
+        "emotion": "Intimacy, secrets, fragility"
+      },
+      {
+        "register": "Belted",
+        "emotion": "Climax, liberation, triumph"
+      },
+      {
+        "register": "Raspy",
+        "emotion": "Pain, experience, authenticity"
+      }
+    ]
+  },
+  {
+    "id": "mapping-2",
+    "headers": [
+      "Influence",
+      "Result"
+    ],
+    "entries": [
+      {
+        "influence": "≤50%",
+        "result": "Too different, loses melody"
+      },
+      {
+        "influence": "**55%**",
+        "result": "**Sweet spot** - preserves structure, adds character"
+      },
+      {
+        "influence": "≥60%",
+        "result": "Not enough transformation"
+      }
+    ]
+  },
+  {
+    "id": "mapping-3",
+    "headers": [
+      "Keyword",
+      "Theoretical Effect"
+    ],
+    "entries": [
+      {
+        "keyword": "`Clean`",
+        "theoretical-effect": "Balanced mix, no mud"
+      },
+      {
+        "keyword": "`FLAC`",
+        "theoretical-effect": "High fidelity, sonic detail"
+      },
+      {
+        "keyword": "`Studio Polish`",
+        "theoretical-effect": "Professional production"
+      },
+      {
+        "keyword": "`High Fidelity`",
+        "theoretical-effect": "Maximum quality"
+      },
+      {
+        "keyword": "`Pristine`",
+        "theoretical-effect": "Clear, detailed"
+      },
+      {
+        "keyword": "`Professional Mix`",
+        "theoretical-effect": "Well-balanced"
+      },
+      {
+        "keyword": "`Crystal Clear`",
+        "theoretical-effect": "Bright, clean"
+      },
+      {
+        "keyword": "`Mastered`",
+        "theoretical-effect": "Polished final sound"
+      }
+    ]
+  },
+  {
+    "id": "mapping-4",
+    "headers": [
+      "Emotional Tag",
+      "AI Adjustment"
+    ],
+    "entries": [
+      {
+        "emotional-tag": "Sad",
+        "ai-adjustment": "Minor key, slower, sparse"
+      },
+      {
+        "emotional-tag": "Angry",
+        "ai-adjustment": "Aggressive voice, faster, louder"
+      },
+      {
+        "emotional-tag": "Desperate",
+        "ai-adjustment": "Sparse instruments, raw vocals"
+      },
+      {
+        "emotional-tag": "Explosive",
+        "ai-adjustment": "Full band, maximum energy"
+      },
+      {
+        "emotional-tag": "Melancholic",
+        "ai-adjustment": "Slower tempo, minor harmonies"
+      },
+      {
+        "emotional-tag": "Euphoric",
+        "ai-adjustment": "Faster, major key, bright"
+      },
+      {
+        "emotional-tag": "Defiant",
+        "ai-adjustment": "Strong delivery, powerful"
+      },
+      {
+        "emotional-tag": "Reflective",
+        "ai-adjustment": "Gentle, thoughtful pacing"
+      },
+      {
+        "emotional-tag": "Triumphant",
+        "ai-adjustment": "Full arrangement, victorious"
+      }
+    ]
+  },
+  {
+    "id": "mapping-5",
+    "headers": [
+      "Genre",
+      "Common Adlibs"
+    ],
+    "entries": [
+      {
+        "genre": "Hip Hop/Trap",
+        "common-adlibs": "[yeah!], [uh!], [ayy!], [skrrt!], [woah!], [let's go!]"
+      },
+      {
+        "genre": "R&B/Soul",
+        "common-adlibs": "[ooh], [ahhh], [mmm], [oh yeah], [baby]"
+      },
+      {
+        "genre": "Rock/Metal",
+        "common-adlibs": "[hey!], [go!], [yeah!], [whoa-oh], [come on!]"
+      },
+      {
+        "genre": "Pop",
+        "common-adlibs": "[oh oh oh], [na na na], [la la la], [hey hey]"
+      },
+      {
+        "genre": "Latin",
+        "common-adlibs": "[dale!], [oye!], [vamos!]"
+      }
+    ]
+  },
+  {
+    "id": "mapping-6",
+    "headers": [
+      "Tag",
+      "Function"
+    ],
+    "entries": [
+      {
+        "tag": "`[Male Vocal]`",
+        "function": "Male voice"
+      },
+      {
+        "tag": "`[Female Vocal]`",
+        "function": "Female voice"
+      },
+      {
+        "tag": "`[Both Vocals]`",
+        "function": "Both together"
+      },
+      {
+        "tag": "`[Male Lead, Female Backing]`",
+        "function": "Male front, female background"
+      },
+      {
+        "tag": "`[Female Lead, Male Harmony]`",
+        "function": "Female front, male harmony"
+      },
+      {
+        "tag": "`[Duet]`",
+        "function": "Both voices, balanced"
+      }
+    ]
+  },
+  {
+    "id": "mapping-7",
+    "headers": [
+      "Format",
+      "Effect"
+    ],
+    "entries": [
+      {
+        "format": "`ALL CAPS + !`",
+        "effect": "Powerful, shouted"
+      },
+      {
+        "format": "`ALL CAPS + ?`",
+        "effect": "Dramatic, desperate"
+      },
+      {
+        "format": "`ALL CAPS + ?!`",
+        "effect": "Intense questioning"
+      },
+      {
+        "format": "`Mixed case + !`",
+        "effect": "Normal emphasis"
+      },
+      {
+        "format": "`lowercase`",
+        "effect": "Delicate (if tagged)"
+      }
+    ]
+  },
+  {
+    "id": "mapping-8",
+    "headers": [
+      "Standard Spelling",
+      "Phonetic Respelling",
+      "Why"
+    ],
+    "entries": [
+      {
+        "standard-spelling": "**read** (present tense)",
+        "phonetic-respelling": "`reed`",
+        "why": "Forces \"ree-d\" instead of \"red\""
+      },
+      {
+        "standard-spelling": "**live** (as in concert)",
+        "phonetic-respelling": "`lyve`",
+        "why": "Forces \"laiv\" instead of \"liv\""
+      },
+      {
+        "standard-spelling": "**bass** (instrument/low frequency)",
+        "phonetic-respelling": "`bahss` or `basss`",
+        "why": "Avoids \"base\" pronunciation"
+      },
+      {
+        "standard-spelling": "**tear** (crying)",
+        "phonetic-respelling": "`teer`",
+        "why": "Forces \"teer\" instead of \"tare\""
+      },
+      {
+        "standard-spelling": "**wound** (injury)",
+        "phonetic-respelling": "`woond`",
+        "why": "Forces \"woond\" instead of \"wownd\""
+      },
+      {
+        "standard-spelling": "**lead** (metal)",
+        "phonetic-respelling": "`led`",
+        "why": "Forces \"led\" instead of \"leed\""
+      }
+    ]
+  }
+]

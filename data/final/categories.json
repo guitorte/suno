@@ -1,0 +1,134 @@
+[
+  {
+    "id": "vocal-tone",
+    "name": "Vocal Tone",
+    "subcategories": [],
+    "tagCount": 17
+  },
+  {
+    "id": "vocal-effects",
+    "name": "Vocal Effects",
+    "subcategories": [],
+    "tagCount": 23
+  },
+  {
+    "id": "pitch-range",
+    "name": "Pitch Range",
+    "subcategories": [],
+    "tagCount": 15
+  },
+  {
+    "id": "vocal-texture",
+    "name": "Vocal Texture",
+    "subcategories": [],
+    "tagCount": 16
+  },
+  {
+    "id": "vocal-style",
+    "name": "Vocal Style",
+    "subcategories": [],
+    "tagCount": 19
+  },
+  {
+    "id": "dynamics",
+    "name": "Dynamics",
+    "subcategories": [],
+    "tagCount": 15
+  },
+  {
+    "id": "emotion-mood",
+    "name": "Emotion Mood",
+    "subcategories": [],
+    "tagCount": 18
+  },
+  {
+    "id": "timing-rhythm",
+    "name": "Timing Rhythm",
+    "subcategories": [],
+    "tagCount": 13
+  },
+  {
+    "id": "drums",
+    "name": "Drums",
+    "subcategories": [
+      "texture-timbre",
+      "rhythmic-movement",
+      "decay-sustain",
+      "spatial-stereo",
+      "energy-fx"
+    ],
+    "tagCount": 32
+  },
+  {
+    "id": "structure",
+    "name": "Structure",
+    "subcategories": [],
+    "tagCount": 12
+  },
+  {
+    "id": "mood-atmosphere",
+    "name": "Mood Atmosphere",
+    "subcategories": [],
+    "tagCount": 6
+  },
+  {
+    "id": "energy-intensity",
+    "name": "Energy Intensity",
+    "subcategories": [],
+    "tagCount": 9
+  },
+  {
+    "id": "instruments",
+    "name": "Instruments",
+    "subcategories": [],
+    "tagCount": 18
+  },
+  {
+    "id": "genre",
+    "name": "Genre",
+    "subcategories": [],
+    "tagCount": 19
+  },
+  {
+    "id": "vocal",
+    "name": "Vocal",
+    "subcategories": [],
+    "tagCount": 14
+  },
+  {
+    "id": "production",
+    "name": "Production",
+    "subcategories": [],
+    "tagCount": 16
+  },
+  {
+    "id": "harmony",
+    "name": "Harmony",
+    "subcategories": [],
+    "tagCount": 14
+  },
+  {
+    "id": "sound-effects",
+    "name": "Sound Effects",
+    "subcategories": [],
+    "tagCount": 15
+  },
+  {
+    "id": "keys-scales",
+    "name": "Keys Scales",
+    "subcategories": [],
+    "tagCount": 17
+  },
+  {
+    "id": "rhythm-tempo",
+    "name": "Rhythm Tempo",
+    "subcategories": [],
+    "tagCount": 15
+  },
+  {
+    "id": "advanced",
+    "name": "Advanced",
+    "subcategories": [],
+    "tagCount": 16
+  }
+]
