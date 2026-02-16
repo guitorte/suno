@@ -439,15 +439,26 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       padding: 16px;
-      font-family: 'Courier New', monospace;
-      font-size: 14px;
-      line-height: 1.6;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
       color: #eee;
       white-space: pre-wrap;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
       max-height: 400px;
       overflow-y: auto;
     }
+
+    .char-counter {
+      text-align: right;
+      font-size: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .char-counter.ok { color: #4CAF50; }
+    .char-counter.warn { color: #ff9800; }
+    .char-counter.over { color: #f44336; }
 
     .modal-actions {
       display: flex;
@@ -532,42 +543,6 @@
       animation: spin 0.8s linear infinite;
     }
 
-    /* API Key Section */
-    .api-key-section {
-      margin-bottom: 16px;
-      padding: 12px;
-      background: rgba(255, 152, 0, 0.1);
-      border: 1px solid rgba(255, 152, 0, 0.3);
-      border-radius: 12px;
-    }
-
-    .api-key-section p {
-      font-size: 12px;
-      color: #ffab40;
-      margin-bottom: 8px;
-    }
-
-    .api-key-input {
-      width: 100%;
-      padding: 10px;
-      font-size: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      background: rgba(0, 0, 0, 0.3);
-      color: #fff;
-      font-family: 'Courier New', monospace;
-    }
-
-    .api-key-help {
-      font-size: 11px;
-      color: #888;
-      margin-top: 6px;
-    }
-
-    .api-key-help a {
-      color: #667eea;
-      text-decoration: none;
-    }
   </style>
 </head>
 <body>
@@ -611,6 +586,7 @@
 
 
       <div class="generated-prompt" id="generatedPrompt">Your generated prompt will appear here...</div>
+      <div class="char-counter" id="charCounter"></div>
       <div class="modal-actions">
         <button class="btn btn-secondary" id="copyPromptBtn">
           <span>📋</span> Copy Prompt
@@ -882,7 +858,294 @@
     }
 
 
-    // Generate AI Prompt (Client-side)
+    // ─── Prose Description Engine ───
+    const R = arr => arr[Math.floor(Math.random() * arr.length)];
+
+    // Genre openers — each is a function receiving the genre names
+    const genreOpeners = [
+      g => `${g} hybrid with a fierce,`,
+      g => `Explosive ${g} groove featuring`,
+      g => `A modern ${g} fusion layered with`,
+      g => `${g} track fused with punchy,`,
+      g => `A driving ${g} composition built on`,
+      g => `${g} sound anchored by a tight,`,
+      g => `Raw ${g} energy propelled by`,
+      g => `Lush ${g} textures woven around`,
+    ];
+
+    // Instrument phrase builders
+    const instrumentPhrases = {
+      'Electric Guitar': [
+        'a crunchy, overdriven electric guitar powering syncopated riffs and anthemic power chords',
+        'high-gain Stratocaster riffs rooted in percussive downstrokes and angular chord stabs',
+        'distorted electric guitar delivering razor-sharp riffs with wah pedal expressiveness',
+        'a fuzzed-out electric guitar laying down driving, palm-muted power chords',
+      ],
+      'Acoustic Guitar': [
+        'warm acoustic guitar fingerpicking patterns weaving melodic counterlines',
+        'a resonant acoustic guitar strumming open chords with rhythmic precision',
+        'nylon-string acoustic guitar arpeggios adding organic warmth',
+      ],
+      'Bass Guitar': [
+        'electric bass locking tight with percussive, syncopated runs',
+        'a deep, rounded bass guitar grooving with off-beat swung lines',
+        'punchy bass guitar doubling and countering the harmonic foundation',
+      ],
+      'Piano': [
+        'piano chords punctuating with jazzy voicings and rhythmic comping',
+        'expressive piano lines adding harmonic depth and melodic fills',
+        'Rhodes-tinged piano textures layered beneath the arrangement',
+      ],
+      'Electric Piano': [
+        'warm electric piano pads and Rhodes textures adding soul',
+        'shimmering electric piano comping with vintage character',
+      ],
+      'Synthesizer': [
+        'layered synthesizer pads building atmospheric depth',
+        'analog synthesizer lines pulsing with rhythmic modulation',
+        'lush synth textures swelling beneath the arrangement',
+      ],
+      'Violin': [
+        'soaring violin lines weaving emotive, lyrical countermelodies',
+        'expressive violin adding classical elegance and tension',
+      ],
+      'Cello': [
+        'rich cello sustains providing a deep, resonant foundation',
+        'cello phrases adding cinematic gravitas and warmth',
+      ],
+      'Saxophone': [
+        'soulful saxophone improvisations adding jazzy sophistication',
+        'a wailing saxophone cutting through with bluesy expressiveness',
+      ],
+      'Trumpet': [
+        'bright trumpet stabs punctuating the arrangement with brass energy',
+        'muted trumpet lines adding smoky, jazz-inflected color',
+      ],
+      'Strings Section': [
+        'orchestral strings section swelling with cinematic intensity',
+        'lush string arrangements layering rich harmonic textures',
+      ],
+      'Organ': [
+        'a Hammond organ providing soulful, churchy warmth and grit',
+        'swirling organ tones adding vintage depth and sustain',
+      ],
+      'Flute': [
+        'delicate flute lines floating above the mix with airy grace',
+      ],
+      'Drums': [
+        'a dynamic drum kit driving the groove with chest-thumping energy',
+        'live drums punching through with tight snare, tom fills, and crisp hi-hats',
+      ],
+      'Electronic Drums': [
+        'punchy electronic drums providing a tight, modern rhythmic backbone',
+        'programmed beats with crisp transients and compressed punch',
+      ],
+      'Hand Percussion': [
+        'organic hand percussion adding polyrhythmic texture and swing',
+      ],
+      'Timpani': [
+        'thunderous timpani rolls adding dramatic orchestral weight',
+      ],
+      'Clarinet': [
+        'warm clarinet phrases weaving through the harmonic texture',
+      ],
+    };
+
+    // Vocal description builders
+    function buildVocalDesc(cats) {
+      const type = cats.vocal || [];
+      const tone = cats['vocal-tone'] || [];
+      const texture = cats['vocal-texture'] || [];
+      const style = cats['vocal-style'] || [];
+      const effects = cats['vocal-effects'] || [];
+      const pitch = cats['pitch-range'] || [];
+
+      const all = [...type, ...tone, ...texture, ...style, ...effects, ...pitch];
+      if (all.length === 0) return '';
+
+      const parts = [];
+
+      // Lead vocal type
+      if (type.length > 0) {
+        const t = type[0].name.toLowerCase();
+        parts.push(R([
+          `The lead vocal is ${t}, delivered with`,
+          `Vocals are defined by ${t} presence,`,
+          `A ${t} lead singer delivers lines with`,
+          `${type[0].name} drive the performance with`,
+        ]));
+      } else {
+        parts.push(R([
+          'The lead vocal delivers lines with',
+          'Vocals are defined by',
+          'The singer attacks each phrase with',
+        ]));
+      }
+
+      // Tone + texture adjectives
+      const adjs = [...tone, ...texture].map(t => t.name.toLowerCase());
+      if (adjs.length > 0) {
+        parts.push(adjs.slice(0, 3).join(', ') + ' character');
+      }
+
+      // Style details
+      if (style.length > 0) {
+        const s = style.map(t => t.name.toLowerCase());
+        parts.push(R([
+          `— alternating ${s.join(' and ')} phrasing`,
+          `, deploying ${s.join(', ')} technique`,
+          `, blending ${s.join(' with ')} delivery`,
+          `and ${s.join(', ')} vocal approach`,
+        ]));
+      }
+
+      // Effects
+      if (effects.length > 0) {
+        const e = effects.slice(0, 2).map(t => t.name.toLowerCase());
+        parts.push(R([
+          `, treated with ${e.join(' and ')} processing`,
+          `. Vocal production uses ${e.join(' and ')} textures`,
+          `, enhanced by ${e.join(' and ')} effects`,
+        ]));
+      }
+
+      // Pitch
+      if (pitch.length > 0) {
+        const p = pitch[0].name.toLowerCase();
+        parts.push(R([
+          `, reaching into ${p} territory`,
+          ` with ${p} range`,
+          `, exploiting a ${p} register`,
+        ]));
+      }
+
+      return parts.join(' ').replace(/\s{2,}/g, ' ').replace(/,\s*,/g, ',') + '.';
+    }
+
+    // Rhythm & groove description
+    function buildRhythmDesc(cats) {
+      const drums = cats.drums || [];
+      const rhythm = cats['rhythm-tempo'] || [];
+      const timing = cats['timing-rhythm'] || [];
+      const all = [...drums, ...rhythm, ...timing];
+      if (all.length === 0) return '';
+
+      const parts = [];
+
+      if (rhythm.length > 0) {
+        const r = rhythm.map(t => t.name.toLowerCase());
+        parts.push(R([
+          `The rhythm section drives a ${r.join(', ')} groove`,
+          `A ${r.join(' ')} rhythmic foundation anchors the track`,
+          `The pulse rides on ${r.join(' and ')} feel`,
+        ]));
+      }
+
+      if (drums.length > 0) {
+        const d = drums.slice(0, 2).map(t => t.name.toLowerCase());
+        parts.push(R([
+          `with ${d.join(' and ')} drum textures`,
+          `, percussion shaped by ${d.join(' and ')}`,
+          `layered with ${d.join(' and ')} patterns`,
+        ]));
+      }
+
+      if (timing.length > 0) {
+        const t = timing.map(t2 => t2.name.toLowerCase());
+        parts.push(R([
+          `, phrasing locked to a ${t.join(', ')} cadence`,
+          ` and ${t.join(', ')} rhythmic phrasing throughout`,
+          ` with ${t.join(' and ')} momentum`,
+        ]));
+      }
+
+      return parts.join(' ').replace(/\s{2,}/g, ' ') + '.';
+    }
+
+    // Mood, energy, atmosphere
+    function buildMoodDesc(cats) {
+      const mood = cats['emotion-mood'] || [];
+      const atmo = cats['mood-atmosphere'] || [];
+      const energy = cats['energy-intensity'] || [];
+      const all = [...mood, ...atmo, ...energy];
+      if (all.length === 0) return '';
+
+      const adjs = all.map(t => t.name.toLowerCase());
+      return R([
+        `The overall atmosphere is ${adjs.join(', ')}, maintaining tension and release throughout.`,
+        `The track delivers a ${adjs.join(', ')} energy that sustains from start to finish.`,
+        `A ${adjs.join(' and ')} vibe permeates the entire arrangement.`,
+        `The mood shifts between ${adjs.slice(0, 2).join(' and ')}${adjs.length > 2 ? ', building toward ' + adjs.slice(2).join(' ') : ''} intensity.`,
+      ]);
+    }
+
+    // Production, effects, harmony, keys
+    function buildProductionDesc(cats) {
+      const prod = cats.production || [];
+      const harmony = cats.harmony || [];
+      const keys = cats['keys-scales'] || [];
+      const sfx = cats['sound-effects'] || [];
+      const adv = cats.advanced || [];
+
+      const parts = [];
+
+      if (prod.length > 0) {
+        const p = prod.slice(0, 3).map(t => t.name.toLowerCase());
+        parts.push(R([
+          `Production relies on ${p.join(', ')}`,
+          `The mix features ${p.join(' and ')}`,
+          `${p.map(x => x.charAt(0).toUpperCase() + x.slice(1)).join(' and ')} shape the sonic palette`,
+        ]));
+      }
+
+      if (harmony.length > 0 || keys.length > 0) {
+        const h = [...harmony, ...keys].slice(0, 2).map(t => t.name);
+        parts.push(R([
+          `built on ${h.join(' and ')} harmonic foundation`,
+          `rooted in ${h.join(', ')}`,
+          `with ${h.join(' and ')} tonality`,
+        ]));
+      }
+
+      if (sfx.length > 0) {
+        const s = sfx.map(t => t.name.toLowerCase());
+        parts.push(`textured with ${s.join(', ')} ambience`);
+      }
+
+      if (adv.length > 0) {
+        const a = adv.slice(0, 2).map(t => t.name.toLowerCase());
+        parts.push(R([
+          `employing ${a.join(' and ')} techniques`,
+          `with ${a.join(' and ')} compositional approach`,
+        ]));
+      }
+
+      if (parts.length === 0) return '';
+      return parts.join(', ') + '.';
+    }
+
+    // Structure description
+    function buildStructureDesc(cats) {
+      const struct = cats.structure || [];
+      if (struct.length === 0) return '';
+      const dynamics = cats.dynamics || [];
+
+      const sections = struct.map(t => t.name.toLowerCase());
+      let desc = R([
+        `The arrangement moves through ${sections.join(', ')}`,
+        `Structured around ${sections.join(', ')} sections`,
+        `The song unfolds across ${sections.join(', ')}`,
+      ]);
+
+      if (dynamics.length > 0) {
+        const d = dynamics.slice(0, 2).map(t => t.name.toLowerCase());
+        desc += `, with ${d.join(' and ')} dynamic shifts between sections`;
+      }
+
+      return desc + '.';
+    }
+
+    // Main generation function
     function generateAIPrompt() {
       const selectedTagsList = Array.from(selectedTags)
         .map(id => tags.find(t => t.id === id))
@@ -895,162 +1158,97 @@
 
       const loadingOverlay = document.getElementById('loadingOverlay');
       const generatedPrompt = document.getElementById('generatedPrompt');
+      const charCounter = document.getElementById('charCounter');
 
       loadingOverlay.classList.add('show');
-      generatedPrompt.textContent = 'Generating your AI prompt...';
+      generatedPrompt.textContent = 'Generating...';
 
-      // Simulate processing time
       setTimeout(() => {
         try {
-          // Organize tags by category
-          const tagsByCategory = {};
+          // Organize selected tags by category
+          const cats = {};
           selectedTagsList.forEach(tag => {
-            if (!tagsByCategory[tag.category]) {
-              tagsByCategory[tag.category] = [];
-            }
-            tagsByCategory[tag.category].push(tag);
+            if (!cats[tag.category]) cats[tag.category] = [];
+            cats[tag.category].push(tag);
           });
 
-          // Build comprehensive prompt
-          let promptParts = [];
+          // Build description sections
+          const sections = [];
 
-          // Introduction templates
-          const intros = [
-            "Create a captivating track with",
-            "Produce an immersive song featuring",
-            "Generate a compelling composition with",
-            "Craft a dynamic piece that combines",
-            "Design a memorable track showcasing"
-          ];
-          const intro = intros[Math.floor(Math.random() * intros.length)];
-
-          // Genre description
-          if (tagsByCategory.genre) {
-            const genres = tagsByCategory.genre.map(t => t.name.toLowerCase()).join(' and ');
-            promptParts.push(`${genres} influences`);
+          // 1. Genre opener
+          if (cats.genre) {
+            const genreNames = cats.genre.map(t => t.name.toLowerCase()).join(' ');
+            sections.push(R(genreOpeners)(genreNames.charAt(0).toUpperCase() + genreNames.slice(1)));
           }
 
-          // Vocal characteristics
-          const vocalCats = ['vocal', 'vocal-tone', 'vocal-texture', 'vocal-style', 'vocal-effects', 'pitch-range'];
-          const vocalTags = vocalCats.flatMap(cat => tagsByCategory[cat] || []);
-          if (vocalTags.length > 0) {
-            const vocalDesc = vocalTags.slice(0, 3).map(t => t.name.toLowerCase()).join(', ');
-            promptParts.push(`${vocalDesc} vocals`);
+          // 2. Instruments
+          const instTags = cats.instruments || [];
+          if (instTags.length > 0) {
+            const instDescs = [];
+            instTags.forEach(t => {
+              const phrases = instrumentPhrases[t.name];
+              if (phrases) {
+                instDescs.push(R(phrases));
+              } else {
+                instDescs.push(`${t.name.toLowerCase()} adding tonal color`);
+              }
+            });
+            // Join first 3 instrument descriptions
+            sections.push(instDescs.slice(0, 3).join('; ') + '.');
           }
 
-          // Instrumentation
-          if (tagsByCategory.instruments) {
-            const instruments = tagsByCategory.instruments.map(t => t.name.toLowerCase()).join(', ');
-            promptParts.push(`featuring ${instruments}`);
-          }
+          // 3. Rhythm & groove
+          const rhythmDesc = buildRhythmDesc(cats);
+          if (rhythmDesc) sections.push(rhythmDesc);
 
-          // Drums & rhythm
-          if (tagsByCategory.drums || tagsByCategory['rhythm-tempo'] || tagsByCategory['timing-rhythm']) {
-            const rhythmTags = [
-              ...(tagsByCategory.drums || []),
-              ...(tagsByCategory['rhythm-tempo'] || []),
-              ...(tagsByCategory['timing-rhythm'] || [])
-            ];
-            if (rhythmTags.length > 0) {
-              const rhythmDesc = rhythmTags.slice(0, 2).map(t => t.name.toLowerCase()).join(' and ');
-              promptParts.push(`with ${rhythmDesc} percussion`);
+          // 4. Vocals
+          const vocalDesc = buildVocalDesc(cats);
+          if (vocalDesc) sections.push(vocalDesc);
+
+          // 5. Mood & atmosphere
+          const moodDesc = buildMoodDesc(cats);
+          if (moodDesc) sections.push(moodDesc);
+
+          // 6. Production & harmony
+          const prodDesc = buildProductionDesc(cats);
+          if (prodDesc) sections.push(prodDesc);
+
+          // 7. Structure
+          const structDesc = buildStructureDesc(cats);
+          if (structDesc) sections.push(structDesc);
+
+          // Join all sections into flowing prose
+          let fullText = sections.join(' ').replace(/\.\s*\./g, '.').replace(/\s{2,}/g, ' ').trim();
+
+          // Enforce 890 character limit
+          if (fullText.length > 890) {
+            // Cut at last complete sentence before 890
+            let cut = fullText.substring(0, 890);
+            const lastPeriod = cut.lastIndexOf('.');
+            if (lastPeriod > 200) {
+              fullText = cut.substring(0, lastPeriod + 1);
+            } else {
+              fullText = cut.trimEnd() + '...';
             }
           }
 
-          // Mood & atmosphere
-          const moodCats = ['emotion-mood', 'mood-atmosphere', 'energy-intensity'];
-          const moodTags = moodCats.flatMap(cat => tagsByCategory[cat] || []);
-          if (moodTags.length > 0) {
-            const moodDesc = moodTags.map(t => t.name.toLowerCase()).join(', ');
-            promptParts.push(`delivering a ${moodDesc} atmosphere`);
-          }
+          generatedPrompt.textContent = fullText;
 
-          // Production & effects
-          if (tagsByCategory.production) {
-            const fx = tagsByCategory.production.slice(0, 2).map(t => t.name.toLowerCase()).join(' and ');
-            promptParts.push(`enhanced with ${fx}`);
-          }
+          // Update character counter
+          const len = fullText.length;
+          charCounter.textContent = `${len} / 890 characters`;
+          charCounter.className = 'char-counter ' + (len <= 750 ? 'ok' : len <= 890 ? 'warn' : 'over');
 
-          // Harmony & keys
-          if (tagsByCategory.harmony || tagsByCategory['keys-scales']) {
-            const harmonyTags = [
-              ...(tagsByCategory.harmony || []),
-              ...(tagsByCategory['keys-scales'] || [])
-            ];
-            if (harmonyTags.length > 0) {
-              const harmonyDesc = harmonyTags[0].name;
-              promptParts.push(`in ${harmonyDesc}`);
-            }
-          }
-
-          // Dynamics
-          if (tagsByCategory.dynamics) {
-            const dynamicsDesc = tagsByCategory.dynamics.map(t => t.name.toLowerCase()).join(' and ');
-            promptParts.push(`with ${dynamicsDesc} dynamics`);
-          }
-
-          // Sound effects
-          if (tagsByCategory['sound-effects']) {
-            const sfx = tagsByCategory['sound-effects'].map(t => t.name.toLowerCase()).join(', ');
-            promptParts.push(`incorporating ${sfx} sound effects`);
-          }
-
-          // Build description
-          let description = intro + ' ' + promptParts.join(', ') + '.';
-
-          // Structure suggestion
-          let structureSuggestion = '';
-          if (tagsByCategory.structure) {
-            structureSuggestion = '\n\nSong Structure:\n' +
-              tagsByCategory.structure.map(t => `- ${t.name}`).join('\n');
-          } else {
-            structureSuggestion = '\n\nSuggested Structure:\n- Intro\n- Verse 1\n- Chorus\n- Verse 2\n- Chorus\n- Bridge\n- Chorus x2\n- Outro';
-          }
-
-          // Advanced techniques
-          let advancedTechniques = '';
-          if (tagsByCategory.advanced) {
-            advancedTechniques = '\n\nAdvanced Techniques:\n' +
-              tagsByCategory.advanced.map(t => `- ${t.name}`).join('\n');
-          }
-
-          // All selected tags syntax
-          const tagSyntax = selectedTagsList.map(t => t.syntax).join(' ');
-
-          // Final output
-          const output = `🎵 SUNO AI PROMPT
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${description}
-${structureSuggestion}
-${advancedTechniques}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📝 SUNO TAGS (Copy these to Suno):
-
-${tagSyntax}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💡 TIP: Paste the description AND tags into Suno
-   for best results!
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✨ Generated by Suno AI Prompt Generator
-   ${selectedTagsList.length} tags selected
-`;
-
-          generatedPrompt.textContent = output;
-          showToast('Prompt generated successfully!');
+          showToast('Prompt generated!');
 
         } catch (error) {
           console.error('Generation error:', error);
-          const tagSyntax = selectedTagsList.map(t => t.syntax).join(' ');
-          generatedPrompt.textContent = `Selected tags:\n${tagSyntax}`;
+          generatedPrompt.textContent = selectedTagsList.map(t => t.syntax).join(' ');
           showToast('Error generating description', true);
         } finally {
           loadingOverlay.classList.remove('show');
         }
-      }, 800); // Simulated processing time
+      }, 500);
     }
 
     // Copy prompt
