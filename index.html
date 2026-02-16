@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0f0f1e">
+  <title>Suno AI Prompt Generator</title>
+  <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;Suno AI Generator&quot;,&quot;short_name&quot;:&quot;Suno&quot;,&quot;start_url&quot;:&quot;.&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;%230f0f1e&quot;,&quot;theme_color&quot;:&quot;%230f0f1e&quot;}">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+      color: #eee;
+      min-height: 100vh;
+      padding-bottom: 160px;
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 15, 30, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .header h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 12px;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      background: rgba(45, 45, 68, 0.5);
+      color: #fff;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    .search-box:focus {
+      border-color: #667eea;
+      background: rgba(45, 45, 68, 0.8);
+    }
+
+    .search-box::placeholder {
+      color: #888;
+    }
+
+    /* Categories */
+    .category {
+      margin-bottom: 8px;
+    }
+
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      cursor: pointer;
+      background: rgba(26, 26, 46, 0.6);
+      user-select: none;
+      border-radius: 12px;
+      margin: 8px;
+      transition: all 0.2s;
+    }
+
+    .category-header:active {
+      transform: scale(0.98);
+      background: rgba(45, 45, 68, 0.8);
+    }
+
+    .category-title {
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cat-icon {
+      font-size: 20px;
+    }
+
+    .category-count {
+      background: rgba(102, 126, 234, 0.3);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #667eea;
+    }
+
+    .category-arrow {
+      font-size: 12px;
+      transition: transform 0.3s;
+      color: #888;
+    }
+
+    .category.open .category-arrow {
+      transform: rotate(90deg);
+    }
+
+    .category-content {
+      display: none;
+      padding: 8px;
+    }
+
+    .category.open .category-content {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Tag Grid */
+    .tag-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+      padding: 8px;
+    }
+
+    .tag-card {
+      background: rgba(45, 45, 68, 0.6);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tag-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .tag-card:active {
+      transform: scale(0.95);
+    }
+
+    .tag-card.selected {
+      border-color: #667eea;
+      background: rgba(102, 126, 234, 0.2);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .tag-card.selected::before {
+      opacity: 0.1;
+    }
+
+    .tag-card-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .tag-card-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .tag-card.selected .tag-card-name {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .tag-card-syntax {
+      font-size: 11px;
+      color: #888;
+      font-family: 'Courier New', monospace;
+    }
+
+    .tag-card.selected .tag-card-syntax {
+      color: #aaa;
+    }
+
+    .tag-card-check {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #667eea;
+      color: white;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      z-index: 2;
+    }
+
+    .tag-card.selected .tag-card-check {
+      display: flex;
+    }
+
+    /* Bottom Panel */
+    .bottom-panel {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 15, 30, 0.98);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 16px;
+      z-index: 200;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .selected-tags {
+      margin-bottom: 12px;
+      max-height: 60px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .selected-tags-list {
+      display: flex;
+      gap: 8px;
+      padding-bottom: 8px;
+    }
+
+    .selected-tag-chip {
+      background: rgba(102, 126, 234, 0.3);
+      border: 1px solid #667eea;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #fff;
+    }
+
+    .selected-tag-remove {
+      cursor: pointer;
+      font-weight: bold;
+      opacity: 0.7;
+    }
+
+    .selected-tag-remove:active {
+      opacity: 1;
+    }
+
+    .empty-selection {
+      text-align: center;
+      color: #666;
+      font-size: 13px;
+      padding: 8px;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(45, 45, 68, 0.8);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn.loading {
+      pointer-events: none;
+    }
+
+    .btn.loading::after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 300;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.show {
+      display: flex;
+      animation: fadeIn 0.3s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      animation: slideUp 0.3s;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .modal-close {
+      font-size: 28px;
+      cursor: pointer;
+      color: #888;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .modal-close:active {
+      color: #fff;
+    }
+
+    .generated-prompt {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #eee;
+      white-space: pre-wrap;
+      margin-bottom: 16px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 180px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      pointer-events: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .toast.error {
+      background: #f44336;
+    }
+
+    /* Search results */
+    .search-results {
+      padding: 16px;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 40px 16px;
+      color: #888;
+    }
+
+    body.searching .category {
+      display: none;
+    }
+
+    body.searching .search-results {
+      display: block;
+    }
+
+    body:not(.searching) .search-results {
+      display: none;
+    }
+
+    /* Loading state */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 250;
+    }
+
+    .loading-overlay.show {
+      display: flex;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top-color: #667eea;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    /* API Key Section */
+    .api-key-section {
+      margin-bottom: 16px;
+      padding: 12px;
+      background: rgba(255, 152, 0, 0.1);
+      border: 1px solid rgba(255, 152, 0, 0.3);
+      border-radius: 12px;
+    }
+
+    .api-key-section p {
+      font-size: 12px;
+      color: #ffab40;
+      margin-bottom: 8px;
+    }
+
+    .api-key-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      font-family: 'Courier New', monospace;
+    }
+
+    .api-key-help {
+      font-size: 11px;
+      color: #888;
+      margin-top: 6px;
+    }
+
+    .api-key-help a {
+      color: #667eea;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🎵 Suno AI Prompt Generator</h1>
+    <p>Select tags and generate AI-powered prompts</p>
+    <input type="text" class="search-box" placeholder="Search 339 tags..." id="search">
+  </div>
+
+  <div class="search-results" id="searchResults">
+    <div class="tag-grid" id="searchTagGrid"></div>
+    <div class="no-results" id="noResults" style="display:none">No tags found</div>
+  </div>
+
+  <div id="categories"></div>
+
+  <div class="bottom-panel">
+    <div class="selected-tags" id="selectedTagsContainer">
+      <div class="empty-selection">Select tags to build your prompt</div>
+      <div class="selected-tags-list" id="selectedTagsList" style="display:none"></div>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-secondary" id="clearBtn">
+        <span>🗑️</span> Clear
+      </button>
+      <button class="btn btn-secondary" id="randomBtn">
+        <span>🎲</span> Random
+      </button>
+      <button class="btn btn-primary" id="generateBtn" disabled>
+        <span>✨</span> Generate AI Prompt
+      </button>
+    </div>
+  </div>
+
+  <div class="modal" id="promptModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">✨ AI Generated Prompt</div>
+        <div class="modal-close" id="modalClose">&times;</div>
+      </div>
+
+      <div class="api-key-section" id="apiKeySection">
+        <p>🔑 Enter your Hugging Face API token (free):</p>
+        <input
+          type="password"
+          class="api-key-input"
+          id="apiKeyInput"
+          placeholder="hf_..."
+        >
+        <div class="api-key-help">
+          Get free token at <a href="https://huggingface.co/settings/tokens" target="_blank">huggingface.co/settings/tokens</a>
+        </div>
+      </div>
+
+      <div class="generated-prompt" id="generatedPrompt">Your generated prompt will appear here...</div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="copyPromptBtn">
+          <span>📋</span> Copy Prompt
+        </button>
+        <button class="btn btn-primary" id="regenerateBtn">
+          <span>🔄</span> Regenerate
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // Embedded data
+    const tags = [{"id":"tag-airy","name":"Airy","category":"vocal-tone","syntax":"[Airy]"},{"id":"tag-breathy","name":"Breathy","category":"vocal-tone","syntax":"[Breathy]"},{"id":"tag-crisp","name":"Crisp","category":"vocal-tone","syntax":"[Crisp]"},{"id":"tag-deep","name":"Deep","category":"vocal-tone","syntax":"[Deep]"},{"id":"tag-gritty","name":"Gritty","category":"vocal-tone","syntax":"[Gritty]"},{"id":"tag-smooth","name":"Smooth","category":"vocal-tone","syntax":"[Smooth]"},{"id":"tag-soft","name":"Soft","category":"vocal-tone","syntax":"[Soft]"},{"id":"tag-warm","name":"Warm","category":"vocal-tone","syntax":"[Warm]"},{"id":"tag-raw","name":"Raw","category":"vocal-tone","syntax":"[Raw]"},{"id":"tag-sharp","name":"Sharp","category":"vocal-tone","syntax":"[Sharp]"},{"id":"tag-muffled","name":"Muffled","category":"vocal-tone","syntax":"[Muffled]"},{"id":"tag-bright","name":"Bright","category":"vocal-tone","syntax":"[Bright]"},{"id":"tag-mellow","name":"Mellow","category":"vocal-tone","syntax":"[Mellow]"},{"id":"tag-raspy","name":"Raspy","category":"vocal-tone","syntax":"[Raspy]"},{"id":"tag-clear","name":"Clear","category":"vocal-tone","syntax":"[Clear]"},{"id":"tag-thin","name":"Thin","category":"vocal-tone","syntax":"[Thin]"},{"id":"tag-dense","name":"Dense","category":"vocal-tone","syntax":"[Dense]"},{"id":"tag-auto-tuned","name":"Auto-tuned","category":"vocal-effects","syntax":"[Auto-tuned]"},{"id":"tag-distorted","name":"Distorted","category":"vocal-effects","syntax":"[Distorted]"},{"id":"tag-reverbed","name":"Reverbed","category":"vocal-effects","syntax":"[Reverbed]"},{"id":"tag-echoed","name":"Echoed","category":"vocal-effects","syntax":"[Echoed]"},{"id":"tag-layered","name":"Layered","category":"vocal-effects","syntax":"[Layered]"},{"id":"tag-chopped","name":"Chopped","category":"vocal-effects","syntax":"[Chopped]"},{"id":"tag-filtered","name":"Filtered","category":"vocal-effects","syntax":"[Filtered]"},{"id":"tag-vocoder","name":"Vocoder","category":"vocal-effects","syntax":"[Vocoder]"},{"id":"tag-robotized","name":"Robotized","category":"vocal-effects","syntax":"[Robotized]"},{"id":"tag-phased","name":"Phased","category":"vocal-effects","syntax":"[Phased]"},{"id":"tag-flanged","name":"Flanged","category":"vocal-effects","syntax":"[Flanged]"},{"id":"tag-time-stretched","name":"Time-stretched","category":"vocal-effects","syntax":"[Time-stretched]"},{"id":"tag-lo-fi","name":"Lo-fi","category":"vocal-effects","syntax":"[Lo-fi]"},{"id":"tag-bit-crushed","name":"Bit-crushed","category":"vocal-effects","syntax":"[Bit-crushed]"},{"id":"tag-glitched","name":"Glitched","category":"vocal-effects","syntax":"[Glitched]"},{"id":"tag-stuttered","name":"Stuttered","category":"vocal-effects","syntax":"[Stuttered]"},{"id":"tag-modulated","name":"Modulated","category":"vocal-effects","syntax":"[Modulated]"},{"id":"tag-granular","name":"Granular","category":"vocal-effects","syntax":"[Granular]"},{"id":"tag-doubled","name":"Doubled","category":"vocal-effects","syntax":"[Doubled]"},{"id":"tag-auto-harmonized","name":"Auto-harmonized","category":"vocal-effects","syntax":"[Auto-harmonized]"},{"id":"tag-saturated","name":"Saturated","category":"vocal-effects","syntax":"[Saturated]"},{"id":"tag-ring-modulated","name":"Ring-modulated","category":"vocal-effects","syntax":"[Ring-modulated]"},{"id":"tag-detuned","name":"Detuned","category":"vocal-effects","syntax":"[Detuned]"},{"id":"tag-low-pitched","name":"Low-pitched","category":"pitch-range","syntax":"[Low-pitched]"},{"id":"tag-high-pitched","name":"High-pitched","category":"pitch-range","syntax":"[High-pitched]"},{"id":"tag-mid-range","name":"Mid-range","category":"pitch-range","syntax":"[Mid-range]"},{"id":"tag-sub-bass-vocals","name":"Sub-bass vocals","category":"pitch-range","syntax":"[Sub-bass vocals]"},{"id":"tag-falsetto","name":"Falsetto","category":"pitch-range","syntax":"[Falsetto]"},{"id":"tag-baritone","name":"Baritone","category":"pitch-range","syntax":"[Baritone]"},{"id":"tag-soprano","name":"Soprano","category":"pitch-range","syntax":"[Soprano]"},{"id":"tag-tenor","name":"Tenor","category":"pitch-range","syntax":"[Tenor]"},{"id":"tag-contralto","name":"Contralto","category":"pitch-range","syntax":"[Contralrange]"},{"id":"tag-whispered-falsetto","name":"Whispered falsetto","category":"pitch-range","syntax":"[Whispered falsetto]"},{"id":"tag-harmonized-layers","name":"Harmonized layers","category":"pitch-range","syntax":"[Harmonized layers]"},{"id":"tag-dissonant-harmonies","name":"Dissonant harmonies","category":"pitch-range","syntax":"[Dissonant harmonies]"},{"id":"tag-pitch-bent","name":"Pitch-bent","category":"pitch-range","syntax":"[Pitch-bent]"},{"id":"tag-modulated-pitch","name":"Modulated pitch","category":"pitch-range","syntax":"[Modulated pitch]"},{"id":"tag-subtle-detune","name":"Subtle detune","category":"pitch-range","syntax":"[Subtle detune]"},{"id":"tag-whispered","name":"Whispered","category":"vocal-texture","syntax":"[Whispered]"},{"id":"tag-gravelly","name":"Gravelly","category":"vocal-texture","syntax":"[Gravelly]"},{"id":"tag-velvety","name":"Velvety","category":"vocal-texture","syntax":"[Velvety]"},{"id":"tag-dreamy","name":"Dreamy","category":"vocal-texture","syntax":"[Dreamy]"},{"id":"tag-resonant","name":"Resonant","category":"vocal-texture","syntax":"[Resonant]"},{"id":"tag-nasal","name":"Nasal","category":"vocal-texture","syntax":"[Nasal]"},{"id":"tag-brassy","name":"Brassy","category":"vocal-texture","syntax":"[Brassy]"},{"id":"tag-metallic","name":"Metallic","category":"vocal-texture","syntax":"[Metallic]"},{"id":"tag-smoky","name":"Smoky","category":"vocal-texture","syntax":"[Smoky]"},{"id":"tag-chilled","name":"Chilled","category":"vocal-texture","syntax":"[Chilled]"},{"id":"tag-rough-edged","name":"Rough-edged","category":"vocal-texture","syntax":"[Rough-edged]"},{"id":"tag-shimmery","name":"Shimmery","category":"vocal-texture","syntax":"[Shimmery]"},{"id":"tag-glassy","name":"Glassy","category":"vocal-texture","syntax":"[Glassy]"},{"id":"tag-crunchy","name":"Crunchy","category":"vocal-texture","syntax":"[Crunchy]"},{"id":"tag-liquid-like","name":"Liquid-like","category":"vocal-texture","syntax":"[Liquid-like]"},{"id":"tag-breathy-exhale","name":"Breathy exhale","category":"vocal-texture","syntax":"[Breathy exhale]"},{"id":"tag-staccato","name":"Staccato","category":"vocal-style","syntax":"[Staccato]"},{"id":"tag-legato","name":"Legato","category":"vocal-style","syntax":"[Legato]"},{"id":"tag-vibrato-heavy","name":"Vibrato-heavy","category":"vocal-style","syntax":"[Vibrato-heavy]"},{"id":"tag-monotone","name":"Monotone","category":"vocal-style","syntax":"[Monotone]"},{"id":"tag-melismatic","name":"Melismatic","category":"vocal-style","syntax":"[Melismatic]"},{"id":"tag-syncopated","name":"Syncopated","category":"vocal-style","syntax":"[Syncopated]"},{"id":"tag-operatic","name":"Operatic","category":"vocal-style","syntax":"[Operatic]"},{"id":"tag-chanting","name":"Chanting","category":"vocal-style","syntax":"[Chanting]"},{"id":"tag-spoken-word","name":"Spoken-word","category":"vocal-style","syntax":"[Spoken-word]"},{"id":"tag-growling","name":"Growling","category":"vocal-style","syntax":"[Growling]"},{"id":"tag-belting","name":"Belting","category":"vocal-style","syntax":"[Belting]"},{"id":"tag-yodeling","name":"Yodeling","category":"vocal-style","syntax":"[Yodeling]"},{"id":"tag-humming","name":"Humming","category":"vocal-style","syntax":"[Humming]"},{"id":"tag-rapping","name":"Rapping","category":"vocal-style","syntax":"[Rapping]"},{"id":"tag-scatting","name":"Scatting","category":"vocal-style","syntax":"[Scatting]"},{"id":"tag-falsetto-runs","name":"Falsetto runs","category":"vocal-style","syntax":"[Falsetto runs]"},{"id":"tag-yelping","name":"Yelping","category":"vocal-style","syntax":"[Yelping]"},{"id":"tag-grunting","name":"Grunting","category":"vocal-style","syntax":"[Grunting]"},{"id":"tag-call-and-response","name":"Call-and-response","category":"vocal-style","syntax":"[Call-and-response]"},{"id":"tag-soft-spoken","name":"Soft-spoken","category":"dynamics","syntax":"[Soft-spoken]"},{"id":"tag-shouted","name":"Shouted","category":"dynamics","syntax":"[Shouted]"},{"id":"tag-crescendo","name":"Crescendo","category":"dynamics","syntax":"[Crescendo]"},{"id":"tag-decrescendo","name":"Decrescendo","category":"dynamics","syntax":"[Decrescendo]"},{"id":"tag-sudden-stop","name":"Sudden stop","category":"dynamics","syntax":"[Sudden stop]"},{"id":"tag-building-intensity","name":"Building intensity","category":"dynamics","syntax":"[Building intensity]"},{"id":"tag-explosive","name":"Explosive","category":"dynamics","syntax":"[Explosive]"},{"id":"tag-subtle","name":"Subtle","category":"dynamics","syntax":"[Subtle]"},{"id":"tag-whispered-vocals","name":"Whispered vocals","category":"dynamics","syntax":"[Whispered vocals]"},{"id":"tag-breathy-build-up","name":"Breathy build-up","category":"dynamics","syntax":"[Breathy build-up]"},{"id":"tag-intense-climax","name":"Intense climax","category":"dynamics","syntax":"[Intense climax]"},{"id":"tag-dynamic-shifts","name":"Dynamic shifts","category":"dynamics","syntax":"[Dynamic shifts]"},{"id":"tag-fading-vocals","name":"Fading vocals","category":"dynamics","syntax":"[Fading vocals]"},{"id":"tag-echoing-softly","name":"Echoing softly","category":"dynamics","syntax":"[Echoing softly]"},{"id":"tag-reverb-swell","name":"Reverb swell","category":"dynamics","syntax":"[Reverb swell]"},{"id":"tag-sultry","name":"Sultry","category":"emotion-mood","syntax":"[Sultry]"},{"id":"tag-ethereal","name":"Ethereal","category":"emotion-mood","syntax":"[Ethereal]"},{"id":"tag-melancholic","name":"Melancholic","category":"emotion-mood","syntax":"[Melancholic]"},{"id":"tag-playful","name":"Playful","category":"emotion-mood","syntax":"[Playful]"},{"id":"tag-aggressive","name":"Aggressive","category":"emotion-mood","syntax":"[Aggressive]"},{"id":"tag-haunting","name":"Haunting","category":"emotion-mood","syntax":"[Haunting]"},{"id":"tag-euphoric","name":"Euphoric","category":"emotion-mood","syntax":"[Euphoric]"},{"id":"tag-mysterious","name":"Mysterious","category":"emotion-mood","syntax":"[Mysterious]"},{"id":"tag-hypnotic","name":"Hypnotic","category":"emotion-mood","syntax":"[Hypnotic]"},{"id":"tag-confident","name":"Confident","category":"emotion-mood","syntax":"[Confident]"},{"id":"tag-desperate","name":"Desperate","category":"emotion-mood","syntax":"[Desperate]"},{"id":"tag-tranquil","name":"Tranquil","category":"emotion-mood","syntax":"[Tranquil]"},{"id":"tag-emotive","name":"Emotive","category":"emotion-mood","syntax":"[Emotive]"},{"id":"tag-longing","name":"Longing","category":"emotion-mood","syntax":"[Longing]"},{"id":"tag-angsty","name":"Angsty","category":"emotion-mood","syntax":"[Angsty]"},{"id":"tag-triumphant","name":"Triumphant","category":"emotion-mood","syntax":"[Triumphant]"},{"id":"tag-introspective","name":"Introspective","category":"emotion-mood","syntax":"[Introspective]"},{"id":"tag-detached","name":"Detached","category":"emotion-mood","syntax":"[Detached]"},{"id":"tag-off-beat","name":"Off-beat","category":"timing-rhythm","syntax":"[Off-beat]"},{"id":"tag-on-beat","name":"On-beat","category":"timing-rhythm","syntax":"[On-beat]"},{"id":"tag-fast-paced","name":"Fast-paced","category":"timing-rhythm","syntax":"[Fast-paced]"},{"id":"tag-laid-back","name":"Laid-back","category":"timing-rhythm","syntax":"[Laid-back]"},{"id":"tag-polyrhythmic","name":"Polyrhythmic","category":"timing-rhythm","syntax":"[Polyrhythmic]"},{"id":"tag-triplets","name":"Triplets","category":"timing-rhythm","syntax":"[Triplets]"},{"id":"tag-slow-drawled","name":"Slow-drawled","category":"timing-rhythm","syntax":"[Slow-drawled]"},{"id":"tag-quick-stabs","name":"Quick stabs","category":"timing-rhythm","syntax":"[Quick stabs]"},{"id":"tag-rolling","name":"Rolling","category":"timing-rhythm","syntax":"[Rolling]"},{"id":"tag-freeform","name":"Freeform","category":"timing-rhythm","syntax":"[Freeform]"},{"id":"tag-rapid-fire","name":"Rapid-fire","category":"timing-rhythm","syntax":"[Rapid-fire]"},{"id":"tag-loose-phrasing","name":"Loose phrasing","category":"timing-rhythm","syntax":"[Loose phrasing]"},{"id":"tag-tight-rhythm","name":"Tight rhythm","category":"timing-rhythm","syntax":"[Tight rhythm]"},{"id":"tag-tube-saturated-kick","name":"Tube-Saturated Kick","category":"drums","syntax":"[Tube-Saturated Kick]"},{"id":"tag-vinyl-print-texture","name":"Vinyl Print Texture","category":"drums","syntax":"[Vinyl Print Texture]"},{"id":"tag-hard-shelled-snare","name":"Hard-Shelled Snare","category":"drums","syntax":"[Hard-Shelled Snare]"},{"id":"tag-tonal-rim-shot","name":"Tonal Rim Shot","category":"drums","syntax":"[Tonal Rim Shot]"},{"id":"tag-crushed-transient-hits","name":"Crushed Transient Hits","category":"drums","syntax":"[Crushed Transient Hits]"},{"id":"tag-wet-clap-reverb","name":"Wet Clap Reverb","category":"drums","syntax":"[Wet Clap Reverb]"},{"id":"tag-ribbon-mic-percussion","name":"Ribbon Mic Percussion","category":"drums","syntax":"[Ribbon Mic Percussion]"},{"id":"tag-chalky-hi-hats","name":"Chalky Hi-Hats","category":"drums","syntax":"[Chalky Hi-Hats]"},{"id":"tag-rubberized-floor-tom","name":"Rubberized Floor Tom","category":"drums","syntax":"[Rubberized Floor Tom]"},{"id":"tag-stutter-ramp-rhythm","name":"Stutter-Ramp Rhythm","category":"drums","syntax":"[Stutter-Ramp Rhythm]"},{"id":"tag-offset-pulse-cycle","name":"Offset Pulse Cycle","category":"drums","syntax":"[Offset Pulse Cycle]"},{"id":"tag-triplet-swing-compression","name":"Triplet-Swing Compression","category":"drums","syntax":"[Triplet-Swing Compression]"},{"id":"tag-backbeat-cut-sync","name":"Backbeat Cut Sync","category":"drums","syntax":"[Backbeat Cut Sync]"},{"id":"tag-polyrhythmic-wash","name":"Polyrhythmic Wash","category":"drums","syntax":"[Polyrhythmic Wash]"},{"id":"tag-syncope-latch-break","name":"Syncope Latch Break","category":"drums","syntax":"[Syncope Latch Break]"},{"id":"tag-microstep-jitter-grid","name":"Microstep Jitter Grid","category":"drums","syntax":"[Microstep Jitter Grid]"},{"id":"tag-analog-tail-drift","name":"Analog Tail Drift","category":"drums","syntax":"[Analog Tail Drift]"},{"id":"tag-snare-choke-collapse","name":"Snare Choke Collapse","category":"drums","syntax":"[Snare Choke Collapse]"},{"id":"tag-open-hat-splash-delay","name":"Open Hat Splash Delay","category":"drums","syntax":"[Open Hat Splash Delay]"},{"id":"tag-reverse-boom-bloom","name":"Reverse Boom Bloom","category":"drums","syntax":"[Reverse Boom Bloom]"},{"id":"tag-snubbed-room-reverb","name":"Snubbed Room Reverb","category":"drums","syntax":"[Snubbed Room Reverb]"},{"id":"tag-kick-decay-swell","name":"Kick Decay Swell","category":"drums","syntax":"[Kick Decay Swell]"},{"id":"tag-stereo-wall-sweep","name":"Stereo Wall Sweep","category":"drums","syntax":"[Stereo Wall Sweep]"},{"id":"tag-pan-divided-drums","name":"Pan-Divided Drums","category":"drums","syntax":"[Pan-Divided Drums]"},{"id":"tag-monolith-percussion-center","name":"Monolith Percussion Center","category":"drums","syntax":"[Monolith Percussion Center]"},{"id":"tag-spiral-rim-loop","name":"Spiral Rim Loop","category":"drums","syntax":"[Spiral Rim Loop]"},{"id":"tag-wide-floor-drum-spread","name":"Wide Floor Drum Spread","category":"drums","syntax":"[Wide Floor Drum Spread]"},{"id":"tag-reverb-pulse-overdrive","name":"Reverb Pulse Overdrive","category":"drums","syntax":"[Reverb Pulse Overdrive]"},{"id":"tag-drum-bus-saturation-curve","name":"Drum Bus Saturation Curve","category":"drums","syntax":"[Drum Bus Saturation Curve]"},{"id":"tag-transient-pump-swell","name":"Transient Pump Swell","category":"drums","syntax":"[Transient Pump Swell]"},{"id":"tag-granular-kick-refract","name":"Granular Kick Refract","category":"drums","syntax":"[Granular Kick Refract]"},{"id":"tag-phase-shifting-snare-snap","name":"Phase-Shifting Snare Snap","category":"drums","syntax":"[Phase-Shifting Snare Snap]"},{"id":"tag-verse","name":"Verse","category":"structure","syntax":"[Verse]"},{"id":"tag-chorus","name":"Chorus","category":"structure","syntax":"[Chorus]"},{"id":"tag-bridge","name":"Bridge","category":"structure","syntax":"[Bridge]"},{"id":"tag-intro","name":"Intro","category":"structure","syntax":"[Intro]"},{"id":"tag-outro","name":"Outro","category":"structure","syntax":"[Outro]"},{"id":"tag-pre-chorus","name":"Pre-Chorus","category":"structure","syntax":"[Pre-Chorus]"},{"id":"tag-post-chorus","name":"Post-Chorus","category":"structure","syntax":"[Post-Chorus]"},{"id":"tag-verse-1","name":"Verse 1","category":"structure","syntax":"[Verse 1]"},{"id":"tag-verse-2","name":"Verse 2","category":"structure","syntax":"[Verse 2]"},{"id":"tag-chorus-x2","name":"Chorus x2","category":"structure","syntax":"[Chorus x2]"},{"id":"tag-instrumental-break","name":"Instrumental Break","category":"structure","syntax":"[Instrumental Break]"},{"id":"tag-solo-section","name":"Solo Section","category":"structure","syntax":"[Solo Section]"},{"id":"tag-nostalgic","name":"Nostalgic","category":"mood-atmosphere","syntax":"[Nostalgic]"},{"id":"tag-peaceful","name":"Peaceful","category":"mood-atmosphere","syntax":"[Peaceful]"},{"id":"tag-dark-atmosphere","name":"Dark Atmosphere","category":"mood-atmosphere","syntax":"[Dark Atmosphere]"},{"id":"tag-bright-atmosphere","name":"Bright Atmosphere","category":"mood-atmosphere","syntax":"[Bright Atmosphere]"},{"id":"tag-ambient-atmosphere","name":"Ambient Atmosphere","category":"mood-atmosphere","syntax":"[Ambient Atmosphere]"},{"id":"tag-intimate-atmosphere","name":"Intimate Atmosphere","category":"mood-atmosphere","syntax":"[Intimate Atmosphere]"},{"id":"tag-high-energy","name":"High Energy","category":"energy-intensity","syntax":"[High Energy]"},{"id":"tag-medium-energy","name":"Medium Energy","category":"energy-intensity","syntax":"[Medium Energy]"},{"id":"tag-low-energy","name":"Low Energy","category":"energy-intensity","syntax":"[Low Energy]"},{"id":"tag-building-energy","name":"Building Energy","category":"energy-intensity","syntax":"[Building Energy]"},{"id":"tag-explosive-energy","name":"Explosive Energy","category":"energy-intensity","syntax":"[Explosive Energy]"},{"id":"tag-intense","name":"Intense","category":"energy-intensity","syntax":"[Intense]"},{"id":"tag-gentle","name":"Gentle","category":"energy-intensity","syntax":"[Gentle]"},{"id":"tag-powerful","name":"Powerful","category":"energy-intensity","syntax":"[Powerful]"},{"id":"tag-dynamic","name":"Dynamic","category":"energy-intensity","syntax":"[Dynamic]"},{"id":"tag-electric-guitar","name":"Electric Guitar","category":"instruments","syntax":"[Electric Guitar]"},{"id":"tag-acoustic-guitar","name":"Acoustic Guitar","category":"instruments","syntax":"[Acoustic Guitar]"},{"id":"tag-bass-guitar","name":"Bass Guitar","category":"instruments","syntax":"[Bass Guitar]"},{"id":"tag-violin","name":"Violin","category":"instruments","syntax":"[Violin]"},{"id":"tag-cello","name":"Cello","category":"instruments","syntax":"[Cello]"},{"id":"tag-drums","name":"Drums","category":"instruments","syntax":"[Drums]"},{"id":"tag-electronic-drums","name":"Electronic Drums","category":"instruments","syntax":"[Electronic Drums]"},{"id":"tag-hand-percussion","name":"Hand Percussion","category":"instruments","syntax":"[Hand Percussion]"},{"id":"tag-timpani","name":"Timpani","category":"instruments","syntax":"[Timpani]"},{"id":"tag-piano","name":"Piano","category":"instruments","syntax":"[Piano]"},{"id":"tag-electric-piano","name":"Electric Piano","category":"instruments","syntax":"[Electric Piano]"},{"id":"tag-synthesizer","name":"Synthesizer","category":"instruments","syntax":"[Synthesizer]"},{"id":"tag-organ","name":"Organ","category":"instruments","syntax":"[Organ]"},{"id":"tag-strings-section","name":"Strings Section","category":"instruments","syntax":"[Strings Section]"},{"id":"tag-saxophone","name":"Saxophone","category":"instruments","syntax":"[Saxophone]"},{"id":"tag-trumpet","name":"Trumpet","category":"instruments","syntax":"[Trumpet]"},{"id":"tag-flute","name":"Flute","category":"instruments","syntax":"[Flute]"},{"id":"tag-clarinet","name":"Clarinet","category":"instruments","syntax":"[Clarinet]"},{"id":"tag-pop","name":"Pop","category":"genre","syntax":"[Pop]"},{"id":"tag-rock","name":"Rock","category":"genre","syntax":"[Rock]"},{"id":"tag-hip-hop","name":"Hip-Hop","category":"genre","syntax":"[Hip-Hop]"},{"id":"tag-electronic","name":"Electronic","category":"genre","syntax":"[Electronic]"},{"id":"tag-jazz","name":"Jazz","category":"genre","syntax":"[Jazz]"},{"id":"tag-classical","name":"Classical","category":"genre","syntax":"[Classical]"},{"id":"tag-folk","name":"Folk","category":"genre","syntax":"[Folk]"},{"id":"tag-r-b","name":"R&B","category":"genre","syntax":"[R&B]"},{"id":"tag-country","name":"Country","category":"genre","syntax":"[Country]"},{"id":"tag-reggae","name":"Reggae","category":"genre","syntax":"[Reggae]"},{"id":"tag-house","name":"House","category":"genre","syntax":"[House]"},{"id":"tag-techno","name":"Techno","category":"genre","syntax":"[Techno]"},{"id":"tag-ambient","name":"Ambient","category":"genre","syntax":"[Ambient]"},{"id":"tag-dubstep","name":"Dubstep","category":"genre","syntax":"[Dubstep]"},{"id":"tag-trance","name":"Trance","category":"genre","syntax":"[Trance]"},{"id":"tag-alternative-rock","name":"Alternative Rock","category":"genre","syntax":"[Alternative Rock]"},{"id":"tag-hard-rock","name":"Hard Rock","category":"genre","syntax":"[Hard Rock]"},{"id":"tag-indie-rock","name":"Indie Rock","category":"genre","syntax":"[Indie Rock]"},{"id":"tag-progressive-rock","name":"Progressive Rock","category":"genre","syntax":"[Progressive Rock]"},{"id":"tag-male-vocals","name":"Male Vocals","category":"vocal","syntax":"[Male Vocals]"},{"id":"tag-female-vocals","name":"Female Vocals","category":"vocal","syntax":"[Female Vocals]"},{"id":"tag-harmonies","name":"Harmonies","category":"vocal","syntax":"[Harmonies]"},{"id":"tag-choir","name":"Choir","category":"vocal","syntax":"[Choir]"},{"id":"tag-powerful-vocals","name":"Powerful Vocals","category":"vocal","syntax":"[Powerful Vocals]"},{"id":"tag-smooth-vocals","name":"Smooth Vocals","category":"vocal","syntax":"[Smooth Vocals]"},{"id":"tag-vibrato","name":"Vibrato","category":"vocal","syntax":"[Vibrato]"},{"id":"tag-staccato-vocals","name":"Staccato Vocals","category":"vocal","syntax":"[Staccato Vocals]"},{"id":"tag-legato-vocals","name":"Legato Vocals","category":"vocal","syntax":"[Legato Vocals]"},{"id":"tag-raspy-voice","name":"Raspy Voice","category":"vocal","syntax":"[Raspy Voice]"},{"id":"tag-clear-voice","name":"Clear Voice","category":"vocal","syntax":"[Clear Voice]"},{"id":"tag-deep-voice","name":"Deep Voice","category":"vocal","syntax":"[Deep Voice]"},{"id":"tag-high-voice","name":"High Voice","category":"vocal","syntax":"[High Voice]"},{"id":"tag-soulful-voice","name":"Soulful Voice","category":"vocal","syntax":"[Soulful Voice]"},{"id":"tag-hall-reverb","name":"Hall Reverb","category":"production","syntax":"[Hall Reverb]"},{"id":"tag-room-reverb","name":"Room Reverb","category":"production","syntax":"[Room Reverb]"},{"id":"tag-plate-reverb","name":"Plate Reverb","category":"production","syntax":"[Plate Reverb]"},{"id":"tag-spring-reverb","name":"Spring Reverb","category":"production","syntax":"[Spring Reverb]"},{"id":"tag-no-reverb","name":"No Reverb","category":"production","syntax":"[No Reverb]"},{"id":"tag-echo","name":"Echo","category":"production","syntax":"[Echo]"},{"id":"tag-delay","name":"Delay","category":"production","syntax":"[Delay]"},{"id":"tag-slapback-delay","name":"Slapback Delay","category":"production","syntax":"[Slapback Delay]"},{"id":"tag-ping-pong-delay","name":"Ping Pong Delay","category":"production","syntax":"[Ping Pong Delay]"},{"id":"tag-distortion","name":"Distortion","category":"production","syntax":"[Distortion]"},{"id":"tag-overdrive","name":"Overdrive","category":"production","syntax":"[Overdrive]"},{"id":"tag-fuzz","name":"Fuzz","category":"production","syntax":"[Fuzz]"},{"id":"tag-clean","name":"Clean","category":"production","syntax":"[Clean]"},{"id":"tag-flanger","name":"Flanger","category":"production","syntax":"[Flanger]"},{"id":"tag-phaser","name":"Phaser","category":"production","syntax":"[Phaser]"},{"id":"tag-tremolo","name":"Tremolo","category":"production","syntax":"[Tremolo]"},{"id":"tag-i-v-vi-iv","name":"I-V-vi-IV","category":"harmony","syntax":"[I-V-vi-IV]"},{"id":"tag-vi-iv-i-v","name":"vi-IV-I-V","category":"harmony","syntax":"[vi-IV-I-V]"},{"id":"tag-i-vi-iv-v","name":"I-vi-IV-V","category":"harmony","syntax":"[I-vi-IV-V]"},{"id":"tag-ii-v-i","name":"ii-V-I","category":"harmony","syntax":"[ii-V-I]"},{"id":"tag-i-vii-vi-vii","name":"I-VII-VI-VII","category":"harmony","syntax":"[I-VII-VI-VII]"},{"id":"tag-major-harmony","name":"Major Harmony","category":"harmony","syntax":"[Major Harmony]"},{"id":"tag-minor-harmony","name":"Minor Harmony","category":"harmony","syntax":"[Minor Harmony]"},{"id":"tag-modal-harmony","name":"Modal Harmony","category":"harmony","syntax":"[Modal Harmony]"},{"id":"tag-jazz-harmony","name":"Jazz Harmony","category":"harmony","syntax":"[Jazz Harmony]"},{"id":"tag-dissonant-harmony","name":"Dissonant Harmony","category":"harmony","syntax":"[Dissonant Harmony]"},{"id":"tag-suspended-chords","name":"Suspended Chords","category":"harmony","syntax":"[Suspended Chords]"},{"id":"tag-extended-chords","name":"Extended Chords","category":"harmony","syntax":"[Extended Chords]"},{"id":"tag-altered-chords","name":"Altered Chords","category":"harmony","syntax":"[Altered Chords]"},{"id":"tag-quartal-harmony","name":"Quartal Harmony","category":"harmony","syntax":"[Quartal Harmony]"},{"id":"tag-rain","name":"Rain","category":"sound-effects","syntax":"[Rain]"},{"id":"tag-thunder","name":"Thunder","category":"sound-effects","syntax":"[Thunder]"},{"id":"tag-wind","name":"Wind","category":"sound-effects","syntax":"[Wind]"},{"id":"tag-ocean-waves","name":"Ocean Waves","category":"sound-effects","syntax":"[Ocean Waves]"},{"id":"tag-fire-crackling","name":"Fire Crackling","category":"sound-effects","syntax":"[Fire Crackling]"},{"id":"tag-traffic","name":"Traffic","category":"sound-effects","syntax":"[Traffic]"},{"id":"tag-footsteps","name":"Footsteps","category":"sound-effects","syntax":"[Footsteps]"},{"id":"tag-doors","name":"Doors","category":"sound-effects","syntax":"[Doors]"},{"id":"tag-machinery","name":"Machinery","category":"sound-effects","syntax":"[Machinery]"},{"id":"tag-vinyl-crackle","name":"Vinyl Crackle","category":"sound-effects","syntax":"[Vinyl Crackle]"},{"id":"tag-tape-hiss","name":"Tape Hiss","category":"sound-effects","syntax":"[Tape Hiss]"},{"id":"tag-record-scratch","name":"Record Scratch","category":"sound-effects","syntax":"[Record Scratch]"},{"id":"tag-reverse-reverb","name":"Reverse Reverb","category":"sound-effects","syntax":"[Reverse Reverb]"},{"id":"tag-risers","name":"Risers","category":"sound-effects","syntax":"[Risers]"},{"id":"tag-impacts","name":"Impacts","category":"sound-effects","syntax":"[Impacts]"},{"id":"tag-c-major","name":"C Major","category":"keys-scales","syntax":"[C Major]"},{"id":"tag-g-major","name":"G Major","category":"keys-scales","syntax":"[G Major]"},{"id":"tag-d-major","name":"D Major","category":"keys-scales","syntax":"[D Major]"},{"id":"tag-a-major","name":"A Major","category":"keys-scales","syntax":"[A Major]"},{"id":"tag-e-major","name":"E Major","category":"keys-scales","syntax":"[E Major]"},{"id":"tag-a-minor","name":"A Minor","category":"keys-scales","syntax":"[A Minor]"},{"id":"tag-e-minor","name":"E Minor","category":"keys-scales","syntax":"[E Minor]"},{"id":"tag-b-minor","name":"B Minor","category":"keys-scales","syntax":"[B Minor]"},{"id":"tag-f-minor","name":"F# Minor","category":"keys-scales","syntax":"[F# Minor]"},{"id":"tag-dorian-mode","name":"Dorian Mode","category":"keys-scales","syntax":"[Dorian Mode]"},{"id":"tag-mixolydian-mode","name":"Mixolydian Mode","category":"keys-scales","syntax":"[Mixolydian Mode]"},{"id":"tag-lydian-mode","name":"Lydian Mode","category":"keys-scales","syntax":"[Lydian Mode]"},{"id":"tag-phrygian-mode","name":"Phrygian Mode","category":"keys-scales","syntax":"[Phrygian Mode]"},{"id":"tag-pentatonic-scale","name":"Pentatonic Scale","category":"keys-scales","syntax":"[Pentatonic Scale]"},{"id":"tag-blues-scale","name":"Blues Scale","category":"keys-scales","syntax":"[Blues Scale]"},{"id":"tag-chromatic-scale","name":"Chromatic Scale","category":"keys-scales","syntax":"[Chromatic Scale]"},{"id":"tag-whole-tone-scale","name":"Whole Tone Scale","category":"keys-scales","syntax":"[Whole Tone Scale]"},{"id":"tag-slow-tempo","name":"Slow Tempo","category":"rhythm-tempo","syntax":"[Slow Tempo]"},{"id":"tag-medium-tempo","name":"Medium Tempo","category":"rhythm-tempo","syntax":"[Medium Tempo]"},{"id":"tag-fast-tempo","name":"Fast Tempo","category":"rhythm-tempo","syntax":"[Fast Tempo]"},{"id":"tag-very-fast","name":"Very Fast","category":"rhythm-tempo","syntax":"[Very Fast]"},{"id":"tag-straight-feel","name":"Straight Feel","category":"rhythm-tempo","syntax":"[Straight Feel]"},{"id":"tag-swing-feel","name":"Swing Feel","category":"rhythm-tempo","syntax":"[Swing Feel]"},{"id":"tag-shuffle-feel","name":"Shuffle Feel","category":"rhythm-tempo","syntax":"[Shuffle Feel]"},{"id":"tag-latin-feel","name":"Latin Feel","category":"rhythm-tempo","syntax":"[Latin Feel]"},{"id":"tag-backbeat","name":"Backbeat","category":"rhythm-tempo","syntax":"[Backbeat]"},{"id":"tag-polyrhythm","name":"Polyrhythm","category":"rhythm-tempo","syntax":"[Polyrhythm]"},{"id":"tag-cross-rhythm","name":"Cross-rhythm","category":"rhythm-tempo","syntax":"[Cross-rhythm]"},{"id":"tag-4-4-time","name":"4/4 Time","category":"rhythm-tempo","syntax":"[4/4 Time]"},{"id":"tag-3-4-time","name":"3/4 Time","category":"rhythm-tempo","syntax":"[3/4 Time]"},{"id":"tag-6-8-time","name":"6/8 Time","category":"rhythm-tempo","syntax":"[6/8 Time]"},{"id":"tag-5-4-time","name":"5/4 Time","category":"rhythm-tempo","syntax":"[5/4 Time]"},{"id":"tag-call-and-response-adv","name":"Call and Response","category":"advanced","syntax":"[Call and Response]"},{"id":"tag-counterpoint","name":"Counterpoint","category":"advanced","syntax":"[Counterpoint]"},{"id":"tag-layering","name":"Layering","category":"advanced","syntax":"[Layering]"},{"id":"tag-unison","name":"Unison","category":"advanced","syntax":"[Unison]"},{"id":"tag-canon","name":"Canon","category":"advanced","syntax":"[Canon]"},{"id":"tag-diminuendo","name":"Diminuendo","category":"advanced","syntax":"[Diminuendo]"},{"id":"tag-forte","name":"Forte","category":"advanced","syntax":"[Forte]"},{"id":"tag-sforzando","name":"Sforzando","category":"advanced","syntax":"[Sforzando]"},{"id":"tag-minimalist","name":"Minimalist","category":"advanced","syntax":"[Minimalist]"},{"id":"tag-maximalist","name":"Maximalist","category":"advanced","syntax":"[Maximalist]"},{"id":"tag-monophonic","name":"Monophonic","category":"advanced","syntax":"[Monophonic]"},{"id":"tag-homophonic","name":"Homophonic","category":"advanced","syntax":"[Homophonic]"},{"id":"tag-polyphonic","name":"Polyphonic","category":"advanced","syntax":"[Polyphonic]"},{"id":"tag-glitch","name":"Glitch","category":"advanced","syntax":"[Glitch]"},{"id":"tag-morphing","name":"Morphing","category":"advanced","syntax":"[Morphing]"},{"id":"tag-sidechaining","name":"Sidechaining","category":"advanced","syntax":"[Sidechaining]"}];
+
+    const categories = [
+      {id: "genre", name: "Genre", icon: "🎵"},
+      {id: "vocal", name: "Vocal Type", icon: "🎤"},
+      {id: "vocal-tone", name: "Vocal Tone", icon: "🗣️"},
+      {id: "vocal-texture", name: "Vocal Texture", icon: "✨"},
+      {id: "vocal-style", name: "Vocal Style", icon: "🎭"},
+      {id: "vocal-effects", name: "Vocal Effects", icon: "🎛️"},
+      {id: "pitch-range", name: "Pitch & Range", icon: "📊"},
+      {id: "emotion-mood", name: "Emotion & Mood", icon: "💜"},
+      {id: "mood-atmosphere", name: "Atmosphere", icon: "🌙"},
+      {id: "dynamics", name: "Dynamics", icon: "📈"},
+      {id: "energy-intensity", name: "Energy", icon: "⚡"},
+      {id: "instruments", name: "Instruments", icon: "🎸"},
+      {id: "drums", name: "Drums & Percussion", icon: "🥁"},
+      {id: "production", name: "Production & FX", icon: "🎚️"},
+      {id: "harmony", name: "Harmony & Chords", icon: "🎹"},
+      {id: "keys-scales", name: "Keys & Scales", icon: "🎼"},
+      {id: "rhythm-tempo", name: "Rhythm & Tempo", icon: "⏱️"},
+      {id: "timing-rhythm", name: "Timing Feel", icon: "🕐"},
+      {id: "structure", name: "Song Structure", icon: "📜"},
+      {id: "sound-effects", name: "Sound Effects", icon: "🔊"},
+      {id: "advanced", name: "Advanced", icon: "🚀"}
+    ];
+
+    // State
+    let selectedTags = new Set();
+    let apiKey = localStorage.getItem('hf_api_key') || '';
+
+    // Group tags by category
+    const tagsByCategory = {};
+    tags.forEach(tag => {
+      if (!tagsByCategory[tag.category]) {
+        tagsByCategory[tag.category] = [];
+      }
+      tagsByCategory[tag.category].push(tag);
+    });
+
+    // Render categories
+    function renderCategories() {
+      const categoriesEl = document.getElementById('categories');
+      categoriesEl.innerHTML = '';
+
+      categories.forEach(cat => {
+        const catTags = tagsByCategory[cat.id] || [];
+        if (catTags.length === 0) return;
+
+        const catEl = document.createElement('div');
+        catEl.className = 'category';
+        catEl.innerHTML = `
+          <div class="category-header">
+            <span class="category-title">
+              <span class="cat-icon">${cat.icon}</span>
+              ${cat.name}
+              <span class="category-count">${catTags.length}</span>
+            </span>
+            <span class="category-arrow">▶</span>
+          </div>
+          <div class="category-content">
+            <div class="tag-grid" data-category="${cat.id}"></div>
+          </div>
+        `;
+
+        catEl.querySelector('.category-header').addEventListener('click', () => {
+          catEl.classList.toggle('open');
+        });
+
+        const grid = catEl.querySelector('.tag-grid');
+        catTags.forEach(tag => {
+          const tagCard = createTagCard(tag);
+          grid.appendChild(tagCard);
+        });
+
+        categoriesEl.appendChild(catEl);
+      });
+    }
+
+    // Create tag card
+    function createTagCard(tag) {
+      const card = document.createElement('div');
+      card.className = 'tag-card';
+      card.dataset.tagId = tag.id;
+      card.dataset.syntax = tag.syntax;
+
+      if (selectedTags.has(tag.id)) {
+        card.classList.add('selected');
+      }
+
+      card.innerHTML = `
+        <div class="tag-card-check">✓</div>
+        <div class="tag-card-content">
+          <div class="tag-card-name">${tag.name}</div>
+          <div class="tag-card-syntax">${tag.syntax}</div>
+        </div>
+      `;
+
+      card.addEventListener('click', () => toggleTag(tag, card));
+
+      return card;
+    }
+
+    // Toggle tag selection
+    function toggleTag(tag, cardEl) {
+      if (selectedTags.has(tag.id)) {
+        selectedTags.delete(tag.id);
+        cardEl.classList.remove('selected');
+      } else {
+        selectedTags.add(tag.id);
+        cardEl.classList.add('selected');
+      }
+      updateSelectedTagsDisplay();
+    }
+
+    // Update selected tags display
+    function updateSelectedTagsDisplay() {
+      const container = document.getElementById('selectedTagsContainer');
+      const list = document.getElementById('selectedTagsList');
+      const emptyMsg = container.querySelector('.empty-selection');
+      const generateBtn = document.getElementById('generateBtn');
+
+      if (selectedTags.size === 0) {
+        emptyMsg.style.display = 'block';
+        list.style.display = 'none';
+        generateBtn.disabled = true;
+      } else {
+        emptyMsg.style.display = 'none';
+        list.style.display = 'flex';
+        generateBtn.disabled = false;
+
+        list.innerHTML = '';
+        selectedTags.forEach(tagId => {
+          const tag = tags.find(t => t.id === tagId);
+          if (!tag) return;
+
+          const chip = document.createElement('div');
+          chip.className = 'selected-tag-chip';
+          chip.innerHTML = `
+            <span>${tag.name}</span>
+            <span class="selected-tag-remove" data-tag-id="${tag.id}">×</span>
+          `;
+
+          chip.querySelector('.selected-tag-remove').addEventListener('click', (e) => {
+            e.stopPropagation();
+            selectedTags.delete(tag.id);
+            document.querySelectorAll(`[data-tag-id="${tag.id}"]`).forEach(el => {
+              if (el.classList.contains('tag-card')) {
+                el.classList.remove('selected');
+              }
+            });
+            updateSelectedTagsDisplay();
+          });
+
+          list.appendChild(chip);
+        });
+      }
+    }
+
+    // Clear all
+    document.getElementById('clearBtn').addEventListener('click', () => {
+      selectedTags.clear();
+      document.querySelectorAll('.tag-card.selected').forEach(el => {
+        el.classList.remove('selected');
+      });
+      updateSelectedTagsDisplay();
+    });
+
+    // Random selection
+    document.getElementById('randomBtn').addEventListener('click', () => {
+      selectedTags.clear();
+
+      const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+      const randomCategories = [
+        'genre', 'vocal', 'emotion-mood', 'instruments', 'rhythm-tempo'
+      ];
+
+      randomCategories.forEach(catId => {
+        const catTags = tagsByCategory[catId] || [];
+        if (catTags.length > 0) {
+          const randomTag = pick(catTags);
+          selectedTags.add(randomTag.id);
+        }
+      });
+
+      document.querySelectorAll('.tag-card').forEach(card => {
+        if (selectedTags.has(card.dataset.tagId)) {
+          card.classList.add('selected');
+        } else {
+          card.classList.remove('selected');
+        }
+      });
+
+      updateSelectedTagsDisplay();
+      showToast('Random tags selected!');
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById('search');
+    const searchResults = document.getElementById('searchResults');
+    const searchTagGrid = document.getElementById('searchTagGrid');
+    const noResults = document.getElementById('noResults');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase().trim();
+
+      if (!query) {
+        document.body.classList.remove('searching');
+        return;
+      }
+
+      document.body.classList.add('searching');
+
+      const matches = tags.filter(t =>
+        t.name.toLowerCase().includes(query) ||
+        t.category.toLowerCase().includes(query)
+      );
+
+      if (matches.length === 0) {
+        searchTagGrid.innerHTML = '';
+        noResults.style.display = 'block';
+      } else {
+        noResults.style.display = 'none';
+        searchTagGrid.innerHTML = '';
+        matches.forEach(tag => {
+          const card = createTagCard(tag);
+          searchTagGrid.appendChild(card);
+        });
+      }
+    });
+
+    // AI Generation
+    document.getElementById('generateBtn').addEventListener('click', showPromptModal);
+
+    // Modal
+    const modal = document.getElementById('promptModal');
+    const modalClose = document.getElementById('modalClose');
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    function showPromptModal() {
+      modal.classList.add('show');
+
+      // Load saved API key
+      const apiKeyInput = document.getElementById('apiKeyInput');
+      apiKeyInput.value = apiKey;
+
+      // Generate prompt immediately if API key exists
+      if (apiKey) {
+        generateAIPrompt();
+      } else {
+        document.getElementById('generatedPrompt').textContent =
+          'Please enter your Hugging Face API token above to generate AI prompts.\n\n' +
+          'Get your free token at: https://huggingface.co/settings/tokens';
+      }
+    }
+
+    function closeModal() {
+      modal.classList.remove('show');
+    }
+
+    // Save API key
+    document.getElementById('apiKeyInput').addEventListener('change', (e) => {
+      apiKey = e.target.value.trim();
+      if (apiKey) {
+        localStorage.setItem('hf_api_key', apiKey);
+        showToast('API key saved!');
+      }
+    });
+
+    // Generate AI Prompt
+    async function generateAIPrompt() {
+      if (!apiKey) {
+        showToast('Please enter your Hugging Face API key', true);
+        return;
+      }
+
+      const selectedTagsList = Array.from(selectedTags)
+        .map(id => tags.find(t => t.id === id))
+        .filter(Boolean);
+
+      if (selectedTagsList.length === 0) {
+        showToast('Please select some tags first', true);
+        return;
+      }
+
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      const generatedPrompt = document.getElementById('generatedPrompt');
+
+      loadingOverlay.classList.add('show');
+      generatedPrompt.textContent = 'Generating your AI prompt...';
+
+      try {
+        // Build prompt for AI
+        const tagNames = selectedTagsList.map(t => t.name).join(', ');
+        const tagSyntax = selectedTagsList.map(t => t.syntax).join(' ');
+
+        const systemPrompt = `You are an expert Suno AI music prompt generator. Based on the selected tags, create a comprehensive, well-structured prompt for Suno that includes:
+1. A clear genre/style description
+2. Specific vocal characteristics
+3. Instrumentation details
+4. Production style and effects
+5. Mood and atmosphere
+6. Song structure suggestions
+
+Format the prompt in a clean, organized way that Suno can use effectively.
+
+Selected tags: ${tagNames}
+
+Generate a detailed, creative Suno prompt:`;
+
+        // Call Hugging Face API
+        const response = await fetch(
+          'https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1',
+          {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${apiKey}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              inputs: systemPrompt,
+              parameters: {
+                max_new_tokens: 500,
+                temperature: 0.8,
+                top_p: 0.95,
+                return_full_text: false
+              }
+            })
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`API error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        let generatedText = data[0]?.generated_text || '';
+
+        // Format output
+        const output = `🎵 SUNO AI PROMPT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${generatedText}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 SELECTED TAGS:
+${tagSyntax}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✨ Generated by Suno AI Prompt Generator
+`;
+
+        generatedPrompt.textContent = output;
+        showToast('Prompt generated successfully!');
+
+      } catch (error) {
+        console.error('AI Generation error:', error);
+        generatedPrompt.textContent =
+          `❌ Error generating prompt: ${error.message}\n\n` +
+          `Please check:\n` +
+          `1. Your API key is valid\n` +
+          `2. You have internet connection\n` +
+          `3. Hugging Face API is accessible\n\n` +
+          `Selected tags:\n${selectedTagsList.map(t => t.syntax).join(' ')}`;
+        showToast('Failed to generate prompt', true);
+      } finally {
+        loadingOverlay.classList.remove('show');
+      }
+    }
+
+    // Copy prompt
+    document.getElementById('copyPromptBtn').addEventListener('click', () => {
+      const prompt = document.getElementById('generatedPrompt').textContent;
+      navigator.clipboard.writeText(prompt).then(() => {
+        showToast('Prompt copied to clipboard!');
+      });
+    });
+
+    // Regenerate
+    document.getElementById('regenerateBtn').addEventListener('click', () => {
+      generateAIPrompt();
+    });
+
+    // Toast
+    function showToast(msg, isError = false) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.toggle('error', isError);
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // Initialize
+    renderCategories();
+    updateSelectedTagsDisplay();
+  </script>
+</body>
+</html>
