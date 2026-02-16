@@ -605,22 +605,10 @@
   <div class="modal" id="promptModal">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="modal-title">✨ AI Generated Prompt</div>
+        <div class="modal-title">✨ Generated Prompt</div>
         <div class="modal-close" id="modalClose">&times;</div>
       </div>
 
-      <div class="api-key-section" id="apiKeySection">
-        <p>🔑 Enter your Hugging Face API token (free):</p>
-        <input
-          type="password"
-          class="api-key-input"
-          id="apiKeyInput"
-          placeholder="hf_..."
-        >
-        <div class="api-key-help">
-          Get free token at <a href="https://huggingface.co/settings/tokens" target="_blank">huggingface.co/settings/tokens</a>
-        </div>
-      </div>
 
       <div class="generated-prompt" id="generatedPrompt">Your generated prompt will appear here...</div>
       <div class="modal-actions">
@@ -670,7 +658,6 @@
 
     // State
     let selectedTags = new Set();
-    let apiKey = localStorage.getItem('hf_api_key') || '';
 
     // Group tags by category
     const tagsByCategory = {};
@@ -887,41 +874,16 @@
 
     function showPromptModal() {
       modal.classList.add('show');
-
-      // Load saved API key
-      const apiKeyInput = document.getElementById('apiKeyInput');
-      apiKeyInput.value = apiKey;
-
-      // Generate prompt immediately if API key exists
-      if (apiKey) {
-        generateAIPrompt();
-      } else {
-        document.getElementById('generatedPrompt').textContent =
-          'Please enter your Hugging Face API token above to generate AI prompts.\n\n' +
-          'Get your free token at: https://huggingface.co/settings/tokens';
-      }
+      generateAIPrompt();
     }
 
     function closeModal() {
       modal.classList.remove('show');
     }
 
-    // Save API key
-    document.getElementById('apiKeyInput').addEventListener('change', (e) => {
-      apiKey = e.target.value.trim();
-      if (apiKey) {
-        localStorage.setItem('hf_api_key', apiKey);
-        showToast('API key saved!');
-      }
-    });
 
-    // Generate AI Prompt
-    async function generateAIPrompt() {
-      if (!apiKey) {
-        showToast('Please enter your Hugging Face API key', true);
-        return;
-      }
-
+    // Generate AI Prompt (Client-side)
+    function generateAIPrompt() {
       const selectedTagsList = Array.from(selectedTags)
         .map(id => tags.find(t => t.id === id))
         .filter(Boolean);
@@ -937,83 +899,158 @@
       loadingOverlay.classList.add('show');
       generatedPrompt.textContent = 'Generating your AI prompt...';
 
-      try {
-        // Build prompt for AI
-        const tagNames = selectedTagsList.map(t => t.name).join(', ');
-        const tagSyntax = selectedTagsList.map(t => t.syntax).join(' ');
+      // Simulate processing time
+      setTimeout(() => {
+        try {
+          // Organize tags by category
+          const tagsByCategory = {};
+          selectedTagsList.forEach(tag => {
+            if (!tagsByCategory[tag.category]) {
+              tagsByCategory[tag.category] = [];
+            }
+            tagsByCategory[tag.category].push(tag);
+          });
 
-        const systemPrompt = `You are an expert Suno AI music prompt generator. Based on the selected tags, create a comprehensive, well-structured prompt for Suno that includes:
-1. A clear genre/style description
-2. Specific vocal characteristics
-3. Instrumentation details
-4. Production style and effects
-5. Mood and atmosphere
-6. Song structure suggestions
+          // Build comprehensive prompt
+          let promptParts = [];
 
-Format the prompt in a clean, organized way that Suno can use effectively.
+          // Introduction templates
+          const intros = [
+            "Create a captivating track with",
+            "Produce an immersive song featuring",
+            "Generate a compelling composition with",
+            "Craft a dynamic piece that combines",
+            "Design a memorable track showcasing"
+          ];
+          const intro = intros[Math.floor(Math.random() * intros.length)];
 
-Selected tags: ${tagNames}
-
-Generate a detailed, creative Suno prompt:`;
-
-        // Call Hugging Face API
-        const response = await fetch(
-          'https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1',
-          {
-            method: 'POST',
-            headers: {
-              'Authorization': `Bearer ${apiKey}`,
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              inputs: systemPrompt,
-              parameters: {
-                max_new_tokens: 500,
-                temperature: 0.8,
-                top_p: 0.95,
-                return_full_text: false
-              }
-            })
+          // Genre description
+          if (tagsByCategory.genre) {
+            const genres = tagsByCategory.genre.map(t => t.name.toLowerCase()).join(' and ');
+            promptParts.push(`${genres} influences`);
           }
-        );
 
-        if (!response.ok) {
-          throw new Error(`API error: ${response.status}`);
-        }
+          // Vocal characteristics
+          const vocalCats = ['vocal', 'vocal-tone', 'vocal-texture', 'vocal-style', 'vocal-effects', 'pitch-range'];
+          const vocalTags = vocalCats.flatMap(cat => tagsByCategory[cat] || []);
+          if (vocalTags.length > 0) {
+            const vocalDesc = vocalTags.slice(0, 3).map(t => t.name.toLowerCase()).join(', ');
+            promptParts.push(`${vocalDesc} vocals`);
+          }
 
-        const data = await response.json();
-        let generatedText = data[0]?.generated_text || '';
+          // Instrumentation
+          if (tagsByCategory.instruments) {
+            const instruments = tagsByCategory.instruments.map(t => t.name.toLowerCase()).join(', ');
+            promptParts.push(`featuring ${instruments}`);
+          }
 
-        // Format output
-        const output = `🎵 SUNO AI PROMPT
+          // Drums & rhythm
+          if (tagsByCategory.drums || tagsByCategory['rhythm-tempo'] || tagsByCategory['timing-rhythm']) {
+            const rhythmTags = [
+              ...(tagsByCategory.drums || []),
+              ...(tagsByCategory['rhythm-tempo'] || []),
+              ...(tagsByCategory['timing-rhythm'] || [])
+            ];
+            if (rhythmTags.length > 0) {
+              const rhythmDesc = rhythmTags.slice(0, 2).map(t => t.name.toLowerCase()).join(' and ');
+              promptParts.push(`with ${rhythmDesc} percussion`);
+            }
+          }
+
+          // Mood & atmosphere
+          const moodCats = ['emotion-mood', 'mood-atmosphere', 'energy-intensity'];
+          const moodTags = moodCats.flatMap(cat => tagsByCategory[cat] || []);
+          if (moodTags.length > 0) {
+            const moodDesc = moodTags.map(t => t.name.toLowerCase()).join(', ');
+            promptParts.push(`delivering a ${moodDesc} atmosphere`);
+          }
+
+          // Production & effects
+          if (tagsByCategory.production) {
+            const fx = tagsByCategory.production.slice(0, 2).map(t => t.name.toLowerCase()).join(' and ');
+            promptParts.push(`enhanced with ${fx}`);
+          }
+
+          // Harmony & keys
+          if (tagsByCategory.harmony || tagsByCategory['keys-scales']) {
+            const harmonyTags = [
+              ...(tagsByCategory.harmony || []),
+              ...(tagsByCategory['keys-scales'] || [])
+            ];
+            if (harmonyTags.length > 0) {
+              const harmonyDesc = harmonyTags[0].name;
+              promptParts.push(`in ${harmonyDesc}`);
+            }
+          }
+
+          // Dynamics
+          if (tagsByCategory.dynamics) {
+            const dynamicsDesc = tagsByCategory.dynamics.map(t => t.name.toLowerCase()).join(' and ');
+            promptParts.push(`with ${dynamicsDesc} dynamics`);
+          }
+
+          // Sound effects
+          if (tagsByCategory['sound-effects']) {
+            const sfx = tagsByCategory['sound-effects'].map(t => t.name.toLowerCase()).join(', ');
+            promptParts.push(`incorporating ${sfx} sound effects`);
+          }
+
+          // Build description
+          let description = intro + ' ' + promptParts.join(', ') + '.';
+
+          // Structure suggestion
+          let structureSuggestion = '';
+          if (tagsByCategory.structure) {
+            structureSuggestion = '\n\nSong Structure:\n' +
+              tagsByCategory.structure.map(t => `- ${t.name}`).join('\n');
+          } else {
+            structureSuggestion = '\n\nSuggested Structure:\n- Intro\n- Verse 1\n- Chorus\n- Verse 2\n- Chorus\n- Bridge\n- Chorus x2\n- Outro';
+          }
+
+          // Advanced techniques
+          let advancedTechniques = '';
+          if (tagsByCategory.advanced) {
+            advancedTechniques = '\n\nAdvanced Techniques:\n' +
+              tagsByCategory.advanced.map(t => `- ${t.name}`).join('\n');
+          }
+
+          // All selected tags syntax
+          const tagSyntax = selectedTagsList.map(t => t.syntax).join(' ');
+
+          // Final output
+          const output = `🎵 SUNO AI PROMPT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-${generatedText}
+${description}
+${structureSuggestion}
+${advancedTechniques}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📝 SELECTED TAGS:
+📝 SUNO TAGS (Copy these to Suno):
+
 ${tagSyntax}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 TIP: Paste the description AND tags into Suno
+   for best results!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ✨ Generated by Suno AI Prompt Generator
+   ${selectedTagsList.length} tags selected
 `;
 
-        generatedPrompt.textContent = output;
-        showToast('Prompt generated successfully!');
+          generatedPrompt.textContent = output;
+          showToast('Prompt generated successfully!');
 
-      } catch (error) {
-        console.error('AI Generation error:', error);
-        generatedPrompt.textContent =
-          `❌ Error generating prompt: ${error.message}\n\n` +
-          `Please check:\n` +
-          `1. Your API key is valid\n` +
-          `2. You have internet connection\n` +
-          `3. Hugging Face API is accessible\n\n` +
-          `Selected tags:\n${selectedTagsList.map(t => t.syntax).join(' ')}`;
-        showToast('Failed to generate prompt', true);
-      } finally {
-        loadingOverlay.classList.remove('show');
-      }
+        } catch (error) {
+          console.error('Generation error:', error);
+          const tagSyntax = selectedTagsList.map(t => t.syntax).join(' ');
+          generatedPrompt.textContent = `Selected tags:\n${tagSyntax}`;
+          showToast('Error generating description', true);
+        } finally {
+          loadingOverlay.classList.remove('show');
+        }
+      }, 800); // Simulated processing time
     }
 
     // Copy prompt
